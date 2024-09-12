@@ -7,10 +7,31 @@ assignees: ''
 
 ---
 
-As a **role** I can **capability** so that **received benefit**
+As a **User**, I would like **to **, so that **I can **
 
-- Acceptance criteria 1
+### Acceptance Criteria
+-	Acceptance Criteria 1
+    **Given** 
+    **When** 
+    **Then** 
+-	Acceptance Criteria 2
+    **Given** 
+    **When** 
+    **Then** 
+-	Acceptance Criteria 3
+    **Given** 
+    **When** 
+    **Then** 
 
-- Acceptance criteria 2
+### Tasks
+-	[] Task 1 – 
+-	[] Task 2 – 
+-	[] Task 3 – 
+-	[] Task 4 – 
+-	[] Task 5 – 
 
-- Acceptance criteria 3
+### Iteration:
+
+### Points:
+
+### Epic: #4
