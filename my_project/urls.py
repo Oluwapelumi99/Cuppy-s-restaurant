@@ -19,6 +19,7 @@ from django.urls import path, include
 from home_page import views as index_views
 from booking import views as booking_views
 
+
 urlpatterns = [
     path('booking/', booking_views.booking, name='booking'),
     path('home/', index_views.index, name='index'),

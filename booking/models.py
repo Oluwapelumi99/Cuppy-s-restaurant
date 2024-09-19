@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 # Create your models here.
 
 
@@ -14,16 +15,37 @@ from django.contrib.auth.models import User
 
 
 class Customer(models.Model):
-    name = models.CharField(max_length=100)
+    title = models.CharField(max_length=10,name=('Title'),choices=(('Ms', ('Miss')),('Mrs', ('Mr.')),),)
+    forename = models.CharField(max_length=100)
+    surname = models.CharField(max_length=100)
     email = models.EmailField()
     phone_number = models.CharField(max_length=11)
+    # class Meta:
+        # ordering = ["created_on"]
+    
+    def __str__(self):
+        return f"Customer {self.forename} booked on {self.created_on}"
+    
 
 class Table(models.Model):
     seats = models.IntegerField()
     number_of_guests = models.IntegerField()
+    # class Meta:
+    #     ordering = ["created_on"]
+
+
 
 class Booking(models.Model):
     booking_dateandtime_start = models.DateTimeField()
     booking_dateandtime_end = models.DateTimeField()
+    special_request = models.TextField(max_length = 1024)
+    cancelled = models.BooleanField(default = False)
+
+    # class Meta:
+    #     ordering = ["created_on"]
+
+    def __str__(self):
+        return f" {self.created_on}"
+
 
 
