@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "spa(ws9C-6+?d5$C%JqYPWq;T!-vWdfsgApo<Wal@2Lt6{'i,4]cY9{;c{!q_#`"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-oluwapelumi-cuppysresta-dzo6185pzm7.ws-eu116.gitpod.io',
                 '.herokuapp.com']
