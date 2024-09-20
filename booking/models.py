@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.translation import gettext_lazy as _
 
 
 # Create your models here.
@@ -15,7 +16,7 @@ from django.contrib.auth.models import User
 
 
 class Customer(models.Model):
-    title = models.CharField(max_length=10,name=('Title'),choices=(('Ms', ('Miss')),('Mrs', ('Mr.')),),)
+    title = models.CharField(max_length=10, verbose_name=_('Title'), choices=(('miss', _('Miss')),('ms', _('Ms')),('mrs', _('Mrs')),('mr', _('Mr')),),blank=True)
     forename = models.CharField(max_length=100)
     surname = models.CharField(max_length=100)
     email = models.EmailField()
@@ -24,7 +25,7 @@ class Customer(models.Model):
         # ordering = ["created_on"]
     
     def __str__(self):
-        return f"Customer {self.forename} booked on {self.created_on}"
+        return f"Customer {self.forename}"
     
 
 class Table(models.Model):
@@ -44,8 +45,8 @@ class Booking(models.Model):
     # class Meta:
     #     ordering = ["created_on"]
 
-    def __str__(self):
-        return f" {self.created_on}"
+    # def __str__(self):
+    #     return f" {self.created_on}"
 
 
 
