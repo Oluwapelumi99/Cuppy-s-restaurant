@@ -18,6 +18,9 @@ if os.path.isfile('env.py'):
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+TEMPLATES_DIR1 = os.path.join(BASE_DIR, 'templates')
+TEMPLATES_DIR2 = os.path.join(BASE_DIR, 'booking', 'templates', 'booking')
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -29,7 +32,7 @@ SECRET_KEY = "spa(ws9C-6+?d5$C%JqYPWq;T!-vWdfsgApo<Wal@2Lt6{'i,4]cY9{;c{!q_#`"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-oluwapelumi-cuppysresta-dzo6185pzm7.ws-eu116.gitpod.io',
+ALLOWED_HOSTS = ['8000-oluwapelumi-cuppysresta-e9ssbm2u7c6.ws.codeinstitute-ide.net',
                 '.herokuapp.com']
 
 
@@ -46,6 +49,13 @@ INSTALLED_APPS = [
     'booking',
 ]
 
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -61,7 +71,7 @@ ROOT_URLCONF = 'my_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_DIR1, TEMPLATES_DIR2],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -91,6 +101,7 @@ DATABASES = {
 }
 
 CSRF_TRUSTED_ORIGINS = [
+    "https://*.codeinstitute-ide.net/",
     'https://8000-oluwapelumi-cuppysresta-dzo6185pzm7.ws-eu116.gitpod.io',
     "https://*.herokuapp.com"
 ]
@@ -129,6 +140,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
