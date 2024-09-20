@@ -30,7 +30,7 @@ TEMPLATES_DIR2 = os.path.join(BASE_DIR, 'booking', 'templates', 'booking')
 SECRET_KEY = "spa(ws9C-6+?d5$C%JqYPWq;T!-vWdfsgApo<Wal@2Lt6{'i,4]cY9{;c{!q_#`"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-oluwapelumi-cuppysresta-e9ssbm2u7c6.ws.codeinstitute-ide.net',
                 '.herokuapp.com']
