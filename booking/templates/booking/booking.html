@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Restaurant Booking system - Cuppys's Restaurant</title>
-</head>
+{% block content %}
 
-<body>
     <h1 class="text-centre">Welcome to Cuppy's</h1>
-    <p class="text-centre"> Book a table now and indulge in our delicious cuisine!</p>
     <h1 class="t-h1">RESERVATIONS</h1>
-    <p>Online Reservatiins are available for a group of 1-6 guests, for larger group contact <a href="booking-cuppysrestaurant@gmail.com"> booking-cuppysrestaurant@gmail.com</a></p>
+    <p>Online Reservations are available for a group of 1-6 guests, for larger group contact <a href="booking-cuppysrestaurant@gmail.com"> booking-cuppysrestaurant@gmail.com</a></p>
     <p>Credit card details are required to secure your reservation. 
         We do not require a deposit to secure the reservation.</p>
     <!--Link to connect to the booking site-->
@@ -32,18 +24,17 @@
         Sun -Sat, 18:00 - 20:30
     </div>
 
-    <div> 
-        <p class="smallcaps">BOOKING POLICY</p>
+    <div>
         <br>
+        <p class="smallcaps">BOOKING POLICY</p>
         For any changes to your reservation with less than 72 hours notice, 
         including cancellation, decrease in party size or rescheduling, 
         a fee of £125 per person for lunch or £155 per person for dinner will be charged to the credit card submitted when making a reservation. 
         Please note, this applies to all cancellations and is not discretionary.
     </div>
 
-    
+    {% endblock content %}   
 
    
-</body>
 
-</html>
+
