@@ -46,8 +46,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_summernote',
+     'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'home_page',
+    'crispy_forms',
+    'crispy_bootstrap5',
+    'django_summernote',
     'booking',
 ]
 
@@ -67,7 +73,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
+
 
 ROOT_URLCONF = 'my_project.urls'
 
@@ -125,6 +133,38 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+AUTHENTICATION_BACKENDS = [ 'django.contrib.auth.backends.ModelBackend',
+                            'allauth.account.auth_backends.AuthenticationBackend'
+
+]
+
+from django.core.mail import send_mail
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+ACCOUNT_AUTHENTICATION_METHOD ='email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_USERNAME_REQUIRED = False
+
+EMAIL_HOST ='smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = DEFAULT_FROM_EMAIL = 'ivzlqzap@students.codeinstitute.net'
+EMAIL_HOST_PASSWORD = 'mmxh fxpg setf wogd'
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, "send_mail")
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+
+# from django.contrib import messages
+# MESSAGE_TAGS = {
+# messages.ERROR: 'danger'
+# }
+
+# AUTH_USER_MODEL = 'authtools.User'
+# LOGIN_REDIRECT_URL = '/notes/'
+# EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+# EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
+# LOGIN_URL = reverse_lazy("accounts:login")
+
 
 
 # Internationalization

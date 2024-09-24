@@ -22,9 +22,9 @@ def makeBooking(request):
         people_num = int(request.POST['people_num'])
 
         booking = Booking(table_num=table_num, date=date, time=time, people_num=people_num)
-        # booking.save(commit=False)
-        # booking.post = post 
-        # booking.approved = False
+        booking.save(commit=False)
+        booking.post = post 
+        booking.approved = False
         booking.save()
         messages.add_message(request, messages.SUCCESS, 'Your booking has been completed succesffully!')
     else:

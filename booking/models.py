@@ -6,15 +6,6 @@ from django.utils.translation import gettext_lazy as _
 # Create your models here.
 
 
-# class Booking(models.Model):
-#     name = models.CharField(max_length=100)
-#     email = models.EmailField()
-#     phone_number = models.CharField(max_length=11)
-#     number_of_guests = models.IntegerField()
-#     booking_dateandtime_start = models.DateTimeField()
-#     booking_dateandtime_end = models.DateTimeField()
-
-
 class Customer(models.Model):
     title = models.CharField(max_length=10, verbose_name=_('Title'), choices=(('miss', _('Miss')),('ms', _('Ms')),('mrs', _('Mrs')),('mr', _('Mr')),),blank=True)
     forename = models.CharField(max_length=100)
