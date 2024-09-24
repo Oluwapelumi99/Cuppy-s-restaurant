@@ -15,22 +15,23 @@ def booking(request):
 
 
 def makeBooking(request):
-    if request.method == 'POST':
-        table_num = int(request.POST['table_num'])
-        date = request.POST['date']
-        time = request.POST['time']
-        people_num = int(request.POST['people_num'])
+    if User == authenticated:
+        if request.method == 'POST':
+            table_num = int(request.POST['table_num'])
+            date = request.POST['date']
+            time = request.POST['time']
+            people_num = int(request.POST['people_num'])
 
-        booking = Booking(table_num=table_num, date=date, time=time, people_num=people_num)
-        booking.save(commit=False)
-        booking.post = post 
-        booking.approved = False
-        booking.save()
-        messages.add_message(request, messages.SUCCESS, 'Your booking has been completed succesffully!')
-    else:
-        messages.add_message(request, messages.ERROR, 'Error making booking, Please send an email to.........')
+            booking = Booking(table_num=table_num, date=date, time=time, people_num=people_num)
+            booking.save(commit=False)
+            booking.post = post 
+            booking.approved = False
+            booking.save()
+            messages.add_message(request, messages.SUCCESS, 'Your booking has been completed succesffully!')
+        else:
+            messages.add_message(request, messages.ERROR, 'Error making booking, Please send an email to.........')
 
-    return HttpResponseRedirect(reverse('booking_detail', args=[slug]))
+        return HttpResponseRedirect(reverse('booking_detail', args=[slug]))
 
 
 def updateBooking(request, slug, booking_id):

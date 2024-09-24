@@ -2,6 +2,14 @@ body {
     background-color: #ffc0cb;
 }
 
-#details, #times {
+#details, #times, #policy {
     text-align: center;
+}
+
+#title {
+    color: darkblue;
+}
+.btn-signup {
+    background-color: #000000;
+    color: #fff;
 }
