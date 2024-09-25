@@ -13,3 +13,82 @@ body {
     background-color: #000000;
     color: #fff;
 }
+
+#hero-image {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+#opacity {
+    background-color:  rgba(4, 0, 1, 0.6);
+    height: 86.5vh;
+}
+#description {
+    color: #fff4f9;
+    display: flex;
+    font-size: 20px;
+    font-family: 'dancing script', sans-serif;
+    
+}
+#content {
+    margin-top: 50px;
+    display: flex;
+    margin-left: 50px;
+    
+}
+#location {
+    margin-top: 150px;
+    margin-left: 250px;
+}
+#image-slides {
+    overflow: hidden;
+    height: 200px;
+    width: 200px;
+    margin-left: 750px;
+    margin-top: 20px;
+}
+
+/* Slides animation*/
+@keyframes slide_animation {
+    0% {left:0px;}
+    10% {left:0px;}
+    20% {right:800px;}
+    30% {right:1000px;}
+    40% {left:1000px;}
+    50% {left:200px;}
+    60% {left:200px;}
+    70% {left:200px;}
+    80% {left:200px;}
+    90% {left:200px;}
+    100% {left:0px;}
+}
+#slides {
+    height: 200px;
+    width: 1000px;
+    margin: 0 0 0 -400px;
+    position: relative;
+    animation-name: slide_animation;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+
+}
+
+.img-container {
+    height: 200px;
+    position: relative;
+    float: left;
+    width: 200px;
+
+}
+#make-bookings {
+    margin-top: 50px;
+    text-align: center;
+    color: #ffc0cb;
+}
+footer {
+    background-color: #ec141403;
+}

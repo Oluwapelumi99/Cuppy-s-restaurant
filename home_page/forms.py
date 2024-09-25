@@ -1,4 +1,4 @@
-from .models import Home, Review
+from .models import Review
 from django import forms
 
 

@@ -15,9 +15,11 @@ class CustomEmailConfirmationView(EmailConfirmation):
     def send_email(self, request, email_address):
         subject = 'verify your email address'
         body = 'Click the link to verify your email address: {{ protocol }}://{{ domain }}{% url "email_confirmation" email_address.key %}'
-        send_mail(subject, body, [email_address.email])
+        send_mail(subject, body, [email_address.gmail])
 
-def reviews(request):  
+def reviews(request):
+    queryset = Review.objects.filter(status=1)
+    post = get_object_or_404(queryset) 
     reviews = reviews.all().order_by("-created_on")
     reviews_count = reviews.filter(approved=True).count()
 

@@ -5,9 +5,69 @@
 {% load crispy_forms_tags %}
 <!-- index.html content starts here -->
 
+<!-- Hero Image-->
+<div id="opacity">
+    <img class="card-img-top" src="{% static 'images/A-restaurant-picture-with-tables-and-chairs.jpg' %}"
+      alt="Restaurant image" id="hero-image">
+    <!-- Body Entries Column -->
 
-        <!-- Body Entries Column -->
-   <!-- Displaying count of reviews -->
+    <!--Restaurant description-->
+    <div id="description">
+      <p>
+        <div id="content">
+        "Here, at Cuppy's, in the City of Derby, we understand cravings
+        <br>
+        and we dont accept compromises. Not about our food.
+        All our ingredients are sourced from local producers
+        <br>
+        to ensure quality and freshness.
+        <br>
+        That's why our menu is seasonal and Today,
+        <br>
+        we may serve you creamy mushroom soup, and <br>
+        tomorrow we may have a classic ratatouille on the menu.
+        <br>
+        But the taste is always the same: finger-licking good!
+        <br>
+        Don't hesitate to pay us a visit if you share our passion
+        <br>for fresh dishes cooked with only the best ingredients.
+        <br>
+        We promise an experience that will keep you coming back for more!
+        <br>
+      </p>
+        </div>
+        <p id="location">You can find us on Osmaston Road, Derby, United Kingdom.
+          <br>
+          If you are having issues booking onine, Call our customer service on: 01332000000
+        </p>
+    </div>
+    <div id="image-slides">
+      <div id="slides">
+        <div class="img-container">
+          <img src="{% static 'images/food-9.jpg' %}">
+        </div>
+        <div class="img-container">
+          <img src="{% static 'images/food-10.jpg' %}">
+        </div>
+        <div class="img-container">
+          <img src="{% static 'images/food-11.jpg' %}">
+        </div>
+        <div class="img-container">
+          <img src="{% static 'images/food-12.jpg' %}">
+        </div>
+        <div class="img-container">
+          <img src="{% static 'images/food-13.jpg' %}">
+        </div>
+    </div>
+  </div>
+
+  <div id="make-bookings">
+    <button class="button"><a href="{%url 'booking' %}">BOOK A TABLE NOW!</a></span></button>
+  </div>
+</div>
+</div>
+
+<!-- Displaying count of reviews
    <div class="row">
     <div class="col-12">
       <strong class="text-secondary">
@@ -15,19 +75,18 @@
       </strong>
     </div>
     <div class="col-12">
-      <hr>
     </div>
   </div>
-  <!-- Displaying Reviews -->
-        <div class="row">
+   Displaying Reviews -->
+<!-- <div class="row">
             <div class="col-md-8 card mb-4  mt-3 ">
-              <h3>Check out our reviews:</h3>
+              <h3>Check out our reviews</h3>
               <div class="card_body">
                 <div>
                     {{ review.author }}
                     <span class="font-weight-normal">
                       {{ review.created_on }}
-                    </span> wrote:
+                    </span>
                   </p>
                   <div id="review{{ review.id }}">
                     {{ review.body | linebreaks }} 
@@ -48,9 +107,9 @@
     <div class="card-body">
         {% if user.is_authenticated %}
     <h5>Write Your Review</h5>
-    <p>Posting as: {{ user.username }}</p>
-        <!--Rating stars-->
-        <form id="reviewForm" method="post"
+    <p>Posting as: {{ user.username }}</p> -->
+<!--Rating stars-->
+<!-- <form id="reviewForm" method="post"
         style="margin-top: 1.3em;">
         {{ review_form | crispy }}
         {% csrf_token %}
@@ -61,10 +120,11 @@
       <p>Log in to leave a review</p>
       {% endif %}
     </div>
-</div>
+</div> -->
 
 <!-- index.html content ends here -->
-{% endblock %}
-
-
-
+<!-- {% endblock %}
+{% block extras %}
+<script src="{% static 'js/reviews.js' %}"></script>
+{% endblock %} 
+ -->
