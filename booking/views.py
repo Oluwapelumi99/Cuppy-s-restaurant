@@ -21,16 +21,11 @@ def makeBooking(request):
     context = {'form': form}
     if request.method == 'POST':
         if form.is_valid():
-            try:
             # here I can check for a table
-                form.save(commit=False)
-                form.user = request.user
-                messages.add_message(request, messages.SUCCESS, 'Your booking has been completed succesffully!')
-            except Exception as e:
-                print(form)
-                print(e)
+            form.save(commit=False)
+            form.user = request.user
+            messages.add_message(request, messages.SUCCESS, 'Your booking has been completed succesffully!')
         else:
-            print(form)
             messages.add_message(request, messages.ERROR, 'Error making booking, Please send an email to.........')
 
         return redirect(reverse('booking'))

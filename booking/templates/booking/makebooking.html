@@ -3,13 +3,15 @@
 {% block content %}
 {% load static %}
 {% load crispy_forms_tags %}
-    
+{% if user.is_authenticated %} 
 <form method="POST">
     {{ form.as_p}}
     {% csrf_token %}
     <button type="submit">Submit</button>
 </form>
-
+    {% else %}
+<p>Log in to make a booking</p>
+    {% endif %}
     {% endblock content %}   
 
    
