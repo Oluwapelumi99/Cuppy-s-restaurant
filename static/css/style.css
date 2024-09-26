@@ -4,6 +4,7 @@ body {
 
 #details, #times, #policy {
     text-align: center;
+    font-family: 'dancing script', sans-serif;
 }
 
 #title {
@@ -67,7 +68,7 @@ body {
 #slides {
     height: 200px;
     width: 1000px;
-    margin: 0 0 0 -400px;
+    margin: 0 0 0 -200px;
     position: relative;
     animation-name: slide_animation;
     animation-duration: 30s;

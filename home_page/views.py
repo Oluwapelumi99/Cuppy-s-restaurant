@@ -9,13 +9,7 @@ from django.core.mail import send_mail
 
 def index(request):      
     home_page = Home.objects.all()
-    return render(request, 'home_page/index.html', {"home_page": home_page},)
-
-class CustomEmailConfirmationView(EmailConfirmation):
-    def send_email(self, request, email_address):
-        subject = 'verify your email address'
-        body = 'Click the link to verify your email address: {{ protocol }}://{{ domain }}{% url "email_confirmation" email_address.key %}'
-        send_mail(subject, body, [email_address.gmail])
+    return render(request, 'home_page/index.html', {"home_page": home_page})
 
 def reviews(request):
     queryset = Review.objects.filter(status=1)

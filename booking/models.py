@@ -26,13 +26,20 @@ class Table(models.Model):
         ordering = ["created_on"]
 
 
-
+PEOPLE_CHOICES = [
+    ('1', '1'),
+    ('2', '2'),
+    ('3', '3'),
+    ('4', '4'),
+    ('5', '5'),
+    ('6', '6'),
+]
 class Booking(models.Model):
-    booking_dateandtime_start = models.DateTimeField()
-    booking_dateandtime_end = models.DateTimeField()
+    start_time = models.DateTimeField(verbose_name= 'booking_dateandtime_start', null=False, blank=False)
+    number_of_guests = models.CharField(choices=PEOPLE_CHOICES, default='2')
     created_on = models.DateTimeField(auto_now_add=True)
-    special_request = models.TextField(max_length = 1024)
-    cancelled = models.BooleanField(default = False)
+    special_request = models.TextField(max_length=1024)
+    cancelled = models.BooleanField(default=False)
 
     class Meta:
         ordering = ["created_on"]

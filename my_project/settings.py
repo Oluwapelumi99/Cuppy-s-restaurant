@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-     'django.contrib.sites',
+    'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -148,11 +148,13 @@ ACCOUNT_USERNAME_REQUIRED = False
 
 EMAIL_HOST ='smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = DEFAULT_FROM_EMAIL = 'ivzlqzap@students.codeinstitute.net'
-EMAIL_HOST_PASSWORD = 'mmxh fxpg setf wogd'
+# EMAIL_HOST_USER = DEFAULT_FROM_EMAIL = 'ivzlqzap@students.codeinstitute.net'
+# EMAIL_HOST_PASSWORD = 'mmxh fxpg setf wogd'
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, "send_mail")
 EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
+# EMAIL_USE_SSL = False
 
 # from django.contrib import messages
 # MESSAGE_TAGS = {
