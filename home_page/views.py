@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, render, redirect
+from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponse
 from .models import Home, Review
@@ -8,7 +9,15 @@ from django.core.mail import send_mail
 from .forms import ReviewForm
 from django.contrib.auth.models import User
 
+
 # Create your views here.
+def review_list(request):
+    reviews = Review.objects.all().order_by('-created_on')
+    review_count = Review.objects.all().count()
+    print('review conuted')
+    template_name = "home_page/reviews.html"
+    return render(request, 'reviews.html', {"reviews": reviews})
+
 
 def index(request):      
     home_page = Home.objects.all()
@@ -40,24 +49,6 @@ def submit_review(request):
         }
         return render(request, 'home_page/create_review.html', context)
 
-def reviews(request):
-    queryset = Review.objects.filter(status=1)
-    review = get_object_or_404(queryset) 
-    reviews = reviews.all().order_by("-created_on")
-    reviews_count = reviews.filter(approved=True).count()
-
-    if request.method == "POST":
-        review_form = ReviewForm(data=request)
-        if review_form.is_valid():
-            review = review_form.save(commit=True)
-            review.save()
-            messages.add_message(
-        request, messages.SUCCESS,
-        "Cuppy's has received your review"
-    )
-
-    review_form = ReviewForm()
-
 
     return render(
         request,
@@ -76,6 +67,7 @@ def edit_review(request, pk):
     review = get_object_or_404(Review, pk=pk)
     review_form = ReviewForm(data=request.POST or None, instance=review)
     if request.method == "POST":
+        print('got form')
         if review_form.is_valid() and review.author == request.user:
             review = review_form.save(commit=False)
             review.save()
@@ -93,13 +85,13 @@ def edit_review(request, pk):
 
 def delete_review(request, pk):
     """
-    view to delete review
+    view to delete reviews
     """
     queryset = Review.objects.filter(status=True)
     review = get_object_or_404(Review, pk=pk)
-    if review.author == request.user or request.staff:
+    if review.author == request.user:
         review.delete()
         messages.add_message(request, messages.SUCCESS, 'Review deleted!')
+        return redirect('home_page')
     else:
         messages.add_message(request, messages.ERROR, 'You can only delete your own review!')
-

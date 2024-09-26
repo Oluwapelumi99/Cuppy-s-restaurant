@@ -16,7 +16,6 @@ class Review(models.Model):
         User, on_delete=models.CASCADE, related_name="reviewer")
     body = models.TextField(max_length=1024, blank=True)
     rating = models.FloatField(default=None)
-    ip = models.CharField(max_length=20, blank=True)
     status = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)

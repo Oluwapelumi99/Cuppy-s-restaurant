@@ -21,6 +21,7 @@ def makeBooking(request):
     context = {'form': form}
     if request.method == 'POST':
         if form.is_valid():
+            table = get
             # here I can check for a table
             form.save(commit=False)
             form.user = request.user
@@ -48,7 +49,7 @@ def makeBooking(request):
     # return HttpResponseRedirect(reverse('booking_detail', args=[slug]))
 
 
-def updateBooking(request, slug, booking_id):
+def updateBooking(request, booking_id):
 
     """
     view to update booking
@@ -56,14 +57,12 @@ def updateBooking(request, slug, booking_id):
     if request.method == "POST":
 
         queryset = Booking.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
         booking = get_object_or_404(booking, pk=booking_id)
         deadline = booking.start_date - timedelta(hours=72)
         # comment_form = CommentForm(data=request.POST, instance=comment)
 
         if request.post.get('new_booking_dateandtime_start') < deadline and comment.author == request.user:
             booking = booking.save(commit=False)
-            booking.post = post
             booking.approved = False
             booking.save()
             messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
