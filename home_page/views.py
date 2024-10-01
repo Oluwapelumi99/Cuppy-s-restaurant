@@ -14,10 +14,11 @@ from django.contrib.auth.models import User
 def review_list(request):
     reviews = Review.objects.all().order_by('-created_on')
     review_count = Review.objects.all().count()
-    print('review conuted')
     template_name = "home_page/reviews.html"
     return render(request, 'reviews.html', {"reviews": reviews})
 
+def map_view(request):
+    return render(request, 'index.html', {'GOOGLE_MAPS_JS_API_URL': GOOGLE_MAPS_JS_API_URL})
 
 def index(request):      
     home_page = Home.objects.all()

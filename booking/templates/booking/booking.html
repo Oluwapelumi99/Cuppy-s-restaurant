@@ -10,10 +10,6 @@
         We do not require a deposit to secure the reservation.</p>
 
     </div
-    <!-- Link to connect to the booking site -->
-    <!-- <div class="button-block">
-        <button class="button"><a href="{%url 'booking' %}">MAKE A RESERVATION</a></span></button>
-    </div> -->
 
     <div id="times">
         <p>Breakfast</p>
@@ -34,18 +30,16 @@
         a fee of £125 per person for lunch or £155 per person for dinner will be charged to the credit card submitted when making a reservation. 
         Please note, this applies to all cancellations and is not discretionary.
     </div>
-
-    <!-- {% if user.is_authenticated %}
-    <div>
-    <form id="customerForm" method="post>
-        style="margin-top: 1.3em;"></form>
-        {{ customer_form | crispy }}
+    {% if user.is_authenticated %} 
+    <form method="POST">
+        {{ form.as_p}}
         {% csrf_token %}
-      </form>
-      {% else %}
-      <p>Log in to make booking</p>
-      {% endif %}
-    </div> -->
+        <button type="submit">Submit</button>
+    </form>
+        {% else %}
+    <p>Log in to make a booking</p>
+        {% endif %}
+  
 
     {% endblock content %}   
 

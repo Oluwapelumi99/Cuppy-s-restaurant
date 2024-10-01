@@ -4,32 +4,36 @@ from django.contrib import messages
 from django.http import HttpResponse
 from .models import Booking, Table, Customer
 from django.views.generic import DeleteView
-from datetime import timedelta
+from datetime import datetime, timedelta
 from .forms import BookingForm
+
+
 
 
 # Create your views here
 
+
 def booking(request):
-    available_tables = Table.objects.filter(seats__gte=1)
-    return render(request, 'booking.html', {'available_tables': available_tables})
-
-
-
-def makeBooking(request):
     form = BookingForm(request.POST or None)
     context = {'form': form}
     if request.method == 'POST':
         if form.is_valid():
-            table = get
+            table = booking.table
+            if table.status == 'available':
+                table.status = 'reserved'
+                table.save()
             # here I can check for a table
-            form.save(commit=False)
-            form.user = request.user
-            messages.add_message(request, messages.SUCCESS, 'Your booking has been completed succesffully!')
+                form.save(commit=False)
+                form.user = request.user
+                form.save()
+                messages.add_message(request, messages.SUCCESS, 'Your booking has been completed succesffully!')
+            else:
+                messages.add_message(request, messages.ERROR, 'Table is already reserved')
+                return render(request, 'booking/booking.html', context)
         else:
             messages.add_message(request, messages.ERROR, 'Error making booking, Please send an email to.........')
 
-        return redirect(reverse('booking'))
+    # return redirect(reverse('booking'))
         # table_num = int(request.POST['table_num'])
         # date = request.POST['date']
         # time = request.POST['time']
@@ -44,9 +48,7 @@ def makeBooking(request):
     # else:
     #     messages.add_message(request, messages.ERROR, 'Error making booking, Please send an email to.........')
 
-    return render(request, 'booking/makebooking.html', context)
-
-    # return HttpResponseRedirect(reverse('booking_detail', args=[slug]))
+    return render(request, 'booking/booking.html', context)
 
 
 def updateBooking(request, booking_id):

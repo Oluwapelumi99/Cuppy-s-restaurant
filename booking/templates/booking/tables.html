@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% if user.is_authenticated %} 
+{% for table in tables %}
+<tr>
+    <td>{{ table.seats }}</td>
+    <td>{{ table.number_of_guests }}</td>
+    <td>{{ table.status }}</td>
+</tr>
+{% endfor %}
+    {% endblock content %}   

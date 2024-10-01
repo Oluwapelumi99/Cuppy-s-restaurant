@@ -153,7 +153,10 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, "send_mail")
 EMAIL_USE_TLS = True
 
-
+import googlemaps
+G00GLE_MAPS_API_KEY = os.environ.get('API_KEY')
+G00GLE_MAPS_JS_API_URL = 'https://maps.googleapis.com/maps/apis/js?key=AIzaSyDogg2hULEghpAfooGf7aW62hN9dlEan38&callback=initMap'
+GMAPS_CLIENT = googlemaps.Client(key=G00GLE_MAPS_API_KEY)
 
 
 # Internationalization
