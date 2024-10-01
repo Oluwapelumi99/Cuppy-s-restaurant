@@ -78,7 +78,7 @@ def edit_review(request, pk):
         else:
             messages.add_message(request, messages.ERROR, 'Error updating review!')
             #send back to edit page to fix form
-            return render(request, 'home_page/edit_review.html', context)
+            return render(request, 'home_page/reviews.html', context)
     else:
         context={
             'form': review_form

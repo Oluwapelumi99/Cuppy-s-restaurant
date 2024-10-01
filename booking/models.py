@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
+from datetime import datetime, timedelta
 
 STATUS = ((0, "Draft"), (1, "Published"))
 # Create your models here.
@@ -39,11 +40,13 @@ PEOPLE_CHOICES = [
     ('6', '6'),
 ]
 class Booking(models.Model):
-    table = models.ForeignKey('Table', on_delete=models.CASCADE, choices=STATUS, default=None, null=True)
+    customer = models.ForeignKey('Customer', on_delete=models.CASCADE, default=None, null=False)
+    table = models.ForeignKey('Table', on_delete=models.CASCADE, choices=STATUS, default=None, null=False)
     start_time = models.DateTimeField(verbose_name= 'booking_dateandtime_start', null=False, blank=False)
     number_of_guests = models.CharField(choices=PEOPLE_CHOICES, default='2')
     created_on = models.DateTimeField(auto_now_add=True)
     special_request = models.TextField(max_length=1024)
+    deadline = models.DateTimeField(default=datetime.now() - timedelta(hours=72))
     cancelled = models.BooleanField(default=False)
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)

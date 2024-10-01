@@ -12,22 +12,42 @@ from .forms import BookingForm
 
 # Create your views here
 
+def customer_bookings(request, customer_id):
+    """
+    View to display a customer's bookings
+    """ 
+    customer = Customer.objects.get(id=customer_id)
+    bookings = Booking.objects.filter(customer=customer).order_by('-created_on')
+    return render(request, 'view_booking.html', {'bookings': bookings, 'customer': customer})
 
-def booking(request):
+def booking(request, customer_id):
+    """
+    view to make bookings
+    """
+    customer = Customer.objects.get(id=customer_id)
     form = BookingForm(request.POST or None)
-    context = {'form': form}
+    context = {'form': form, 'customer':customer}
     if request.method == 'POST':
         if form.is_valid():
-            table = booking.table
-            if table.status == 'available':
-                table.status = 'reserved'
-                table.save()
+            booking = form.save(commit=False)
+            customer = booking.customer
+            table = Booking.table
+            if Table.status == 'available':
+                print('table available')
+                # Table.status = 'reserved'
+                print('table')
+                Table.save()
+                print('table')
             # here I can check for a table
-                form.save(commit=False)
+                # form.save(commit=False)
+                print('table')
                 form.user = request.user
                 form.save()
                 messages.add_message(request, messages.SUCCESS, 'Your booking has been completed succesffully!')
+                return redirect('customer_bookings', customer_id=customer_id)
             else:
+                Table.status = 'reserved'
+                print('table')
                 messages.add_message(request, messages.ERROR, 'Table is already reserved')
                 return render(request, 'booking/booking.html', context)
         else:
@@ -51,37 +71,71 @@ def booking(request):
     return render(request, 'booking/booking.html', context)
 
 
-def updateBooking(request, booking_id):
-
+def update_booking(request, pk):
     """
-    view to update booking
+    view to update bookings
     """
+    queryset = Booking.objects.filter()
+    booking = get_object_or_404(Booking, pk=pk)
+    booking_form = BookingForm(data=request.POST or None, instance=booking)
+    current_time = datetime.now()
     if request.method == "POST":
-
-        queryset = Booking.objects.filter(status=1)
-        booking = get_object_or_404(booking, pk=booking_id)
-        deadline = booking.start_date - timedelta(hours=72)
-        # comment_form = CommentForm(data=request.POST, instance=comment)
-
-        if request.post.get('new_booking_dateandtime_start') < deadline and comment.author == request.user:
-            booking = booking.save(commit=False)
-            booking.approved = False
-            booking.save()
-            messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
+        print('got form')
+        if current_time > booking.deadline:
+            if booking_form.is_valid() and booking.author == request.user:
+                booking = booking_form.save(commit=False)
+                booking.save()
+                messages.add_message(request, messages.SUCCESS, 'Booking Updated!')
+                return redirect('home_page')
+            else:
+                messages.add_message(request, messages.ERROR, 'Error updating booking!')
+                return render(request, 'booking/booking.html', context)
         else:
-            messages.info(request, 'Cannot change booking after deadline')
-            return HttpResponseRedirect(reverse('booking_detail', args=[booking_id]))
+            messages.add_message(request, messages.ERROR, 'You can no longer make changes to this booking!')
+            return render(request, 'booking/booking.html', context)
+    else:
+        context={
+            'form': booking_form
+        }
 
-    return render(request, 'booking_update.html', {booking:booking})
+# def updateBooking(request, booking_id):
+
+#     """
+#     view to update booking
+#     """
+#     if request.method == "POST":
+
+#         queryset = Booking.objects.filter(status=1)
+#         booking = get_object_or_404(booking, pk=booking_id)
+#         deadline = booking.start_date - timedelta(hours=72)
+#         # comment_form = CommentForm(data=request.POST, instance=comment)
+
+#         if request.post.get('new_booking_dateandtime_start') < deadline and comment.author == request.user:
+#             booking = booking.save(commit=False)
+#             booking.approved = False
+#             booking.save()
+#             messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
+#         else:
+#             messages.info(request, 'Cannot change booking after deadline')
+#             return HttpResponseRedirect(reverse('booking_detail', args=[booking_id]))
+
+    # return render(request, 'booking_update.html', {booking:booking})
 
 
-class cancelBooking(DeleteView):
+class cancel_booking(DeleteView):
+    """
+    view to cancel booking
+    """
     model = Booking
-    template_name = 'cancel.html'
-    success_url = '/'
+    template_name = 'view_booking.html'
 
     def post(self, request, pk):
-        booking = self.get_object_or_404()
-        booking.cancelled = True
-        booking.save()
-        return redirect(self.success_url)
+        booking = self.get_object_or_404(Booking, pk=pk)
+        if booking.author == request.user:
+            booking.cancelled = True
+            booking.save()
+            messages.add_message(request, messages.SUCCESS, 'Booking Canceled!')
+            return redirect('home_page')
+        else:
+            messages.add_message(request, messages.ERROR, 'A problem occured,Please contact the restaurant')
+       
