@@ -12,8 +12,7 @@ class Home(models.Model):
         return self.title
 
 class Review(models.Model):
-    author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="reviewer")
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="reviewer")
     body = models.TextField(max_length=1024, blank=True)
     rating = models.FloatField(default=None)
     status = models.BooleanField(default=True)

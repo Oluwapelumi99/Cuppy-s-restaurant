@@ -40,7 +40,7 @@ PEOPLE_CHOICES = [
     ('6', '6'),
 ]
 class Booking(models.Model):
-    customer = models.ForeignKey('Customer', on_delete=models.CASCADE, related_name='customer')
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, default=None, null=True)
     table = models.ForeignKey('Table', on_delete=models.CASCADE, choices=STATUS, default=None, null=False)
     start_time = models.DateTimeField(verbose_name= 'booking_dateandtime_start', null=False, blank=False)
     number_of_guests = models.CharField(choices=PEOPLE_CHOICES, default='2')
