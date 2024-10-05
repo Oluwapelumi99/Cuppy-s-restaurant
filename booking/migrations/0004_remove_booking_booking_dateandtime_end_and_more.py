@@ -14,10 +14,12 @@ class Migration(migrations.Migration):
         migrations.RemoveField(
             model_name='booking',
             name='booking_dateandtime_end',
+            field=models.DateTimeField(default=django.utils.timezone.now, verbose_name='booking_dateandtime_start'),
         ),
         migrations.RemoveField(
             model_name='booking',
             name='booking_dateandtime_start',
+            field=models.DateTimeField(default=django.utils.timezone.now, verbose_name='booking_dateandtime_start'),
         ),
         migrations.AddField(
             model_name='booking',

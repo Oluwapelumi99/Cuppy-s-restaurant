@@ -85,8 +85,20 @@ body {
     width: 200px;
 
 }
+
 #map {min-height: 360px; width: 300px;}
-/*Hide radio buttons*/
+
+/* Rating css*/
+.checked {
+    color: orange;
+  }
+.my-btn {
+    background-color: inherit !important;
+    border: 0 !important;
+}
+
+
+/* Hide radio buttons
 .rate > input {
     display: none;
 }
@@ -101,7 +113,7 @@ body {
 }
 
 /* Show the stars*/
-.rate > label::before {
+/* .rate > label::before {
     display: inline-block;
     font-size: 1.1rem;
     font-family: FontAwesome;
@@ -117,14 +129,14 @@ body {
 }
 
 /* Click and hover*/
-input:checked ~ label, label::hover ~ label {
+/* input:checked ~ label, label::hover ~ label {
     color: #ffb503;
 }
 /* Hover highlights*/
-input:checked + label:hover, input:checked ~ label:hover,input:checked ~ label:hover ~ label,
+/* input:checked + label:hover, input:checked ~ label:hover,input:checked ~ label:hover ~ label,
 label:hover ~ input:checked ~ label {
     color: #cc9000;
-}
+} */
 #make-bookings {
     margin-top: 50px;
     text-align: center;

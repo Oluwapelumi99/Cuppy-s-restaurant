@@ -1,0 +1,26 @@
+[
+    {
+        "model": "home_page.review",
+        "pk": 4,
+        "fields": {
+            "author": 1,
+            "body": "hbuhbiun",
+            "rating": 2.0,
+            "status": true,
+            "created_on": "2024-09-26T17:54:31.887Z",
+            "updated_on": "2024-09-26T18:18:07.633Z"
+        }
+    },
+    {
+        "model": "home_page.review",
+        "pk": 7,
+        "fields": {
+            "author": 1,
+            "body": "dkjf0ijsd",
+            "rating": 1.0,
+            "status": true,
+            "created_on": "2024-09-26T19:54:10.265Z",
+            "updated_on": "2024-09-26T19:54:10.265Z"
+        }
+    }
+]

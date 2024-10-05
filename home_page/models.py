@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 # Create your models here.
@@ -16,6 +17,10 @@ class Review(models.Model):
     body = models.TextField(max_length=1024, blank=True)
     rating = models.FloatField(default=None)
     status = models.BooleanField(default=True)
+    score = models.IntegerField(default=0, validators= [
+            MaxValueValidator(5),
+            MinValueValidator(0)
+    ])
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     class Meta:
