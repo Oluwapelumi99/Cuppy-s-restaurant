@@ -12,7 +12,7 @@
         <div class="col-md-8 mt-3 offset-md-2">
             <h3>{% trans "Sign In" %}</h3>
 
-            <p>{% blocktrans %}Please create an account to make your bookings{% endblocktrans %}</p>
+            <p>{% blocktrans %}Please create an account to leave a review{% endblocktrans %}</p>
         </div>
     </div>
     <div class="row">
@@ -28,7 +28,7 @@
         </div>
     </div>
 </div>
-  <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+  <a class="button secondaryAction" href="{% url 'account_reset_password' %}"><div id="password">{% trans "Forgot Password?" %}</a></div>
 </form>
 
 {% endblock content %}

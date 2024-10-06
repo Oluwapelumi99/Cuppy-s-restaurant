@@ -1,6 +1,4 @@
 from django.contrib import admin
-from .models import Home, Review
+from .models import Review
 
-
-admin.site.register(Home)
 admin.site.register(Review)

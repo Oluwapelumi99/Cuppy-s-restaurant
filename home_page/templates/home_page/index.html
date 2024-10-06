@@ -39,6 +39,9 @@
         <p id="location">You can find us on Osmaston Road, Derby, United Kingdom.
           <br>
           If you are having issues booking onine, Call our customer service on: 01332000000
+          or click on the email address to send your enquiries
+          <br>
+          <a href="mailto:bookingscuppysrestaurant@gmail.com"> bookingscuppysrestaurant@gmail.com</a>
         </p>
     </div>
     <!--Images slides-->
@@ -63,20 +66,22 @@
   </div>
 
   <div id="make-bookings">
-    <button class="button"><a href="{%url 'booking' %}">BOOK A TABLE NOW!</a></span></button>
+    <button class="button" id="book_table"><a href="{%url 'booking' %}">BOOK A TABLE NOW!</a></span></button>
   </div>
-  <div>
-    <p id="reviews_page"> Check out our reviews</p>
+  <div id="reviews_page">
+    <p > <a href="{% url 'review_list' %}">Read all {{ review_count }} reviews</p></a>
+      <button  class="my-btn fa fa-star fa checked" ></button>
+      <button  class="my-btn fa fa-star fa checked" ></button>
+      <button  class="my-btn fa fa-star fa checked" ></button>
+      <button  class="my-btn fa fa-star fa checked" ></button>
+      <button  class="my-btn fa fa-star fa checked" ></button>
   </div>
-  <div id="map">map></map></div>
-</div>
-
 </div>
 </div>
 <!-- index.html content ends here -->
 {% endblock %}
-{% block script%}
-<script>
+<!-- {% block script%} -->
+<!-- <script>
   function initMap() {
       var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 3,
@@ -89,4 +94,4 @@
 </script>
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 <script async defer src="{{ G00GLE_MAPS_JS_API_URL }}"></script>
-{% endblock %}
+{% endblock %} -->

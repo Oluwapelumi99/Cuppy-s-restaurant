@@ -11,7 +11,7 @@ class CustomerForm(forms.ModelForm):
 class TableForm(forms.ModelForm):
     class Meta:
         model = Table
-        fields = '__all__'
+        fields = ['seats']
 
 
 class BookingForm(forms.ModelForm):

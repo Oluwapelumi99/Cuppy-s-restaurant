@@ -3,27 +3,33 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponse
-from .models import Home, Review
+from .models import Review
 from allauth.account.views import EmailConfirmation
 from django.core.mail import send_mail
 from .forms import ReviewForm
 from django.contrib.auth.models import User
+from django.views import View
+# from urllib.parse import urlencode
+
 
 
 # Create your views here.
 def review_list(request):
     reviews = Review.objects.all().order_by('-created_on')
-    review_count = Review.objects.all().count()
     template_name = "home_page/reviews.html"
-    return render(request, 'reviews.html', {"reviews": reviews})
+    return render(request, 'reviews.html', {"reviews": reviews},)
 
 def map_view(request):
-    return render(request, 'index.html', {'GOOGLE_MAPS_JS_API_URL': GOOGLE_MAPS_JS_API_URL})
+    return render(request, 'home_page/location.html')
 
-def index(request):      
-    home_page = Home.objects.all()
-    return render(request, 'home_page/index.html', {"home_page": home_page})
+def index(request):
+    review_count = Review.objects.all().count()     
+    return render(request, 'home_page/index.html', {"review_count": review_count})
 
+# def email_direct(request):
+#     email_address = 'bookingscuppysrestaurant@gmail.com'
+#     mailto_link = f'mailto:{urlencode ({"to": email_address})}'
+#     return render(request, 'home_page/index.html', {'mailto_link': mailto_link})
 
 @login_required
 def submit_review(request):
@@ -50,15 +56,6 @@ def submit_review(request):
         }
         return render(request, 'home_page/create_review.html', context)
 
-
-    return render(
-        request,
-        'home_page/index.html',
-        {"reviews": reviews,
-        "review_count": review_count,
-        "review_form": review_form,
-        },
-    )
 
 def edit_review(request, pk):
     """
@@ -96,3 +93,10 @@ def delete_review(request, pk):
         return redirect('home_page')
     else:
         messages.add_message(request, messages.ERROR, 'You can only delete your own review!')
+
+# class geocoding(View):
+#     template_name = 'home_page/location.html'
+
+#     def get(self, request):
+#         return render(request, self.template_name, {'map': map})
+        

@@ -8,7 +8,7 @@
 <div id="map"></div>
 {% endblock %} 
 
-
+{% block script%}
 <script>
     function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -21,6 +21,6 @@
     }
 </script>
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/apis/js?key=AIzaSyDogg2hULEghpAfooGf7aW62hN9dlEan38&callback=initMap"></script>
-{% block extras%}
+<script async defer src="{{ G00GLE_MAPS_JS_API_URL }}"></script>
+
 {% endblock %}

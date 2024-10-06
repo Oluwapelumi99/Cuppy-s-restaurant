@@ -3,22 +3,19 @@
 {% block content %}
 {% load static %}
 {% load crispy_forms_tags %}
-<!--Displaying count of reviews-->
-<div class="row">
-    <div class="col-12">
-      <strong class="text-secondary">
-        Read all {{ review_count }} reviews
-      </strong>
-    </div>
-  </div>
  
-<!--Displaying reviews-->
-    
-      <h3>Check out our reviews</h3>
-     
+<div id="write-review"> 
+  <h4> Share your thoughts with other Customers
+    <br>
+    <a href="{% url 'submit_review'%}">Write a review</a>
+  </h4>
+</div>
+
+
+<!--Displaying reviews-->    
         {% for review in reviews %}
         
-            {{ review.author }}
+            <div id="reviews" class="col text-center">{{ review.author }}
             {% csrf_token %}
             <span class="font-weight-normal">
               {{ review.created_on }}
@@ -34,10 +31,9 @@
            <button class="btn btn-edit"
              review_id="{{ review.id }}">Edit</button>
             </div>
+            <br>
            {% endif %} 
            {% endfor %}
-        </div>
-    </div>
 <!-- Delete confirmation modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1"
   aria-labelledby="deleteModalLabel" aria-hidden="true">
