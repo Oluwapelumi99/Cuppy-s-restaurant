@@ -20,3 +20,15 @@ class BookingForm(forms.ModelForm):
         fields = ['start_time', 'number_of_guests', 'special_request']
         widgets = {'start_time': forms.DateTimeInput(attrs={'type': 'datetime-local'}),}
 
+
+class CancelBookingForm(forms.ModelForm):
+    class Meta:
+        model = Booking
+        fields = []
+
+    def __init__(self, *args, **kwargs):
+        super(CancelBookingForm, self).__init__(*args, **kwargs)
+        self.fields['id'] = forms.IntegerField(widget=forms.HiddenInput())
+        if self.instance and self.instance.pk:
+            self.fields['id'].initial = self.instance.pk
+

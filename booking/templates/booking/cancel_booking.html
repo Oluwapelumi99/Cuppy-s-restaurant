@@ -1,60 +1,27 @@
-<!-- {% extends "base.html" %}
+{% extends "base.html" %}
 
 {% block content %}
 {% load static %}
-{% load crispy_forms_tags %} -->
+{% load crispy_forms_tags %}
 
-<!--Displaying reviews-->
-    
-      <!-- <h3>Your Booking</h3>
-     
-        {% for review in reviews %}
-        
-            {{ review.author }}
-            {% csrf_token %}
-            <span class="font-weight-normal">
-              {{ review.created_on }}
-            </span>
-          </p>
-          <div id="review{{ review.id }}">
-            {{ review.body | linebreaks }} 
-            {{ review.rating }}
-          </div>
-          {% if user.is_authenticated and review.author == user %}
-          <button class="btn btn-delete"
-           review_id="{{ review.id }}">Delete</button>
-           <button class="btn btn-edit"
-             review_id="{{ review.id }}">Edit</button>
-            </div>
-           {% endif %} 
-           {% endfor %}
-        </div>
-    </div> -->
-<!-- Delete confirmation modal -->
-<!-- <div class="modal fade" id="deleteModal" tabindex="-1"
-  aria-labelledby="deleteModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"
-          id="deleteModalLabel">Delete review?</h5>
-        <button type="button" class="btn-close"
-          data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Are you sure you want to delete your review?
-        This action cannot be undone.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary"
-          data-bs-dismiss="modal">Close</button>
-        <a id="deleteConfirm" href="#" class="btn
-          btn-danger">Delete</a>
-      </div>
-    </div>
-  </div>
-</div>    
-{% endblock %}
-{% block extras%}
-<script src="{% static 'js/reviews.js' %}"></script> 
-{% endblock %} -->
+{% if user.is_authenticated %} 
+<div id="cancelform">
+  <h3> Cancel Booking</h3>
+  <div>Date: {{ booking.start_time }}</div>
+  <div>Number of guests: {{ booking.number_of_guests }}</div>
+  <p> Are you sure you want to cancel this booking?</p>
+
+    <form method="POST">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <button class="btn" type="submit">Yes</button>
+        <a href="{% url 'customer_bookings' %}" class="btn">No</button>
+    </form>
+</div> 
+{% endif %}
+
+    {% endblock content %}   
+
+   
+
+

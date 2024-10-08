@@ -6,26 +6,28 @@ from .models import Booking, Table, Customer
 from django.contrib.auth.models import User
 from django.views.generic import DeleteView
 from datetime import datetime, timedelta
-from .forms import BookingForm
+from .forms import BookingForm, CancelBookingForm
 from urllib.parse import urlencode
 from pytz import timezone as tz
-
+from django.contrib.auth.decorators import login_required
 
 
 
 # Create your views here
 
 
-
-def customer_bookings(request, pk=None):
+@login_required
+def customer_bookings(request):
     """
     View to display a customer's bookings
     """
-    bookings = Booking.objects.order_by('-created_on')
-    bookings = Booking.objects.filter(customer_id=request.user).order_by('-created_on')
-    if Booking.customer==request.user:
-        bookings.view()
-    return render(request, 'view_booking.html', {'bookings': bookings})
+    bookings = Booking.objects.filter(customer_id=request.user, cancelled=False).order_by('-created_on')
+    print(bookings)
+    if bookings:
+        # bookings.view()
+        return render(request, 'view_booking.html', {'bookings': bookings})
+    else:
+        return redirect('booking') 
 
 def email_direct(request):
     email_address = 'bookingscuppysrestaurant@gmail.com'
@@ -53,7 +55,7 @@ def booking(request):
             print(available_tables)
             if available_tables.exists():
                 booking.table = available_tables.first()
-                booking.user = request.user
+                booking.customer = request.user
                 booking.save()
                 print('form saved')
                 messages.add_message(request, messages.SUCCESS, 'Your booking has been completed succesffully!')
@@ -89,11 +91,10 @@ def update_booking(request, pk):
     """
     view to update bookings
     """
-    queryset = Booking.objects.filter()
     booking = get_object_or_404(Booking, pk=pk)
     booking_form = BookingForm(data=request.POST or None, instance=booking)
-    current_time = datetime.now()
     if request.method == "POST":
+        current_time = datetime.now()
         print('got form')
         if booking.start_time < booking.deadline.replace(tzinfo=tz('UTC')) - current_time:
             print(booking.deadline)
@@ -138,22 +139,30 @@ def update_booking(request, pk):
     # return render(request, 'booking_update.html', {booking:booking})
 
 
-# class cancel_booking(DeleteView):
-#     """
-#     view to cancel booking
-#     """
-#     model = Booking
-#     template_name = 'view_booking.html'
 
-#     def post(self, request, pk):
-#         booking = self.get_object_or_404(Booking, pk=pk)
-#         if booking.author == request.user:
-#             booking.cancelled = True
-#             booking.save()
-#             messages.add_message(request, messages.SUCCESS, 'Booking Canceled!')
-#             return redirect('home_page')
-#         else:
-#             messages.add_message(request, messages.ERROR, 'A problem occured,Please contact the restaurant')
+@login_required
+def cancel_booking(request, pk):
+    booking = get_object_or_404(Booking, id=pk)
+    if booking.customer != request.user:
+        return redirect('home_page')
+    if request.method == 'POST':
+        form = CancelBookingForm(request.POST, instance=booking)
+        if form.is_valid():
+            cancelled_booking = form.save(commit=False)
+            print(cancelled_booking.id)
+            print('deleting')
+            booking = get_object_or_404(Booking, id=cancelled_booking.id)
+            booking.delete()
+            return redirect('customer_bookings')
+    else:
+        form = CancelBookingForm(instance=booking)
+        print(form.instance)
+        print(booking.id)
+        print(form)
+        print(form.fields['id'].initial)
+        context = {
+            'form': form,
+            'booking': booking
+        }
 
-
-       
+        return render(request, 'booking/cancel_booking.html', context)
