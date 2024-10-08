@@ -2,11 +2,21 @@ body {
     background-color: #ffc0cb;
 }
 
-#details, #times, #policy {
-    text-align: center;
+#details {
+    padding-left: 10px;
+    padding-top: 10px;
     font-family: 'dancing script', sans-serif;
+    font-size: 20px;
+    
 }
 
+#bookform {
+    font-family: 'dancing script', sans-serif;
+    
+}
+#smallcaps {
+    display: flex;
+}
 .btn-signup,
 .btn-edit {
     background-color: #000000;
@@ -112,9 +122,24 @@ body {
     width: 300px;}
 
 /* Rating css*/
+.rating-list li {
+    float: right;
+    color: #ddd;
+    padding: 10px 5px;
+}
+
+.rating-list li:hover,
+.rating-list li:hover ~ li {
+    color: orange;
+}
+.rating-list {
+    display: inline-block;
+    list-style: none;
+}
 .checked {
     color: orange;
   }
+
 .my-btn {
     background-color: inherit !important;
     border: 0 !important;

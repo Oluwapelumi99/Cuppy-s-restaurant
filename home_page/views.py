@@ -9,7 +9,10 @@ from django.core.mail import send_mail
 from .forms import ReviewForm
 from django.contrib.auth.models import User
 from django.views import View
-# from urllib.parse import urlencode
+from django.db.models import Avg
+import googlemaps
+from django.conf import settings
+from pprint import pprint
 
 
 
@@ -20,7 +23,16 @@ def review_list(request):
     return render(request, 'reviews.html', {"reviews": reviews},)
 
 def map_view(request):
-    return render(request, 'home_page/location.html')
+    GMAPS_CLIENT = googlemaps.Client(key= settings.GOOGLE_MAPS_API_KEY)
+    restaurant_address = 'Osmaston Road, DE1 2EH, Derby, UK'
+    response = GMAPS_CLIENT.geocode(restaurant_address)[0]
+    geometry = response.get('geometry', {})
+    place_id = response.get('place_id', {})
+    restaurant1 = geometry.get('location', {})
+    lat = restaurant1.get('lat', None)
+    lng = restaurant1.get('lng', None)
+    return render(request, 'home_page/location.html',  {'response':response, 'geometry': geometry, 
+    'restaurant1': restaurant1, 'lat':lat, 'lng':lng, 'place_id': place_id})
 
 def index(request):
     review_count = Review.objects.all().count()     
@@ -32,9 +44,13 @@ def index(request):
 #     return render(request, 'home_page/index.html', {'mailto_link': mailto_link})
 
 @login_required
-def submit_review(request):
+def submit_review(request,pk=None):
     if request.method == "POST":
         try:
+            review = Review.objects.get(id=rating_id)
+            rating = Review.objects.all(Review, username=request.user).first()
+            rating_set.create(username=request.user, rating=rating)
+            user_rating = rating.rating if rating else 0
             form = ReviewForm(request.POST)
             user = get_object_or_404(User, username=request.user)
             if form.is_valid():
@@ -55,6 +71,14 @@ def submit_review(request):
             'form': form
         }
         return render(request, 'home_page/create_review.html', context)
+
+
+# def rate(request, rating_id):
+#     review = Review.objects.get(id=rating_id)
+#     Review.rating.objects.all(Review, username=request.user).delete()
+#     rating_set.create(username=request.user, rating=rating)
+#     return render(request, 'home_page/create_review.html', context)
+
 
 
 def edit_review(request, pk):
@@ -80,6 +104,7 @@ def edit_review(request, pk):
         context={
             'form': review_form
         }
+    return render(request, 'home_page/create_review.html', context)
 
 def delete_review(request, pk):
     """
@@ -93,6 +118,7 @@ def delete_review(request, pk):
         return redirect('home_page')
     else:
         messages.add_message(request, messages.ERROR, 'You can only delete your own review!')
+        return render(request, 'home_page/reviews.html', context)
 
 # class geocoding(View):
 #     template_name = 'home_page/location.html'

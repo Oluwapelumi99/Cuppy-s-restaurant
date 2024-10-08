@@ -6,23 +6,53 @@
 <div id="booking_details">
 <h1> Your booking details</h1>
 
-{% for booking in bookings %}
-<div id="reviews" class="col text-center bold ">{{ booking.customer }}:
+
+<div id="reviews" class="col text-center bold ">{{ booking.customer_id }}:
     {% csrf_token %}
-    <span class="font-weight-normal">
-        Number of guests: {{ booking.number_of_guests }}
-    </span>
-     Time: {{ booking.start_time }}
-    </p>
-    <div>
-        Special requests: {{ booking.special_request }}
+    <div class="font-weight-normal">
+        Number of guests: {{ bookings.number_of_guests }}
     </div>
-
+     Time: {{ bookings.start_time }}
+   
+    <div>
+        Special requests: {{ bookings.special_request }}
+    </div>
 </div>
-{% endfor %}
-
+{% if user.is_authenticated and booking.customer_id == user %}
+          <button class="btn btn-delete"
+           booking_id="{{ booking.id }}">Edit</button>
+           <button class="btn btn-edit"
+             booking_id="{{ booking.id }}">Cancel</button>
+            </div>
+            <br>
+{% endif %} 
+<!-- Cancel confirmation modal -->
+<div class="modal fade" id="cancelModal" tabindex="-1"
+  aria-labelledby="cancelModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"
+          id="cancelModalLabel">Cancel this booking?</h5>
+        <button type="button" class="btn-close"
+          data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to cancel this booking?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"
+          data-bs-dismiss="modal">Close</button>
+        <a id="cancelConfirm" href="#" class="btn
+          btn-danger">Cancel</a>
+      </div>
+    </div>
+  </div>
+</div>    
 
 {% endblock content %}   
-
+{% block extras%}
+  <script src="{% static 'js/bookings.js' %}"></script> 
+{% endblock %}
 
         

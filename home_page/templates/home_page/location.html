@@ -3,13 +3,34 @@
 {% block content %}
 {% load static %}
 {% load crispy_forms_tags %}
+<div>
+{{ response }}
+</div>
+<br>
+<div>
+{{ geometry }}
+</div>
 
+<div>
+{{ restaurant1 }}
+</div>
 
+<div>
+    {{ lat }}
+</div>
+
+<div>
+    {{ lng }}
+</div>
+
+<div>
+    {{ place_id }}
+</div>
 <div id="map"></div>
-{% endblock %} 
+ 
 
-{% block script%}
-<script>
+
+<!-- <script>
     function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 3,
@@ -21,6 +42,6 @@
     }
 </script>
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-<script async defer src="{{ G00GLE_MAPS_JS_API_URL }}"></script>
+<script async defer src="{{ G00GLE_MAPS_JS_API_URL }}"></script> -->
 
-{% endblock %}
+{% endblock %} 

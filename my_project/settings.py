@@ -156,13 +156,12 @@ EMAIL_USE_TLS = True
 from pprint import pprint
 import googlemaps
 GOOGLE_MAPS_API_KEY = os.environ.get('API_KEY')
-GOOGLE_MAPS_JS_API_URL = 'https://maps.googleapis.com/maps/apis/js?key=AIzaSyAyM6ElNFfhQCdaHYvz3y9C9H1DtLouv-s&callback=initMap'
 GMAPS_CLIENT = googlemaps.Client(GOOGLE_MAPS_API_KEY)
 
-restaurant_address = 'Osmaston Road, Derby, UK'
+restaurant_address = 'Osmaston Road, DE1 2EH, Derby, UK'
 response = GMAPS_CLIENT.geocode(restaurant_address)
-# pprint(response)
-# print(response[0]['geometry'])
+pprint(response)
+print(response[0]['geometry'])
 
 
 
