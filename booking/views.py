@@ -8,6 +8,7 @@ from django.views.generic import DeleteView
 from datetime import datetime, timedelta
 from .forms import BookingForm
 from urllib.parse import urlencode
+from pytz import timezone as tz
 
 
 
@@ -84,17 +85,18 @@ def save_draft(self, request):
 
 
 
-def update_booking(request, id):
+def update_booking(request, pk):
     """
     view to update bookings
     """
     queryset = Booking.objects.filter()
-    booking = get_object_or_404(Booking, pk=id)
+    booking = get_object_or_404(Booking, pk=pk)
     booking_form = BookingForm(data=request.POST or None, instance=booking)
     current_time = datetime.now()
     if request.method == "POST":
         print('got form')
-        if booking.start_time < booking.deadline - current_time:
+        if booking.start_time < booking.deadline.replace(tzinfo=tz('UTC')) - current_time:
+            print(booking.deadline)
             if booking_form.is_valid() and booking.author == request.user:
                 booking = booking_form.save(commit=False)
                 booking.save()
@@ -105,11 +107,12 @@ def update_booking(request, id):
                 return render(request, 'booking/booking.html', context)
         else:
             messages.add_message(request, messages.ERROR, 'You can no longer make changes to this booking!')
-            return render(request, 'booking/booking.html', context)
+            return render(request, 'booking/booking.html')
     else:
         context={
             'form': booking_form
         }
+    return render(request, 'booking/booking.html', context)
 
 # def updateBooking(request, booking_id):
 

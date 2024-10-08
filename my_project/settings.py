@@ -33,7 +33,7 @@ SECRET_KEY = "spa(ws9C-6+?d5$C%JqYPWq;T!-vWdfsgApo<Wal@2Lt6{'i,4]cY9{;c{!q_#`"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-oluwapelumi-cuppysresta-e9ssbm2u7c6.ws.codeinstitute-ide.net',
+ALLOWED_HOSTS = ['8000-oluwapelumi-cuppysresta-owp92hug8pl.ws-eu116.gitpod.io',
                 '.herokuapp.com']
 
 
@@ -113,7 +113,7 @@ DATABASES = {
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeinstitute-ide.net/",
-    'https://8000-oluwapelumi-cuppysresta-dzo6185pzm7.ws-eu116.gitpod.io',
+    'https://8000-oluwapelumi-cuppysresta-owp92hug8pl.ws-eu116.gitpod.io',
     "https://*.herokuapp.com"
 ]
 # Password validation
