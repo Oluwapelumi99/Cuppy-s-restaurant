@@ -72,21 +72,6 @@ def booking(request):
     return render(request, 'booking/booking.html', context)
 
 
-def save_draft(self, request):
-    form = BookingForm(request.POST or None)
-    context = {'form': form }
-    if form.cleaned_data.get('draft'):
-        form.instance.draft = True
-        form.save()
-        messages.add_message(request, messages.SUCCESS, 'Booking draft saved succesffully!')
-        return render(request, 'booking/booking.html', context)
-    else:
-        messages.add_message(request, messages.ERROR, 'Error saving draft, Please contact the restaurant')
-        return render(request, 'booking/booking.html', context)
-
-
-
-
 def update_booking(request, pk):
     """
     view to update bookings
@@ -115,33 +100,12 @@ def update_booking(request, pk):
         }
     return render(request, 'booking/booking.html', context)
 
-# def updateBooking(request, booking_id):
-
-#     """
-#     view to update booking
-#     """
-#     if request.method == "POST":
-
-#         queryset = Booking.objects.filter(status=1)
-#         booking = get_object_or_404(booking, pk=booking_id)
-#         deadline = booking.start_date - timedelta(hours=72)
-#         # comment_form = CommentForm(data=request.POST, instance=comment)
-
-#         if request.post.get('new_booking_dateandtime_start') < deadline and comment.author == request.user:
-#             booking = booking.save(commit=False)
-#             booking.approved = False
-#             booking.save()
-#             messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
-#         else:
-#             messages.info(request, 'Cannot change booking after deadline')
-#             return HttpResponseRedirect(reverse('booking_detail', args=[booking_id]))
-
-    # return render(request, 'booking_update.html', {booking:booking})
-
-
 
 @login_required
 def cancel_booking(request, pk):
+    """
+    view to delete bookings
+    """
     booking = get_object_or_404(Booking, id=pk)
     if booking.customer != request.user:
         return redirect('home_page')

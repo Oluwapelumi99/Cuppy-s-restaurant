@@ -24,7 +24,6 @@ STATUS = [
 ]
 class Table(models.Model):
     seats = models.IntegerField()
-
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
     class Meta:
@@ -49,15 +48,6 @@ class Booking(models.Model):
     deadline = models.DateTimeField(default=datetime.now() - timedelta(hours=72))
     draft = models.BooleanField(default=False)
     cancelled = models.BooleanField(default=False)
-
-    def save(self, *args, **kwargs):
-        if self.draft:
-            self.draft = True
-        else:
-            self.draft = False
-        super().save(*args, **kwargs)
-
-
     class Meta:
         ordering = ["created_on"]
 

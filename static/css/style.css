@@ -3,20 +3,23 @@ body {
 }
 
 #details {
-    padding-left: 10px;
-    padding-top: 10px;
+    padding-left: 20px;
+    padding-top: 20px;
     font-family: 'dancing script', sans-serif;
     font-size: 20px;
-    
+    display: flex;
 }
 
 #bookform {
     font-family: 'dancing script', sans-serif;
-    
+    margin-top: 90px;
+    margin-left: 50px;
 }
-#smallcaps {
-    display: flex;
+
+#bookform_submit {
+    margin-left: 12rem;
 }
+
 .btn-signup,
 .btn-edit {
     background-color: #000000;
@@ -57,7 +60,6 @@ body {
 
 #content {
     margin-top: 50px;
-    display: flex;
     margin-left: 50px;
     
 }
