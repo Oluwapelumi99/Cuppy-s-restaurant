@@ -108,6 +108,7 @@ def cancel_booking(request, pk):
     """
     booking = get_object_or_404(Booking, id=pk)
     if booking.customer != request.user:
+        messages.add_message(request, messages.ERROR, 'You do not have any bookings.')
         return redirect('home_page')
     if request.method == 'POST':
         form = CancelBookingForm(request.POST, instance=booking)

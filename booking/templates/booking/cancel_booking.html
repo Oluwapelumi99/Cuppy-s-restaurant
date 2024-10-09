@@ -9,13 +9,14 @@
   <h3> Cancel Booking</h3>
   <div>Date: {{ booking.start_time }}</div>
   <div>Number of guests: {{ booking.number_of_guests }}</div>
+  <div>Special request: {{ booking.special_request }}</div>
   <p> Are you sure you want to cancel this booking?</p>
 
     <form method="POST">
         {{ form.as_p }}
         {% csrf_token %}
-        <button class="btn" type="submit">Yes</button>
-        <a href="{% url 'customer_bookings' %}" class="btn">No</button>
+        <button class="btn btn-signup" type="submit">Yes</button>
+        <a href="{% url 'customer_bookings' %}" class="btn btn-signup">No</button>
     </form>
 </div> 
 {% endif %}
