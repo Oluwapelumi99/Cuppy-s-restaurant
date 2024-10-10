@@ -5,11 +5,10 @@ from django.http import HttpResponse
 from .models import Booking, Table, Customer
 from django.contrib.auth.models import User
 from django.views.generic import DeleteView
-from datetime import datetime, timedelta
 from .forms import BookingForm, CancelBookingForm
 from urllib.parse import urlencode
-from pytz import timezone as tz
 from django.contrib.auth.decorators import login_required
+from datetime import datetime, timedelta, timezone
 
 
 
@@ -24,9 +23,9 @@ def customer_bookings(request):
     bookings = Booking.objects.filter(customer_id=request.user, cancelled=False).order_by('-created_on')
     print(bookings)
     if bookings:
-        # bookings.view()
         return render(request, 'view_booking.html', {'bookings': bookings})
     else:
+        messages.add_message(request, messages.ERROR, 'You do not have any bookings, please complete the form below to make bookings.')
         return redirect('booking') 
 
 def email_direct(request):
@@ -72,6 +71,10 @@ def booking(request):
     return render(request, 'booking/booking.html', context)
 
 
+def get_72_hour(booking__start_time):
+    seventy_two_hours = timedelta(days=3)
+    return booking__start_time + seventy_two_hours
+
 def update_booking(request, pk):
     """
     view to update bookings
@@ -79,11 +82,15 @@ def update_booking(request, pk):
     booking = get_object_or_404(Booking, pk=pk)
     booking_form = BookingForm(data=request.POST or None, instance=booking)
     if request.method == "POST":
-        current_time = datetime.now()
+        # timezone = 'Europe/Berlin'
+        # current_time = datetime.now(timezone.utc)
+        # deadline = request.POST.get('booking__start_time')
+        booking = get_object_or_404(Booking, pk=pk)
         print('got form')
-        if booking.start_time < booking.deadline.replace(tzinfo=tz('UTC')) - current_time:
-            print(booking.deadline)
-            if booking_form.is_valid() and booking.author == request.user:
+        print(booking.deadline)
+        if booking.start_time > get_72_hour(booking.start_time):
+            print(get_72_hour(booking.start_time))
+            if booking_form.is_valid() and booking.customer == request.user:
                 booking = booking_form.save(commit=False)
                 booking.save()
                 messages.add_message(request, messages.SUCCESS, 'Booking Updated!')
@@ -93,7 +100,7 @@ def update_booking(request, pk):
                 return render(request, 'booking/booking.html', context)
         else:
             messages.add_message(request, messages.ERROR, 'You can no longer make changes to this booking!')
-            return render(request, 'booking/booking.html')
+            return redirect('home_page')
     else:
         context={
             'form': booking_form
@@ -118,6 +125,7 @@ def cancel_booking(request, pk):
             print('deleting')
             booking = get_object_or_404(Booking, id=cancelled_booking.id)
             booking.delete()
+            messages.add_message(request, messages.SUCCESS, 'Booking cancelled')
             return redirect('customer_bookings')
     else:
         form = CancelBookingForm(instance=booking)

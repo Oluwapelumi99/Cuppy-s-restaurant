@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db.models import Avg
 from django_google_maps import fields as map_fields
+from geopy.geocoders import Nominatim
 
 
 # Create your models here.
@@ -23,9 +24,15 @@ class Review(models.Model):
     def __str__(self):
         return f"{self.author} "
 
+
 class Location(models.Model):
-    address = map_fields.AddressField(max_length=200)
-    geolocation = map_fields.GeoLocationField(max_length=100)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+    lat = models.CharField(max_length=100, blank=True, null=True)
+    lng = models.CharField(max_length=100, blank=True, null=True)
+    place_id = models.CharField(max_length=100, blank=True, null=True)
+    # timestamp = models.DateTimeField(auto_now_add=True)
+
+    # def current_location(models.Model):
 
 
 # class Rating(models.Model):

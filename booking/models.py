@@ -45,7 +45,7 @@ class Booking(models.Model):
     number_of_guests = models.CharField(choices=PEOPLE_CHOICES, default='2')
     created_on = models.DateTimeField(auto_now_add=True)
     special_request = models.TextField(max_length=1024)
-    deadline = models.DateTimeField(default=datetime.now() - timedelta(hours=72))
+    deadline = models.DateTimeField(default=datetime.now() + timedelta(hours=72))
     draft = models.BooleanField(default=False)
     cancelled = models.BooleanField(default=False)
     class Meta:

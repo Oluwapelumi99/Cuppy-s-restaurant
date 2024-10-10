@@ -4,10 +4,9 @@
 {% load static %}
 {% load crispy_forms_tags %}
  
-<div id="write-review"> 
+<div id="write-review" class="col text-center mt-5 "> 
   <h4> Share your thoughts with other Customers
-    <br>
-    <a href="{% url 'submit_review'%}">Write a review</a>
+    <span><a class="mt-5" href="{% url 'submit_review'%}">Write a review</a></span>
   </h4>
 </div>
 
@@ -26,10 +25,9 @@
             {{ review.rating }}
           </div>
           {% if user.is_authenticated and review.author == user %}
-          <button class="btn btn-delete"
+          <button class="btn btn-delete btn-signup mt-3"
            review_id="{{ review.id }}">Delete</button>
-           <button class="btn btn-edit"
-             review_id="{{ review.id }}">Edit</button>
+           <a href="{% url 'edit_review' review.id %}" class="btn btn-signup btn-edit mt-3">Edit</a>
             </div>
             <br>
            {% endif %} 

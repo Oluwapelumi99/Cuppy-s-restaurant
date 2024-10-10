@@ -6,17 +6,17 @@
 
 {% if user.is_authenticated %} 
 <div id="cancelform">
-  <h3> Cancel Booking</h3>
-  <div>Date: {{ booking.start_time }}</div>
-  <div>Number of guests: {{ booking.number_of_guests }}</div>
-  <div>Special request: {{ booking.special_request }}</div>
-  <p> Are you sure you want to cancel this booking?</p>
+  <h3> Cancel Booking?</h3>
+  <div class="mt-3" >Date: {{ booking.start_time }}</div>
+  <div class="mt-3">Number of guests: {{ booking.number_of_guests }}</div>
+  <div class="mt-3">Special request: {{ booking.special_request }}</div>
+  <p class="mt-3"> Are you sure you want to cancel this booking?</p>
 
-    <form method="POST">
+    <form method="POST" class="mt-3">
         {{ form.as_p }}
         {% csrf_token %}
-        <button class="btn btn-signup" type="submit">Yes</button>
-        <a href="{% url 'customer_bookings' %}" class="btn btn-signup">No</button>
+        <button class="btn btn-signup mt-3" type="submit">Yes</button>
+        <a href="{% url 'customer_bookings' %}" class="btn mt-3">No</button>
     </form>
 </div> 
 {% endif %}

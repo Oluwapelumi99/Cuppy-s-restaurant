@@ -20,6 +20,11 @@ class BookingForm(forms.ModelForm):
         fields = ['start_time', 'number_of_guests', 'special_request']
         widgets = {'start_time': forms.DateTimeInput(attrs={'type': 'datetime-local'}),}
 
+    def clean_deadline(self):
+        deadline = self.instance.deadline
+        if self.instance.start_time < deadline:
+            raise forms.ValidationError("Changes cannot be made 3 days to event.")
+
 
 class CancelBookingForm(forms.ModelForm):
     class Meta:

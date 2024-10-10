@@ -31,6 +31,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
+
 </head>
 
 <body class="d-flex flex-column h-100 main-bg">
@@ -72,8 +73,12 @@
                           {% endif %}      
 
                 </ul>
-                <span class="navbar-text text-muted">
-                    Book a table now and indulge in our delicious cuisine!
+                <span class="navbar-text text-muted flex-shrink-0">
+                    {% if user.is_authenticated %}
+                    <p class="text-end ">You are logged in as {{ user }}</p>
+                    {% else %}
+                    <p class="text-end ">You are not logged in</p>
+                    {% endif %}
                 </span>
             </div>
         </div>
@@ -93,13 +98,14 @@
       </div>
     </div>
   </div>
-    <main>
+  <main>
 
-        {% block content %}
-        <!-- Content Goes here -->
-        {% endblock content %}
+    {% block content %}
+    <!-- Content Goes here -->
+    {% endblock content %}
 
-    </main>
+</main>
+
 
     <!-- Footer -->
     <footer id="footer" class="footer mt-auto py-3 dark-bg">
@@ -113,7 +119,7 @@
             <i class="fab fa-youtube-square ms-3"></i>
         </p>
     </footer>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
         </script>

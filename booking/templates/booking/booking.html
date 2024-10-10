@@ -29,10 +29,10 @@
             be charged to the credit card submitted when making a reservation.
             <br> 
             Please note, this applies to all cancellations and is not discretionary.
-            <div>Already made a booking? Click the link to view</div>
     </div>
     {% if user.is_authenticated %}
     <div id="bookform">
+        <p>Already made a booking?<a href="{% url 'customer_bookings' %}">  View bookings</a></p>
         <form method="POST">
             {{ form.as_p}}
             {% csrf_token %}
