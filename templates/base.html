@@ -1,4 +1,3 @@
-
 {% load static %}
 
 {% url 'home_page' as home_page_url %}
@@ -12,7 +11,7 @@
 
 <head>
     <title>Restaurant booking system- Cuppy's Restaurant</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,59 +51,56 @@
                     </li>
 
                     <li class="nav-item">
-                        <a
-                          class="nav-link
-                          {% if request.path == booking_url %}active{%endif%}"
-                          aria-current="page"
-                          href="{% url 'booking' %}"
-                          >BOOKINGS</a>
-                          {% if user.is_authenticated %}
-                          <li class="nav-item">
-                              <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
-                          </li>
-                          {% else %}
-                          <li class="nav-item">
-                              <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                                  href="{% url 'account_signup' %}">Register</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
-                          </li>
-                          {% endif %}      
-
+                        <a class="nav-link
+                          {% if request.path == booking_url %}active{%endif%}" aria-current="page"
+                            href="{% url 'booking' %}">BOOKINGS</a>
+                        {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_logout' %}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_signup' %}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_login' %}">Login</a>
+                    </li>
+                    {% endif %}
                 </ul>
                 <span class="navbar-text text-muted flex-shrink-0">
                     {% if user.is_authenticated %}
-                    <p class="text-end ">You are logged in as {{ user }}</p>
+                    <div class="text-end"> You are logged in as {{ user }}</div>
                     {% else %}
-                    <p class="text-end ">You are not logged in</p>
+                    <div class="text-end">You are not logged in</div>
                     {% endif %}
                 </span>
             </div>
         </div>
     </nav>
-<!-- displaying Django messages -->
-<div class="container">
-    <div class="row">
-      <div class="col-md-8 offset-md-2">
-        {% for message in messages %}
-        <div class="alert {{ message.tags }} alert-dismissible
+    <!-- displaying Django messages -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible
           fade show" id="msg" role="alert">
-          {{ message | safe }}
-          <button type="button" class="btn-close"
-            data-bs-dismiss="alert" aria-label="Close"></button>
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
         </div>
-        {% endfor %}
-      </div>
     </div>
-  </div>
-  <main>
+    <main>
 
-    {% block content %}
-    <!-- Content Goes here -->
-    {% endblock content %}
+        {% block content %}
+        <!-- Content Goes here -->
+        {% endblock content %}
 
-</main>
+    </main>
 
 
     <!-- Footer -->
@@ -112,7 +108,7 @@
         <p class="m-0 text-center text-white">
             {% block copyright %}
             Cuppy's Restaurant</p>
-            {% endblock copyright %}
+        {% endblock copyright %}
         <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
             <i class="fab fa-twitter-square ms-3"></i>
             <i class="fab fa-instagram-square ms-3"></i>
@@ -123,8 +119,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
         </script>
-        {% block extras %}
-        {% endblock %}
+    {% block extras %}
+    {% endblock %}
 </body>
 
 </html>
