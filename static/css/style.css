@@ -1,41 +1,8 @@
 body {
     background-color: #ffc0cb;
 }
-/* booking.html css*/
-#details {
-    padding-left: 20px;
-    padding-top: 20px;
-    font-family: 'dancing script', sans-serif;
-    font-size: 20px;
-    display: flex;
-}
 
-#bookform {
-    font-family: 'dancing script', sans-serif;
-    margin-top: 90px;
-    margin-left: 50px;
-}
-
-#bookform_submit {
-    margin-left: 12rem;
-}
-
-.btn-signup,
-.btn-edit {
-    background-color: #000000;
-    color: #ffc0cb;
-}
-
-.btn-signup:hover,
-.btn-signup:active {
-    background-color: #ffc0cb;
-    color: #000000;
-}
-/*cancel_booking.html css*/
-#cancelform {
-    text-align: center;
-    padding-top: 50px;
-}
+/*index.html css*/
 #hero-image {
     width: 100vw;
     height: 100vh;
@@ -121,6 +88,42 @@ body {
     box-sizing: border-box;
     border-radius: 10px;
 
+}
+
+/* booking.html css*/
+#details {
+    padding-left: 20px;
+    padding-top: 20px;
+    font-family: 'dancing script', sans-serif;
+    font-size: 20px;
+    display: flex;
+}
+
+#bookform {
+    font-family: 'dancing script', sans-serif;
+    margin-top: 90px;
+    margin-left: 50px;
+}
+
+#bookform_submit {
+    margin-left: 12rem;
+}
+
+.btn-signup,
+.btn-edit {
+    background-color: #000000;
+    color: #ffc0cb;
+}
+
+.btn-signup:hover,
+.btn-signup:active {
+    background-color: #ffc0cb;
+    color: #000000;
+}
+/*cancel_booking.html css*/
+#cancelform {
+    text-align: center;
+    padding-top: 50px;
 }
 
 #map {
