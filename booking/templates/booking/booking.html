@@ -31,18 +31,17 @@
             <br> 
             Please note, this applies to all cancellations and is not discretionary.
     </div>
-    {% if user.is_authenticated %}
-    <div id="bookform">
-        <p>Already made a booking?<a href="{% url 'customer_bookings' %}">  View bookings</a></p>
-        <form method="POST">
-            {{ form.as_p}}
-            {% csrf_token %}
-            <button class="btn-signup" id="bookform_submit" type="submit">Submit</button>
-        </form>
-            {% else %}
-        <p>Log in to make a booking</p>
-    </div> 
-</div>
+        {% if user.is_authenticated %}
+        <div id="bookform">
+            <p>Already made a booking?<a href="{% url 'customer_bookings' %}">  View bookings</a></p>
+            <form method="POST">
+                {{ form.as_p}}
+                {% csrf_token %}
+                <button class="btn-signup" id="bookform_submit" type="submit">Submit</button>
+            </form>
+                {% else %}
+            <p>Log in to make a booking</p>
+        </div> 
     {% endif %}
     {% endblock content %}   
 
