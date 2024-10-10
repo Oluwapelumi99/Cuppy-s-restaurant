@@ -2,12 +2,12 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic 
 from django.contrib import messages
 from django.http import HttpResponse
-from .models import Booking, Table, Customer
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from django.views.generic import DeleteView
+from .models import Booking, Table, Customer
 from .forms import BookingForm, CancelBookingForm
 from urllib.parse import urlencode
-from django.contrib.auth.decorators import login_required
 from datetime import datetime, timedelta, timezone
 
 
@@ -19,6 +19,13 @@ from datetime import datetime, timedelta, timezone
 def customer_bookings(request):
     """
     View to display a customer's bookings
+    ** content **
+
+    ``customer``
+    an instance of booking.customer
+
+    *template*
+    ``view_booking.html``
     """
     bookings = Booking.objects.filter(customer_id=request.user, cancelled=False).order_by('-created_on')
     print(bookings)
@@ -37,6 +44,15 @@ def email_direct(request):
 def booking(request):
     """
     view to make bookings
+    **context**
+    ``booking``
+    an instance of booking.customer
+    ``tables``
+    all approved tables related to table.approved
+    ``form``
+    related to forms BookingForm
+    *template*
+    ``booking.html``
     """
     form = BookingForm(request.POST or None)
     context = {'form': form }
@@ -72,12 +88,25 @@ def booking(request):
 
 
 def get_72_hour(booking__start_time):
+    """
+    view to set deadline to make changes before 72hours of the booking time and date
+    """
     seventy_two_hours = timedelta(days=3)
     return booking__start_time + seventy_two_hours
+
 
 def update_booking(request, pk):
     """
     view to update bookings
+    **context**
+    ``booking``
+    an instance of booking.customer
+    ``tables``
+    all approved tables related to table.approved
+    ``form``
+    related to forms BookingForm
+    *template*
+    ``booking.html``
     """
     booking = get_object_or_404(Booking, pk=pk)
     booking_form = BookingForm(data=request.POST or None, instance=booking)
@@ -111,7 +140,11 @@ def update_booking(request, pk):
 @login_required
 def cancel_booking(request, pk):
     """
-    view to delete bookings
+    view to delete bookings, it renders the template:
+    `booking/cancel_booking.html`
+    also renders:
+    `context - form:form which is the cancelBooking form but has been made hidden`
+
     """
     booking = get_object_or_404(Booking, id=pk)
     if booking.customer != request.user:

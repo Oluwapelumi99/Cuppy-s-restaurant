@@ -6,6 +6,9 @@ from datetime import datetime, timedelta
 STATUS = ((0, "Draft"), (1, "Published"))
 # Create your models here.
 class Customer(models.Model):
+    """
+    Stores a single customer id  when a booking has been made and assigns the customer to the booking
+    """
     title = models.CharField(max_length=10, verbose_name=_('Title'), choices=(('miss', _('Miss')),('ms', _('Ms')),('mrs', _('Mrs')),('mr', _('Mr')),),blank=True)
     forename = models.CharField(max_length=100)
     surname = models.CharField(max_length=100)
@@ -18,11 +21,11 @@ class Customer(models.Model):
     def __str__(self):
         return f"Customer {self.forename}"
     
-STATUS = [
-    ('1', 'Reserved'),
-    ('2', 'Available'),
-]
+
 class Table(models.Model):
+    """
+    Stores a Table object when a booking has been made and assigns the Table to the booking
+    """
     seats = models.IntegerField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
@@ -39,10 +42,14 @@ PEOPLE_CHOICES = [
     ('6', '6'),
 ]
 class Booking(models.Model):
+    """
+    Stores a single booking entry.
+    When a booking is deleted, the table and the customer that made the booking is also deleted
+    """
     customer = models.ForeignKey(User, on_delete=models.CASCADE, default=None, null=True)
     table = models.ForeignKey(Table, on_delete=models.CASCADE, default=None, null=True)
     start_time = models.DateTimeField(verbose_name= 'booking_dateandtime_start', null=False, blank=False)
-    number_of_guests = models.CharField(choices=PEOPLE_CHOICES, default='2')
+    number_of_guests = models.CharField(max_length=6, choices=PEOPLE_CHOICES, default='2')
     created_on = models.DateTimeField(auto_now_add=True)
     special_request = models.TextField(max_length=1024)
     deadline = models.DateTimeField(default=datetime.now() + timedelta(hours=72))

@@ -47,7 +47,26 @@ Repeat for each feature
 ## Testing
 
 ### Validation of Code
-Insert screenshots of HTML, CSS and any other code files being tested in the relevant code validator - CSS validator might not validate newer CSS syntax - be careful to read and fully understand why it is giving you an error.
+- I tested all the HTML pages with the W3C validatior which found a bug and the bug was fixed.
+ #### index.html 
+- The page presented with these errors on the first test.
+<img width="1710" alt="Screenshot 2024-10-10 at 17 36 19" src="https://github.com/user-attachments/assets/722e4e35-91b5-407c-b6df-529a5c5eeca0">
+
+- These errors were fixed by adding an alt text to the images, the pictures were later removed as they did not improve the user experience and were no longer needed. Also,the span was made into a div element and the closing p element was removed, then the page was tested again and it returned no errors as seen below.
+
+<img width="1699" alt="Screenshot 2024-10-10 at 18 49 16" src="https://github.com/user-attachments/assets/ef7b4fc2-b43e-4114-9655-c9b071e2acad">
+
+ #### booking.html
+- The booking page presented with the errors as seen in the image below
+
+<img width="1702" alt="Screenshot 2024-10-10 at 22 58 05" src="https://github.com/user-attachments/assets/56d48ea7-e59a-452b-af4c-eb7ed3852814">
+
+- These errors were fixed by 
+
+
+
+
+
 
 ### Lighthouse
 
@@ -71,6 +90,11 @@ To write up the tests you can use a table,
 | enter details here | enter details here | enter details here | enter details here | enter details here |
 
 You should have tests for every section of every page.. individually.
+
+### Automated Testing
+
+- I started the automated testing by checking that the forms in my app are valid. 
+- Started by creating a test_forms.py file and tested the form as seen in the image below.
 
 
 ## Technologies Used

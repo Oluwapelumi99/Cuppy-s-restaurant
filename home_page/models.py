@@ -9,6 +9,9 @@ from geopy.geocoders import Nominatim
 # Create your models here.
 
 class Review(models.Model):
+    """
+    Stores a review entry related to model:`auth.User`
+    """
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="reviewer")
     body = models.TextField(max_length=1024, blank=True)
     rating = models.IntegerField(default=0)
@@ -26,6 +29,9 @@ class Review(models.Model):
 
 
 class Location(models.Model):
+    """
+    Stores the location of the restaurant
+    """
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     lat = models.CharField(max_length=100, blank=True, null=True)
     lng = models.CharField(max_length=100, blank=True, null=True)

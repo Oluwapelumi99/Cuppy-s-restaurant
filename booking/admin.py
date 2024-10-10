@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import Customer, Table, Booking
 from django_summernote.admin import SummernoteModelAdmin
+from .models import Customer, Table, Booking
+
 
 @admin.register(Customer)
 class CustomerAdmin(SummernoteModelAdmin):

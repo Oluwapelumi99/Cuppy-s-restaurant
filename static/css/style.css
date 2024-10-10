@@ -38,57 +38,6 @@ body {
     margin-top: 150px;
     margin-left: 250px;
 }
-#image-slides {
-    overflow: hidden;
-    height: 200px;
-    width: 200px;
-    margin-left: 750px;
-    margin-top: 20px;
-    /* border: 10px solid red;
-    padding: 20px;
-    box-sizing: border-box; */
-}
-
-/* Slides animation*/
-@keyframes slide_animation {
-    0% {left:0px;}
-    10% {left:0px;}
-    20% {right:800px;}
-    30% {right:1000px;}
-    40% {left:1000px;}
-    50% {left:200px;}
-    60% {left:200px;}
-    70% {left:200px;}
-    80% {left:200px;}
-    90% {left:200px;}
-    100% {left:0px;}
-}
-#slides {
-    height: 200px;
-    width: 1000px;
-    margin: 0 0 0 -200px;
-    position: relative;
-    animation-name: slide_animation;
-    animation-duration: 30s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-play-state: running;
-    /* border: 10px solid red;
-    padding: 20px;
-    box-sizing: border-box; */
-
-}
-
-.img-container {
-    height: 200px;
-    position: relative;
-    float: right;
-    width: 200px;
-    border: 10px solid #ffc0cb;
-    box-sizing: border-box;
-    border-radius: 10px;
-
-}
 
 /* booking.html css*/
 #details {

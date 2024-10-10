@@ -6,9 +6,10 @@
 <div id="details">
     <div>
         <h3>RESERVATIONS</h3>
-        <p>Online Reservations are available for a group of 1-6 guests, for larger group contact <a href="mailto:bookingscuppysrestaurant@gmail.com"> bookingscuppysrestaurant@gmail.com</a>
+        <p>Online Reservations are available for a group of 1-6 guests, for larger group contact 
+            <a href="mailto:bookingscuppysrestaurant@gmail.com"> bookingscuppysrestaurant@gmail.com</a>
             <br>
-        Credit card details are required to secure your reservation.
+            Credit card details are required to secure your reservation.
             We do not require a deposit to secure the reservation.</p>
             Breakfast
             <div>Sun - Sat, 6:00 - 11:00</div>
@@ -36,7 +37,7 @@
         <form method="POST">
             {{ form.as_p}}
             {% csrf_token %}
-            <button class="btn-signup"id="bookform_submit" type="submit">Submit</button>
+            <button class="btn-signup" id="bookform_submit" type="submit">Submit</button>
         </form>
             {% else %}
         <p>Log in to make a booking</p>

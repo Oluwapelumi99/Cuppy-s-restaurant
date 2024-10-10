@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import sys
+from django.contrib.messages import constants as messages
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
@@ -110,7 +112,9 @@ DATABASES = {
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
-
+if 'test' in sys.argv:
+    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
+    
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeinstitute-ide.net/",
     'https://8000-oluwapelumi-cuppysresta-owp92hug8pl.ws-eu116.gitpod.io',
@@ -176,7 +180,10 @@ USE_I18N = True
 
 USE_TZ = True
 
-
+MESSAGE_TAGS = {
+    messages.SUCCESS: 'alert-success',
+    messages.ERROR: 'alert-danger',
+}
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 

@@ -11,7 +11,7 @@
       alt="Restaurant image" id="hero-image">
     <!-- Body Entries Column -->
 
-    <!--Restaurant description-->
+    <!--Restaurant introduction-->
   <div id="description">
       <div id="content">
       "Here, at Cuppy's, in the City of Derby, we understand cravings
@@ -33,7 +33,7 @@
       <br>
       We promise an experience that will keep you coming back for more!
       <br>
-  </div>
+    </div>
   <p id="location">You can find us on Osmaston Road, Derby, United Kingdom.
     <br>
     If you are having issues booking onine, Call our customer service on: 01332000000
@@ -41,32 +41,12 @@
     <br>
     <a href="mailto:bookingscuppysrestaurant@gmail.com"> bookingscuppysrestaurant@gmail.com</a>
   </div>
-    <!--Images slides-->
-    <div id="image-slides">
-      <div id="slides">
-        <div class="img-container">
-          <img src="{% static 'images/food-9.jpg' %}" alt="A bowl of food">
+        <div id="make-bookings">
+        <p class="btn btn-signup" id="book_table"><a href="{%url 'booking' %}">BOOK A TABLE NOW!</a></p>
         </div>
-        <div class="img-container">
-          <img src="{% static 'images/food-10.jpg' %}" alt="A bowl of pizza">
-        </div>
-        <div class="img-container">
-          <img src="{% static 'images/food-11.jpg' %}" alt="Man pouring oil on a bowl of food">
-        </div>
-        <div class="img-container">
-          <img src="{% static 'images/food-12.jpg' %}" alt="A bowl of food">
-        </div>
-        <div class="img-container">
-          <img src="{% static 'images/food-13.jpg' %}" alt="A bowl of noodles">
-        </div>
+        <div id="reviews_page">
+            <a href="{% url 'review_list' %}">Read all {{ review_count }} reviews</a>
     </div>
-  </div>
-      <div id="make-bookings">
-      <p class="btn btn-signup" id="book_table"><a href="{%url 'booking' %}">BOOK A TABLE NOW!</a></p>
-      </div>
-      <div id="reviews_page">
-          <a href="{% url 'review_list' %}">Read all {{ review_count }} reviews</a>
-      </div>
           <!-- <button  class="my-btn fa fa-star fa checked" ></button>
           <button  class="my-btn fa fa-star fa checked" ></button>
           <button  class="my-btn fa fa-star fa checked" ></button>
