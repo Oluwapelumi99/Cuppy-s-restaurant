@@ -7,75 +7,74 @@
 
 <!-- Hero Image-->
 <div id="opacity">
-    <img class="card-img-top" src="{% static 'images/A-restaurant-picture-with-tables-and-chairs.jpg' %}"
+  <img class="card-img-top" src="{% static 'images/A-restaurant-picture-with-tables-and-chairs.jpg' %}"
       alt="Restaurant image" id="hero-image">
     <!-- Body Entries Column -->
 
     <!--Restaurant description-->
-    <div id="description">
-      <p>
-        <div id="content">
-        "Here, at Cuppy's, in the City of Derby, we understand cravings
-        <br>
-        and we dont accept compromises. Not about our food.
-        All our ingredients are sourced from local producers
-        <br>
-        to ensure quality and freshness.
-        <br>
-        That's why our menu is seasonal and Today,
-        <br>
-        we may serve you creamy mushroom soup, and <br>
-        tomorrow we may have a classic ratatouille on the menu.
-        <br>
-        But the taste is always the same: finger-licking good!
-        <br>
-        Don't hesitate to pay us a visit if you share our passion
-        <br>for fresh dishes cooked with only the best ingredients.
-        <br>
-        We promise an experience that will keep you coming back for more!
-        <br>
-      </p>
-        </div>
-        <p id="location">You can find us on Osmaston Road, Derby, United Kingdom.
-          <br>
-          If you are having issues booking onine, Call our customer service on: 01332000000
-          or click on the email address to send your enquiries
-          <br>
-          <a href="mailto:bookingscuppysrestaurant@gmail.com"> bookingscuppysrestaurant@gmail.com</a>
-        </p>
-    </div>
+  <div id="description">
+    <p>
+      <div id="content">
+      "Here, at Cuppy's, in the City of Derby, we understand cravings
+      <br>
+      and we dont accept compromises. Not about our food.
+      All our ingredients are sourced from local producers
+      <br>
+      to ensure quality and freshness.
+      <br>
+      That's why our menu is seasonal and Today,
+      <br>
+      we may serve you creamy mushroom soup, and <br>
+      tomorrow we may have a classic ratatouille on the menu.
+      <br>
+      But the taste is always the same: finger-licking good!
+      <br>
+      Don't hesitate to pay us a visit if you share our passion
+      <br>for fresh dishes cooked with only the best ingredients.
+      <br>
+      We promise an experience that will keep you coming back for more!
+      <br>
+    </p>
+  </div>
+  <p id="location">You can find us on Osmaston Road, Derby, United Kingdom.
+    <br>
+    If you are having issues booking onine, Call our customer service on: 01332000000
+    or click on the email address to send your enquiries
+    <br>
+    <a href="mailto:bookingscuppysrestaurant@gmail.com"> bookingscuppysrestaurant@gmail.com</a>
+  </p>
+  </div>
     <!--Images slides-->
     <div id="image-slides">
       <div id="slides">
         <div class="img-container">
-          <img src="{% static 'images/food-9.jpg' %}">
+          <img src="{% static 'images/food-9.jpg' %}" alt="A bowl of food">
         </div>
         <div class="img-container">
-          <img src="{% static 'images/food-10.jpg' %}">
+          <img src="{% static 'images/food-10.jpg' %}" alt="A bowl of pizza">
         </div>
         <div class="img-container">
-          <img src="{% static 'images/food-11.jpg' %}">
+          <img src="{% static 'images/food-11.jpg' %}" alt="Man pouring oil on a bowl of food">
         </div>
         <div class="img-container">
-          <img src="{% static 'images/food-12.jpg' %}">
+          <img src="{% static 'images/food-12.jpg' %}" alt="A bowl of food">
         </div>
         <div class="img-container">
-          <img src="{% static 'images/food-13.jpg' %}">
+          <img src="{% static 'images/food-13.jpg' %}" alt="A bowl of noodles">
         </div>
     </div>
   </div>
-
-  <div id="make-bookings">
-    <button class="button" id="book_table"><a href="{%url 'booking' %}">BOOK A TABLE NOW!</a></span></button>
-  </div>
-  <div id="reviews_page">
-    <p > <a href="{% url 'review_list' %}">Read all {{ review_count }} reviews</p></a>
-      <button  class="my-btn fa fa-star fa checked" ></button>
-      <button  class="my-btn fa fa-star fa checked" ></button>
-      <button  class="my-btn fa fa-star fa checked" ></button>
-      <button  class="my-btn fa fa-star fa checked" ></button>
-      <button  class="my-btn fa fa-star fa checked" ></button>
-  </div>
+      <div id="make-bookings">
+      <p class="btn btn-signup" id="book_table"><a href="{%url 'booking' %}">BOOK A TABLE NOW!</a></p>
+      </div>
+      <div id="reviews_page">
+          <a href="{% url 'review_list' %}">Read all {{ review_count }} reviews</a>
+      </div>
+          <!-- <button  class="my-btn fa fa-star fa checked" ></button>
+          <button  class="my-btn fa fa-star fa checked" ></button>
+          <button  class="my-btn fa fa-star fa checked" ></button>
+          <button  class="my-btn fa fa-star fa checked" ></button>
+          <button  class="my-btn fa fa-star fa checked" ></button> -->
 </div>
 </div>
 <!-- index.html content ends here -->
