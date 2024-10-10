@@ -65,6 +65,11 @@ Repeat for each feature
 
 <img width="1704" alt="Screenshot 2024-10-10 at 23 31 18" src="https://github.com/user-attachments/assets/2b946a87-ca60-469b-9c5c-4d52658dd191">
 
+#### view_booking.html
+- The view booking page which is relate to the view function customer bookings was tested and it presented an error as ssen below.
+
+
+
 
 
 
