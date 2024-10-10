@@ -69,14 +69,14 @@
                             href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
-                </ul>
-                <span class="navbar-text text-muted flex-shrink-0">
+                <li class="navbar-text text-muted flex-shrink-0">
                     {% if user.is_authenticated %}
                     <div class="text-end"> You are logged in as {{ user }}</div>
                     {% else %}
                     <div class="text-end">You are not logged in</div>
                     {% endif %}
-                </span>
+                </li>
+            </ul>
             </div>
         </div>
     </nav>
