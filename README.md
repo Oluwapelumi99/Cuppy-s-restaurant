@@ -67,6 +67,14 @@ Repeat for each feature
 
 #### view_booking.html
 - The view booking page which is relate to the view function customer bookings was tested and it presented an error as ssen below.
+<img width="1702" alt="Screenshot 2024-10-10 at 23 47 36" src="https://github.com/user-attachments/assets/b871c2e6-55b7-4a03-b8e2-564af9f36bc4">
+
+- The error was fixed by adding an opening form tag to the trailing closing form tag in login.html file.
+<img width="1704" alt="Screenshot 2024-10-10 at 23 55 01" src="https://github.com/user-attachments/assets/be79a45e-a6e8-4aac-9362-08d32f8f9ab8">
+
+#### cancel_booking.html
+- The cancel booking page was tested and found no errors as shown below.
+<img width="1699" alt="Screenshot 2024-10-10 at 23 58 44" src="https://github.com/user-attachments/assets/b52c47c8-e74a-4358-87e0-51d7bbd6905c">
 
 
 
