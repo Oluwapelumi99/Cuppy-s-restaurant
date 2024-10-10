@@ -59,9 +59,11 @@ Repeat for each feature
  #### booking.html
 - The booking page presented with the errors as seen in the image below
 
-<img width="1702" alt="Screenshot 2024-10-10 at 22 58 05" src="https://github.com/user-attachments/assets/56d48ea7-e59a-452b-af4c-eb7ed3852814">
+<img width="1702" alt="Screenshot 2024-10-10 at 23 22 26" src="https://github.com/user-attachments/assets/a0151be6-6627-4d49-b064-0f1573884109">
 
-- These errors were fixed by 
+- This error was fixed by taking out the trailing div
+
+<img width="1704" alt="Screenshot 2024-10-10 at 23 31 18" src="https://github.com/user-attachments/assets/2b946a87-ca60-469b-9c5c-4d52658dd191">
 
 
 
