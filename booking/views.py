@@ -111,12 +111,8 @@ def update_booking(request, pk):
     booking = get_object_or_404(Booking, pk=pk)
     booking_form = BookingForm(data=request.POST or None, instance=booking)
     if request.method == "POST":
-        # timezone = 'Europe/Berlin'
-        # current_time = datetime.now(timezone.utc)
-        # deadline = request.POST.get('booking__start_time')
         booking = get_object_or_404(Booking, pk=pk)
         print('got form')
-        print(booking.deadline)
         if booking.start_time < get_72_hour(booking.start_time):
             print(get_72_hour(booking.start_time))
             if booking_form.is_valid() and booking.customer == request.user:

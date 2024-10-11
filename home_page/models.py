@@ -22,28 +22,9 @@ class Review(models.Model):
     class Meta:
         ordering = ["created_on"]
 
-    def average_rating(self) -> float:
-        return self.rating.objects.all().aggregate(Avg('rating'))['rating__avg'] or 0
+
     def __str__(self):
         return f"{self.author} "
 
 
-class Location(models.Model):
-    """
-    Stores the location of the restaurant
-    """
-    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
-    lat = models.CharField(max_length=100, blank=True, null=True)
-    lng = models.CharField(max_length=100, blank=True, null=True)
-    place_id = models.CharField(max_length=100, blank=True, null=True)
-    # timestamp = models.DateTimeField(auto_now_add=True)
 
-    # def current_location(models.Model):
-
-
-# class Rating(models.Model):
-#     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="reviewer")
-#     rating = models.IntegerField(default=0)
-
-#     def __str__(self):
-#         return f"{self.author}: {self.rating}"
