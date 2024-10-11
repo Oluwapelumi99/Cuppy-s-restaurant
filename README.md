@@ -13,8 +13,6 @@
 ### Colour Scheme
 ### Typography
 ### Imagery
-### Wireframes
-### Figma/Full color mockup if produced
 ## Features
 ## Testing
 ## Technologies Used
@@ -26,7 +24,9 @@
 - User Goals
 - Site Owner Goals
 
-  ## Color Scheme
+
+## Design
+  ### Color Scheme
 - The colors used for this project are #ffc0cb: this is used for the background color on all the other pages asides the home page.
 - The home page uses a background picture from www.pexels.com. A transparent background color has been applied on the background image so whatever is written on it will be visible.
 - There are 5 food image slides on the home page and all the pictures are from www.pexels.com. This was done to improve the look of the home page and to further depict what the site is about.
@@ -34,15 +34,20 @@
 - On the sign in, sign-up and sign out buttons, The background color when the mouse hovers over it is #ffc0cb and text color is #000000; after hover background color is set back to #000000; and the text color has been set to #ffc0cb. These have all been done for added accessibility.
 - All links text on this app have been set to inherit the text color on the page and text decoration is underline. This makes the link text and other text on the page uniform and does not make the site look out of place.
 
-  ## Typography
+  ### Typography
 - The prefered font used is 'dancing script' and sans-serif has been added as a fall back incase the browser does not load the prefered font.
 
+  ### Imagery
+- Image used on the home page matches the theme of the site. Image is seen below. It is gotten from https://www.pexels.com
+<img width="1710" alt="Screenshot 2024-10-11 at 00 43 30" src="https://github.com/user-attachments/assets/239a1f5b-7119-48dc-bb30-2c1e8d0cf3c4">
 
 ### Feature title - e.g. Navigation
-Screenshot of implemented feature
-Description of the value this feature has for the users
+<img width="1441" alt="Screenshot 2024-10-11 at 00 50 12" src="https://github.com/user-attachments/assets/c936eee6-4494-4958-ba42-15b32c10c6ac">
 
-Repeat for each feature
+- At the top of the page, we can see 'Cuppy's, which is the restaurant's name, clicking on Cuppy's lead us to the home_page.
+- The navigation bar also shows the home pae and clicking on this will also take us to the home_page.
+- The booking link can also be seen on the nav bar, clicking on this will take us to the booking page as seen below.
+- The other nav items are the Register and login links if the 
 
 ## Testing
 
@@ -75,6 +80,18 @@ Repeat for each feature
 #### cancel_booking.html
 - The cancel booking page was tested and found no errors as shown below.
 <img width="1699" alt="Screenshot 2024-10-10 at 23 58 44" src="https://github.com/user-attachments/assets/b52c47c8-e74a-4358-87e0-51d7bbd6905c">
+
+#### create_review.html
+-The create review page was tested by and showed errors as seen in the image below.
+<img width="1704" alt="Screenshot 2024-10-11 at 00 11 55" src="https://github.com/user-attachments/assets/e7018f41-50d7-495a-9918-ab8f32e8ac4d">
+ 
+- These errors were fixed by taking out the type = submit attribute as they are no longer buttons and have been changed to spans. Fixed screenshot can be seen below.
+<img width="1705" alt="Screenshot 2024-10-11 at 00 15 30" src="https://github.com/user-attachments/assets/2cc3b18e-dfda-421f-8f45-a569f6be10f1">
+
+#### reviews.html
+- The reviews list page was tested and it returned no errors.
+<img width="1702" alt="Screenshot 2024-10-11 at 00 27 57" src="https://github.com/user-attachments/assets/def40845-2d0f-480b-a234-ebdaf0a8e0c7">
+
 
 
 
