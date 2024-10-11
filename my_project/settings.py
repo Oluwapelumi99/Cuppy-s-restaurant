@@ -103,14 +103,20 @@ WSGI_APPLICATION = 'my_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+# DATABASES = {
+#     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-}
-DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 if 'test' in sys.argv:
     DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
@@ -157,15 +163,15 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, "send_mail")
 EMAIL_USE_TLS = True
 
-from pprint import pprint
-import googlemaps
-GOOGLE_MAPS_API_KEY = os.environ.get('API_KEY')
-GMAPS_CLIENT = googlemaps.Client(GOOGLE_MAPS_API_KEY)
+# from pprint import pprint
+# import googlemaps
+# GOOGLE_MAPS_API_KEY = os.environ.get('API_KEY')
+# GMAPS_CLIENT = googlemaps.Client(GOOGLE_MAPS_API_KEY)
 
-restaurant_address = 'Osmaston Road, DE1 2EH, Derby, UK'
-response = GMAPS_CLIENT.geocode(restaurant_address)
-pprint(response)
-print(response[0]['geometry'])
+# restaurant_address = 'Osmaston Road, DE1 2EH, Derby, UK'
+# response = GMAPS_CLIENT.geocode(restaurant_address)
+# pprint(response)
+# print(response[0]['geometry'])
 
 
 

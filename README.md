@@ -46,13 +46,13 @@
 ### navigations
 <img width="1710" alt="Screenshot 2024-10-11 at 01 18 50" src="https://github.com/user-attachments/assets/1186f933-d7ed-444a-bdcb-14de4f5eb67b">
 
-- At the top of the page, we can see 'Cuppy's, which is the restaurant's name, clicking on Cuppy's lead us to the home_page as seen below.
+- At the top of the page, we can see 'Cuppy's', which is the restaurant's name, clicking on Cuppy's lead us to the home_page as seen below.
 <img width="1703" alt="Screenshot 2024-10-11 at 01 08 05" src="https://github.com/user-attachments/assets/fd0422a8-e487-4d77-8ee3-8e6f99cce32b">
 
 - The navigation bar also shows the home pae and clicking on this will also take us to the home_page as seen below.
 <img width="1703" alt="Screenshot 2024-10-11 at 01 08 05" src="https://github.com/user-attachments/assets/fd0422a8-e487-4d77-8ee3-8e6f99cce32b">
 
-- The booking link can also be seen on the nav bar, clicking on this will take us to the booking page as seen below.
+- The booking page link called 'BOOKINGS' can also be seen on the nav bar, clicking on this will take us to the booking page as seen below.
 <img width="1710" alt="Screenshot 2024-10-11 at 01 09 20" src="https://github.com/user-attachments/assets/67a59977-8ba7-49ac-8c3b-33303aecb11f">
 
 - The other nav items are the Register and login links if the user has not yet registered an account but if the user as an account, it is just logout link next.
@@ -60,10 +60,11 @@
 <img width="1702" alt="Screenshot 2024-10-11 at 01 10 27" src="https://github.com/user-attachments/assets/2081b28d-1ec8-4ea5-a676-6827c6f3cdef">
 - When the log in nav is clicked.
 <img width="1700" alt="Screenshot 2024-10-11 at 01 12 22" src="https://github.com/user-attachments/assets/e9286488-8925-439a-97d3-0e321c97e6f6">
--If a user has logged in and the log out icon is clicked.
+-If a user has logged in and the log out nav item is clicked.
 <img width="1706" alt="Screenshot 2024-10-11 at 01 15 57" src="https://github.com/user-attachments/assets/16db7529-d6dc-47a1-bc2b-9b46b62ad91b">
 
-- On the right corner of the nav bar, the log in status and user name has been added for easily visibility and to improve user's experience so they know if they are logged in.
+- On the right corner of the nav bar, the log in status and user name has been added for easy visibility and to improve user's experience so they know if they are logged in and if they are not logged in, it says so as seen in the image below.
+
 
 
 ## Testing
@@ -119,6 +120,9 @@
 - The Javascript was tested and it did not give any warnings. Image seen below.
 <img width="1706" alt="Screenshot 2024-10-11 at 03 41 27" src="https://github.com/user-attachments/assets/72c37690-4b82-4e1b-a65b-8ae7c395da6a">
 
+- ### Python testing
+- 
+
 
 ### Lighthouse
 
@@ -139,8 +143,11 @@ You can test your site for accessibility through the wave.webaim site - it needs
 - In the middle of the home page, there is a link leading to the booking page which says 'BOOK A TABLE NOW'. Assuming a user is not logged in, when it is clicked it shows the page but does not show the booking form and says 'log in to make a booking' like the image below.
 <img width="1702" alt="Screenshot 2024-10-11 at 01 35 13" src="https://github.com/user-attachments/assets/baa00319-5166-4913-8c21-28589f7bff54">
 
-- if the user is logged in, it shows the booking form for users to make their bookings.
+- If the user is logged in, it shows the booking form for users to make their bookings.
 <img width="1707" alt="Screenshot 2024-10-11 at 01 38 45" src="https://github.com/user-attachments/assets/f9012591-afe5-433f-8557-68577fb9a686">
+
+- If the form is not filled in correctly and the date has not been put in it says to fill in the date as the date is a required feild. 
+<img width="1710" alt="Screenshot 2024-10-11 at 13 38 25" src="https://github.com/user-attachments/assets/e42e8397-d07a-4b38-8e7a-2f175f22277a"> 
 
 -After a booking has been made, it displays a message that says booking has been made successfully and redirects to the home page as seen below.
 <img width="1700" alt="Screenshot 2024-10-11 at 01 43 56" src="https://github.com/user-attachments/assets/fff55a6c-2c45-4b93-958e-29bcd2088eb0">
@@ -156,7 +163,7 @@ You can test your site for accessibility through the wave.webaim site - it needs
 - If the user chooses to edit the booking, example of a booking is shown below:
 <img width="1709" alt="Screenshot 2024-10-11 at 02 28 27" src="https://github.com/user-attachments/assets/46f175c6-2073-4b5c-8ae3-954bcf89ba14">
 
-- If user chooses to edit this boking, it takes them to the booking form and creates an instance of the booking in the form so the form is already prepopulated with the old details like the image below:
+- If user chooses to edit this booking, it takes them to the booking form and creates an instance of the booking in the form so the form is already prepopulated with the old details like the image below:
 <img width="1705" alt="Screenshot 2024-10-11 at 02 31 45" src="https://github.com/user-attachments/assets/29544960-6bf1-4142-b607-7abe882d3c83">
 
 - Once booking has been updated, it directs to the home page and displays a success message. As seen below:
@@ -176,14 +183,52 @@ You can test your site for accessibility through the wave.webaim site - it needs
 
 
 - ### On the review page
-- On the bottom right of the home page, there is a link to the reviews page that says 'Read all {{ review_count }} reviews.' Once this link is clicked it shows all the reviews the restaurant has. As seen below:
+- On the bottom right of the home page, there is a link to the reviews page that says 'Read all {{ review_count }} reviews', (this updates depending on how many reviews the restaurant has. ) ' Once this link is clicked it shows all the reviews the restaurant has. As seen below:
+<img width="563" alt="Screenshot 2024-10-11 at 12 40 09" src="https://github.com/user-attachments/assets/f2b59b9a-ae55-4add-8f3f-816fcb5da472">\
+
+- When the link is clicked, it takes us to the page read all the reviews.
+<img width="1704" alt="Screenshot 2024-10-11 at 12 48 39" src="https://github.com/user-attachments/assets/7c0239a7-5835-42b7-ac17-41b94b29796d">
+
+-  As it can be seen from the image above, users who have not written a review cannot edit or delete other people's review.
+- In the picture below, a review has been made by the currently logged in user, which bring the number of reviews to 4. And it has the option to edit or delete the review. Now cuppystaff is logged in and cuppystaff can now make changes to their reviews.
+<img width="1710" alt="Screenshot 2024-10-11 at 12 54 48" src="https://github.com/user-attachments/assets/1a24884f-355c-43ef-ad4f-18f5d7095e89">
+
+- If they click on edit button, It takes them to the review form and the body of the form is already pre-populated by the previous review the user wrote.As seen below.
+<img width="1701" alt="Screenshot 2024-10-11 at 12 57 53" src="https://github.com/user-attachments/assets/9a7d0467-f103-41cd-abb8-17ddfa876570">
+
+-After the review has been edited, It sends a success message as seen below.
+<img width="1709" alt="Screenshot 2024-10-11 at 12 58 34" src="https://github.com/user-attachments/assets/1d29da57-d2c6-4e4d-b97a-b28392a37a07">
+
+- And when I view the review, the new content have been added to it.
+<img width="1706" alt="Screenshot 2024-10-11 at 12 59 01" src="https://github.com/user-attachments/assets/52efff45-f91b-4190-ad20-551681732df6">
+
+- If the user chooses to delete their review, It asks them if they want to delete the review with a Modal.
+<img width="1689" alt="Screenshot 2024-10-11 at 13 03 07" src="https://github.com/user-attachments/assets/fa9b81af-d2b7-41f0-af3a-62f1e97d95ec">
+
+- If they click on close, it takes them back to the review page. However, if they click on yes, their review is immediately deleted from the database. And it can be seen from the picture that the number of reviews is now back to 3.
+<img width="1707" alt="Screenshot 2024-10-11 at 13 05 52" src="https://github.com/user-attachments/assets/b1471eb9-cab8-4e60-b7cc-9a407f64ad9e">
+
+- If I go back to the reviews page, the review is no longer there.
+<img width="1710" alt="Screenshot 2024-10-11 at 13 08 33" src="https://github.com/user-attachments/assets/648f5360-f421-407a-a50f-d8eda6e0c5f4">
 
 
 
+
+
+
+
+- ### On the register page
+- 
 
 - ### On the Log in page 
-- Users who already registered an account can log into their account.The log in page has ben set to extend base.html and it looks like this now.
+- Users who already registered an account can log into their account.The log in page has been set to extend base.html and it looks like this now.
 <img width="1710" alt="Screenshot 2024-10-11 at 03 13 55" src="https://github.com/user-attachments/assets/401beb75-5314-4638-abfa-fa65af8590b6">
+
+- ### On the log out page
+- Users who have been logged in can log out of their account whenever they want.The log out page has been set to extend base.html and it looks like this now.
+<img width="1706" alt="Screenshot 2024-10-11 at 01 15 57" src="https://github.com/user-attachments/assets/16db7529-d6dc-47a1-bc2b-9b46b62ad91b">
+- And when the user signs out, It sends a success message that says 'You've been signed out'.
+
 
 - ### Footer
 <img width="1703" alt="Screenshot 2024-10-11 at 03 17 30" src="https://github.com/user-attachments/assets/0d80efab-e5ec-403e-b943-d6ed2a07180e">

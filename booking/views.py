@@ -19,7 +19,7 @@ from datetime import datetime, timedelta, timezone
 def customer_bookings(request):
     """
     View to display a customer's bookings
-    ** content **
+    ** context **
 
     ``customer``
     an instance of booking.customer

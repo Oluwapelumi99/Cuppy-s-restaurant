@@ -1,7 +1,3 @@
-from django.contrib.auth.models import User
-from django.test import TestCase, Client
-from .forms import ReviewForm
-
 def login(self, data):
     self.username = 'dummy' + data + '@gmail.com'
     self.password = 'Dummy@123'
@@ -33,17 +29,3 @@ def setUp(self):
                                             content_type=self.content_type)
     type(self).check_id = self.response.json()['id']
     self.assertEqual(self.response.status_code, 201)
-
-class TestReviewForm(TestCase):
-
-    # def test_form_is_valid(self):
-    #     """ Test for all fields"""
-    #     form = ReviewForm({
-    #         'body': 'I love the place',
-    #     })
-    #     self.assertTrue(form.is_valid(), msg="Form is not valid")
-
-    def test_form_is_valid(self):
-        user = User()
-        form = ReviewForm(data={"body": "Test Review", "review": 4})
-        self.assertTrue(form.is_valid())

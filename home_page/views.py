@@ -78,9 +78,6 @@ def submit_review(request):
     if request.method == "POST":
         try:
             review = Review.objects.get(id=rating_id)
-            # rating = Review.objects.all(Review, username=request.user).first()
-            # rating_set.create(username=request.user, rating=rating)
-            # user_rating = rating.rating if rating else 0
             form = ReviewForm(request.POST)
             user = get_object_or_404(User, username=request.user)
             if form.is_valid():
@@ -103,17 +100,6 @@ def submit_review(request):
         return render(request, 'home_page/create_review.html', context)
 
 
-# def rate(request, rating_id):
-#     """
-#     view to integrate star rating system
-#     """
-#     review = Review.objects.get(id=rating_id)
-#     Review.rating.objects.all(Review, username=request.user).delete()
-#     rating_set.create(username=request.user, rating=rating)
-#     return render(request, 'home_page/create_review.html', context)
-
-
-
 def edit_review(request, pk):
     """
     view to edit reviews
@@ -127,11 +113,9 @@ def edit_review(request, pk):
             review = review_form.save(commit=False)
             review.save()
             messages.add_message(request, messages.SUCCESS, 'Review Updated!')
-            # send to home page
             return redirect('home_page')
         else:
             messages.add_message(request, messages.ERROR, 'Error updating review!')
-            #send back to edit page to fix form
             return render(request, 'home_page/reviews.html', context)
     else:
         context={
@@ -153,9 +137,3 @@ def delete_review(request, pk):
         messages.add_message(request, messages.ERROR, 'You can only delete your own review!')
         return render(request, 'home_page/reviews.html', context)
 
-# class geocoding(View):
-#     template_name = 'home_page/location.html'
-
-#     def get(self, request):
-#         return render(request, self.template_name, {'map': map})
-        
