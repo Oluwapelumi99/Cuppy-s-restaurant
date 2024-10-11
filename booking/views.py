@@ -27,7 +27,7 @@ def customer_bookings(request):
     *template*
     ``view_booking.html``
     """
-    bookings = Booking.objects.filter(customer_id=request.user, cancelled=False).order_by('-created_on')
+    bookings = Booking.objects.filter(customer_id=request.user).order_by('-created_on')
     print(bookings)
     if bookings:
         return render(request, 'view_booking.html', {'bookings': bookings})
@@ -35,10 +35,10 @@ def customer_bookings(request):
         messages.add_message(request, messages.ERROR, 'You do not have any bookings, please complete the form below to make bookings.')
         return redirect('booking') 
 
-def email_direct(request):
-    email_address = 'bookingscuppysrestaurant@gmail.com'
-    mailto_link = f'mailto:{urlencode ({"to": email_address})}'
-    return render(request, 'booking.html', {'mailto_link': mailto_link})
+# def email_direct(request):
+#     email_address = 'bookingscuppysrestaurant@gmail.com'
+#     mailto_link = f'mailto:{urlencode ({"to": email_address})}'
+#     return render(request, 'booking.html', {'mailto_link': mailto_link})
 
 
 def booking(request):
@@ -66,7 +66,7 @@ def booking(request):
             end_query_time = booking.start_time + timedelta(hours=2)
             print(start_query_time)
             print(end_query_time)
-            available_tables = Table.objects.exclude(booking__start_time__gt=start_query_time, booking__start_time__lt=end_query_time)
+            available_tables = Table.objects.exclude(booking__start_time__gte=start_query_time, booking__start_time__lte=end_query_time)
             print(available_tables)
             if available_tables.exists():
                 booking.table = available_tables.first()
@@ -74,7 +74,7 @@ def booking(request):
                 booking.save()
                 print('form saved')
                 messages.add_message(request, messages.SUCCESS, 'Your booking has been completed succesffully!')
-                return render(request, 'booking.html', context )
+                return redirect('home_page')
             else:
                messages.add_message(request, messages.ERROR,'Table already reserved, please pick another time')
                return render(request, 'booking.html', context )
@@ -117,7 +117,7 @@ def update_booking(request, pk):
         booking = get_object_or_404(Booking, pk=pk)
         print('got form')
         print(booking.deadline)
-        if booking.start_time > get_72_hour(booking.start_time):
+        if booking.start_time < get_72_hour(booking.start_time):
             print(get_72_hour(booking.start_time))
             if booking_form.is_valid() and booking.customer == request.user:
                 booking = booking_form.save(commit=False)

@@ -13,7 +13,7 @@
 ### Colour Scheme
 ### Typography
 ### Imagery
-## Features
+## Features e.g navs
 ## Testing
 ## Technologies Used
 ## Cloning and forking.
@@ -41,13 +41,30 @@
 - Image used on the home page matches the theme of the site. Image is seen below. It is gotten from https://www.pexels.com
 <img width="1710" alt="Screenshot 2024-10-11 at 00 43 30" src="https://github.com/user-attachments/assets/239a1f5b-7119-48dc-bb30-2c1e8d0cf3c4">
 
-### Feature title - e.g. Navigation
-<img width="1441" alt="Screenshot 2024-10-11 at 00 50 12" src="https://github.com/user-attachments/assets/c936eee6-4494-4958-ba42-15b32c10c6ac">
+### Features
 
-- At the top of the page, we can see 'Cuppy's, which is the restaurant's name, clicking on Cuppy's lead us to the home_page.
-- The navigation bar also shows the home pae and clicking on this will also take us to the home_page.
+### navigations
+<img width="1710" alt="Screenshot 2024-10-11 at 01 18 50" src="https://github.com/user-attachments/assets/1186f933-d7ed-444a-bdcb-14de4f5eb67b">
+
+- At the top of the page, we can see 'Cuppy's, which is the restaurant's name, clicking on Cuppy's lead us to the home_page as seen below.
+<img width="1703" alt="Screenshot 2024-10-11 at 01 08 05" src="https://github.com/user-attachments/assets/fd0422a8-e487-4d77-8ee3-8e6f99cce32b">
+
+- The navigation bar also shows the home pae and clicking on this will also take us to the home_page as seen below.
+<img width="1703" alt="Screenshot 2024-10-11 at 01 08 05" src="https://github.com/user-attachments/assets/fd0422a8-e487-4d77-8ee3-8e6f99cce32b">
+
 - The booking link can also be seen on the nav bar, clicking on this will take us to the booking page as seen below.
-- The other nav items are the Register and login links if the 
+<img width="1710" alt="Screenshot 2024-10-11 at 01 09 20" src="https://github.com/user-attachments/assets/67a59977-8ba7-49ac-8c3b-33303aecb11f">
+
+- The other nav items are the Register and login links if the user has not yet registered an account but if the user as an account, it is just logout link next.
+- The user has not logged in now.
+<img width="1702" alt="Screenshot 2024-10-11 at 01 10 27" src="https://github.com/user-attachments/assets/2081b28d-1ec8-4ea5-a676-6827c6f3cdef">
+- When the log in nav is clicked.
+<img width="1700" alt="Screenshot 2024-10-11 at 01 12 22" src="https://github.com/user-attachments/assets/e9286488-8925-439a-97d3-0e321c97e6f6">
+-If a user has logged in and the log out icon is clicked.
+<img width="1706" alt="Screenshot 2024-10-11 at 01 15 57" src="https://github.com/user-attachments/assets/16db7529-d6dc-47a1-bc2b-9b46b62ad91b">
+
+- On the right corner of the nav bar, the log in status and user name has been added for easily visibility and to improve user's experience so they know if they are logged in.
+
 
 ## Testing
 
@@ -93,11 +110,14 @@
 <img width="1702" alt="Screenshot 2024-10-11 at 00 27 57" src="https://github.com/user-attachments/assets/def40845-2d0f-480b-a234-ebdaf0a8e0c7">
 
 
+### CSS testing
+- The css was tested and it did not give any errors. Image seen below.
+<img width="1704" alt="Screenshot 2024-10-11 at 03 36 21" src="https://github.com/user-attachments/assets/a0293f97-9dc6-4802-829d-ba26e4e5c91b">
 
 
-
-
-
+- ### Javascript testing
+- The Javascript was tested and it did not give any warnings. Image seen below.
+<img width="1706" alt="Screenshot 2024-10-11 at 03 41 27" src="https://github.com/user-attachments/assets/72c37690-4b82-4e1b-a65b-8ae7c395da6a">
 
 
 ### Lighthouse
@@ -108,11 +128,71 @@ You can test your site for accessibility through the wave.webaim site - it needs
 
 ### Manual Testing
 
-You need to perform, and document everything you did to manually test your site.
-At a minimum - you need to check every link on every page works as intended.
-So that is check every link in the nav bar (do this on every single page because its a link in a different file) and any other links that appear on your site.
-Test the responsiveness of the site - you can do this in the dev tools in responsive mode.
-You should also load the site once deployed on as many devices you have access to. What is different from one device to the next? why is it different?
+- ### On the home page
+- <img width="1703" alt="Screenshot 2024-10-11 at 01 08 05" src="https://github.com/user-attachments/assets/fd0422a8-e487-4d77-8ee3-8e6f99cce32b">
+- A transparent background has been created on top of the background image, so it can provide a great contrast to see what is written on it.
+- On the home page, a brief introduction is seen and number to call the restaurant on. Also, an email address that links directly to the restaurants email address as seen below.
+<img width="1701" alt="Screenshot 2024-10-11 at 01 32 37" src="https://github.com/user-attachments/assets/47834070-34ec-448a-85f3-6ff458ad50bb">
+
+
+- ### On the booking page
+- In the middle of the home page, there is a link leading to the booking page which says 'BOOK A TABLE NOW'. Assuming a user is not logged in, when it is clicked it shows the page but does not show the booking form and says 'log in to make a booking' like the image below.
+<img width="1702" alt="Screenshot 2024-10-11 at 01 35 13" src="https://github.com/user-attachments/assets/baa00319-5166-4913-8c21-28589f7bff54">
+
+- if the user is logged in, it shows the booking form for users to make their bookings.
+<img width="1707" alt="Screenshot 2024-10-11 at 01 38 45" src="https://github.com/user-attachments/assets/f9012591-afe5-433f-8557-68577fb9a686">
+
+-After a booking has been made, it displays a message that says booking has been made successfully and redirects to the home page as seen below.
+<img width="1700" alt="Screenshot 2024-10-11 at 01 43 56" src="https://github.com/user-attachments/assets/fff55a6c-2c45-4b93-958e-29bcd2088eb0">
+
+- The booking logic has been designed in the function to check for available tables before making a booking, as the booking only accomodates one couple or only one person so a table can only be available at a time. If the time the user is picking is not available, it says table is already reserved as seen below.
+<img width="1710" alt="Screenshot 2024-10-11 at 02 04 33" src="https://github.com/user-attachments/assets/1c7d0535-6844-44d0-a9ca-f7961633de73">
+
+- The link on the booking page which says 'view booking' if they already have a booking, when that is clicked, it shows a detail of all the bookings that customer has made.
+<img width="1707" alt="Screenshot 2024-10-11 at 02 13 39" src="https://github.com/user-attachments/assets/533dad49-0551-4805-9ce4-671a65e039b9">
+
+- When the booking user views their bookings, they have the option to either edit or cancel their bookings.
+
+- If the user chooses to edit the booking, example of a booking is shown below:
+<img width="1709" alt="Screenshot 2024-10-11 at 02 28 27" src="https://github.com/user-attachments/assets/46f175c6-2073-4b5c-8ae3-954bcf89ba14">
+
+- If user chooses to edit this boking, it takes them to the booking form and creates an instance of the booking in the form so the form is already prepopulated with the old details like the image below:
+<img width="1705" alt="Screenshot 2024-10-11 at 02 31 45" src="https://github.com/user-attachments/assets/29544960-6bf1-4142-b607-7abe882d3c83">
+
+- Once booking has been updated, it directs to the home page and displays a success message. As seen below:
+<img width="1706" alt="Screenshot 2024-10-11 at 02 36 04" src="https://github.com/user-attachments/assets/7af8d389-ff7c-450c-84a8-70537a011d8c">
+
+- A function to only make changes to bookings have been implemented and it will not allow users to make changes to bookings 72 hours before booking date.
+<img width="1709" alt="Screenshot 2024-10-11 at 02 34 34" src="https://github.com/user-attachments/assets/b9b6cfb1-9592-43cb-88e1-b74a995709bf">
+
+- If the user chooses to cancel their booking, It asks them if they are sure about deleting their booking as shown in the mage below:
+<img width="1703" alt="Screenshot 2024-10-11 at 02 18 40" src="https://github.com/user-attachments/assets/9a571940-05c4-4759-80c1-2b92add58982">
+
+- If the user clicks on yes, it deletes the booking from the database and shows a success message, as seen below: The user had 3 booking now there are just 2.
+<img width="1708" alt="Screenshot 2024-10-11 at 02 21 16" src="https://github.com/user-attachments/assets/7abad95e-3426-47ac-8dde-f947c12a8ebb">
+
+- However, if the user does not have any booking, it displays a message that says 'You do not have any bookings. Please complete the form to make bookings' and displays the booking form. Image shown below.
+<img width="1707" alt="Screenshot 2024-10-11 at 02 23 50" src="https://github.com/user-attachments/assets/1f0a944a-49c9-44f1-9b3b-0756add2b198">
+
+
+- ### On the review page
+- On the bottom right of the home page, there is a link to the reviews page that says 'Read all {{ review_count }} reviews.' Once this link is clicked it shows all the reviews the restaurant has. As seen below:
+
+
+
+
+- ### On the Log in page 
+- Users who already registered an account can log into their account.The log in page has ben set to extend base.html and it looks like this now.
+<img width="1710" alt="Screenshot 2024-10-11 at 03 13 55" src="https://github.com/user-attachments/assets/401beb75-5314-4638-abfa-fa65af8590b6">
+
+- ### Footer
+<img width="1703" alt="Screenshot 2024-10-11 at 03 17 30" src="https://github.com/user-attachments/assets/0d80efab-e5ec-403e-b943-d6ed2a07180e">
+- The footer contains a block copyright of 'Cuppy's Restaurant'.
+- It also contains links to facebook, instagram, twitter and youtube which are social media and they are working as seen in the pictures below.
+<img width="1701" alt="Screenshot 2024-10-11 at 03 29 48" src="https://github.com/user-attachments/assets/ae5ad45c-291d-47ba-add4-d2e46b02fb2d">
+<img width="1708" alt="Screenshot 2024-10-11 at 03 30 22" src="https://github.com/user-attachments/assets/9a9266b9-f5c6-4f23-8bca-a71fdb430a00">
+<img width="1708" alt="Screenshot 2024-10-11 at 03 30 40" src="https://github.com/user-attachments/assets/1128bf40-3d5a-4249-9e7d-43cd7f0c452d">
+<img width="1708" alt="Screenshot 2024-10-11 at 03 30 54" src="https://github.com/user-attachments/assets/bf7e90e2-8e0e-4fbd-b119-0b7b6ee508aa">
 
 Test the user stories that you created earlier in the readme - did you satisfy the goal, how?
 

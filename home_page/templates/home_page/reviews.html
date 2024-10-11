@@ -14,7 +14,7 @@
 <!--Displaying reviews-->    
         {% for review in reviews %}
         
-            <div id="reviews" class="col text-center">{{ review.author }}
+            <div id="reviews" class="col text-center font-weight-bold">{{ review.author }}
             {% csrf_token %}
             <span class="font-weight-normal">
               {{ review.created_on }}

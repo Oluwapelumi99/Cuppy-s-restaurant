@@ -36,10 +36,6 @@ class Table(models.Model):
 PEOPLE_CHOICES = [
     ('1', '1'),
     ('2', '2'),
-    ('3', '3'),
-    ('4', '4'),
-    ('5', '5'),
-    ('6', '6'),
 ]
 class Booking(models.Model):
     """
@@ -49,12 +45,11 @@ class Booking(models.Model):
     customer = models.ForeignKey(User, on_delete=models.CASCADE, default=None, null=True)
     table = models.ForeignKey(Table, on_delete=models.CASCADE, default=None, null=True)
     start_time = models.DateTimeField(verbose_name= 'booking_dateandtime_start', null=False, blank=False)
-    number_of_guests = models.CharField(max_length=6, choices=PEOPLE_CHOICES, default='2')
+    number_of_guests = models.CharField(max_length=2, choices=PEOPLE_CHOICES, default='2')
     created_on = models.DateTimeField(auto_now_add=True)
     special_request = models.TextField(max_length=1024)
     deadline = models.DateTimeField(default=datetime.now() + timedelta(hours=72))
     draft = models.BooleanField(default=False)
-    cancelled = models.BooleanField(default=False)
     class Meta:
         ordering = ["created_on"]
 
