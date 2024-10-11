@@ -8,11 +8,18 @@
 <!-- Hero Image-->
 <div id="opacity">
   <img class="card-img-top" src="{% static 'images/A-restaurant-picture-with-tables-and-chairs.jpg' %}"
-      alt="Restaurant image" id="hero-image">
+    alt="Restaurant image" id="hero-image">
     <!-- Body Entries Column -->
 
     <!--Restaurant introduction-->
   <div id="description">
+    <div id="loggedin" class="text-muted ">
+      {% if user.is_authenticated %}
+      <div> You are logged in as {{ user }}</div>
+      {% else %}
+      <div>You are not logged in</div>
+      {% endif %}
+  </div>
       <div id="content">
       "Here, at Cuppy's, in the City of Derby, we understand cravings
       <br>
@@ -34,9 +41,13 @@
       We promise an experience that will keep you coming back for more!
       <br>
     </div>
+    <div>
   <p id="location">You can find us on Osmaston Road, Derby, United Kingdom.
     <br>
-    If you are having issues booking onine, Call our customer service on: 01332000000
+    If you are having issues booking onine,
+    <br>
+    Call our customer service on: 01332000000
+    <br>
     or click on the email address to send your enquiries
     <br>
     <a href="mailto:bookingscuppysrestaurant@gmail.com"> bookingscuppysrestaurant@gmail.com</a>
@@ -47,11 +58,7 @@
         <div id="reviews_page">
             <a href="{% url 'review_list' %}">Read all {{ review_count }} reviews</a>
     </div>
-          <!-- <button  class="my-btn fa fa-star fa checked" ></button>
-          <button  class="my-btn fa fa-star fa checked" ></button>
-          <button  class="my-btn fa fa-star fa checked" ></button>
-          <button  class="my-btn fa fa-star fa checked" ></button>
-          <button  class="my-btn fa fa-star fa checked" ></button> -->
+</div>
 </div>
 
 <!-- index.html content ends here -->

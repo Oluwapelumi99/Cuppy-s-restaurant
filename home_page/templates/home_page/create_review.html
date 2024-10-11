@@ -7,43 +7,11 @@
 <form method="POST" class="col text-center mt-5">
     {{ form.as_p}}
     {% csrf_token %}
-    <button type="submit">Submit</button>
+    <button class="btn-signup" type="submit">Submit</button>
 </form>
     {% else %}
 <p>Log in to leave a review</p>
     {% endif %}
-
-    <!--Rating stars-->
-    <div class="container" style="padding: 2em">
-     
-        <div class="col text-center">
-            <h5>How many stars would you rate Cuppy's restaurant?:
-                <span  class="my-btn fa fa-star fa-3x {% if review.average_rating > 0 %} checked {% endif %}" id="first"></span>
-                <span  class="my-btn fa fa-star fa-3x {% if review.average_rating > 1 %} checked {% endif %}" id="second"></span>
-                <span  class="my-btn fa fa-star fa-3x {% if review.average_rating > 2 %} checked {% endif %}" id="third"></span>
-                <span  class="my-btn fa fa-star fa-3x {% if review.average_rating > 3 %} checked {% endif %}" id="fourth"></span>
-                <span  class="my-btn fa fa-star fa-3x {% if review.average_rating > 4 %} checked {% endif %}" id="fifth"></span>
-                <br>
-            </h5>
-
-                <ul class="btn btn-light list-inline rating-list">
-                    <li onclick="rate(5, {{ rating.id }})">
-                        <i class="fa fa-star {% if user_rating > 4 %} checked {% endif %}" title="Rate 5"></i>   
-                    </li>
-                    <li onclick="rate(4, {{ rating.id }})">
-                        <i class="fa fa-star {% if user_rating > 3 %} checked {% endif %}" title="Rate 4"></i>   
-                    </li>
-                    <li onclick="rate(3, {{ rating.id }})">
-                        <i class="fa fa-star {% if user_rating > 2 %} checked {% endif %}" title="Rate 3"></i>   
-                    </li>
-                    <li onclick="rate (2, {{ rating.id }})">
-                        <i class="fa fa-star {% if review.rating > 1 %} checked {% endif %}" title="Rate 2"></i>   
-                    </li>
-                    <li onclick="rate(1, {{ review.rating.id }})">
-                        <i class="fa fa-star {% if user_rating > 0 %} checked {% endif %}" title="Rate 1"></i>   
-                    </li>
-                </ul>
-        </div>
         <br>
         <!-- <div id="confirm-box"></div> -->
          

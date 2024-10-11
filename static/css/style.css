@@ -1,7 +1,17 @@
+* {
+    padding: 0;
+    margin: 0;
+}
 body {
     background-color: #ffc0cb;
+    width: 100vw;
+    height: 100vh;
 }
-
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
 /*index.html css*/
 #hero-image {
     width: 100vw;
@@ -10,35 +20,38 @@ body {
     position: fixed;
     z-index: -1;
 }
+#description {
+    color: #fff4f9;
+    font-size: 15px;
+    font-family: 'dancing script', sans-serif; 
+}
+#loggedin{
+    padding-top: 5px;
+    text-align: center;
+}
 #opacity {
     background-color:  rgba(4, 0, 1, 0.6);
-    height: 86.5vh;
+    height: 100vh;
+    width: 100vw;
 }
 
+#content {
+    padding-left: 1px; 
+    padding-top: 20px;
+    
+}
+#location {
+    padding-right: 1px;
+    margin-top: 30px;
+}
 #book_table {
     font-family: 'dancing script', sans-serif;
     font-size: 22px;
     border-radius: 10px; 
 }
-
-#description {
-    color: #fff4f9;
-    display: flex;
-    font-size: 20px;
-    font-family: 'dancing script', sans-serif;
-    
+#reviews_page {
+    text-align: center;
 }
-
-#content {
-    margin-top: 50px;
-    margin-left: 50px;
-    
-}
-#location {
-    margin-top: 150px;
-    margin-left: 250px;
-}
-
 /* booking.html css*/
 #details {
     padding-left: 20px;
@@ -75,29 +88,6 @@ body {
     padding-top: 50px;
 }
 
-#map {
-    min-height: 360px; 
-    width: 300px;}
-
-/* Rating css*/
-.rating-list li {
-    float: right;
-    color: #ddd;
-    padding: 10px 5px;
-}
-
-.rating-list li:hover,
-.rating-list li:hover ~ li {
-    color: orange;
-}
-.rating-list {
-    display: inline-block;
-    list-style: none;
-}
-.checked {
-    color: orange;
-  }
-
 .my-btn {
     background-color: inherit !important;
     border: 0 !important;
@@ -111,7 +101,6 @@ body {
 
 /* Reviews page css*/
 #reviews_page {   
-    margin-left: 1450px;
     color: #fff;
     font-family: 'dancing script', sans-serif;
     font-size: 20px;
@@ -119,11 +108,11 @@ body {
 .font-weight-bold {
     font-size: large;
 }
-
 #password {
-    margin-top: 10px;
-    margin-left: 430px;
+    margin-top: 5px;
+    margin-left: 30px;
 }
+
 a {
     text-decoration: underline;
     color: inherit;
@@ -135,4 +124,71 @@ footer {
     width: 100%;
     background-color: rgba(4, 0, 1, 0.6);   
 }
+/* Media queries for smaller devices less than 350px*/
+/*Media queries*/
+@media screen and (max-width:350px) {
+    .navbar-text {
+        display: none  
+    }
+}
+/*Media queries of screen sizes bigger than 768px and up*/
+/*Media queries*/
+@media screen and (min-width :768px) {
+    #loggedin {
+        display: none;
+    }
+    #password {
+        margin-top: 10px;
+        margin-left: 370px;
+    }
+    #description {
+        color: #fff4f9;
+        display: flex;
+        font-size: 20px;
+        font-family: 'dancing script', sans-serif;
+        
+    }
+    #hero-image {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        position: fixed;
+        z-index: -1;
+    }
 
+    #reviews_page {   
+        margin-left: 1000px;
+        color: #fff;
+        font-family: 'dancing script', sans-serif;
+        font-size: 20px;
+    }
+    #location {
+        margin-top: 150px;
+        margin-left: 250px;
+    }
+    #content {
+        margin-top: 20px;
+        margin-left: 50px;
+        
+    }
+    #book_table {
+        font-family: 'dancing script', sans-serif;
+        font-size: 22px;
+        border-radius: 10px; 
+    }
+    #details {
+        padding-left: 20px;
+        padding-top: 20px;
+        font-family: 'dancing script', sans-serif;
+        font-size: 20px;
+        display: flex;
+    }
+}
+/*Media queries of screen sizes bigger than 992px and up*/
+@media screen and (min-width: 992px){
+   #opacity {
+    background-color:  rgba(4, 0, 1, 0.6);
+    height: 100vh;
+    width: 100vw;
+    }
+}
