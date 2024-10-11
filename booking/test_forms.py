@@ -8,7 +8,7 @@ class TestBookingForm(TestCase):
     
 
     def test_form_is_valid(self):
-        form = BookingForm({'start_time': '24/10/2024, 10:30', 'number_of_guests': '2', 'special_request': 'Test Form'})
+        form = BookingForm({'start_time': '2024-10-31T23:16', 'number_of_guests': '2', 'special_request': 'Test Form'})
         self.assertTrue(form.is_valid(), msg='Form is not valid')
 
     

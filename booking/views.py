@@ -59,6 +59,7 @@ def booking(request):
     if request.method == 'POST':
         if form.is_valid():
             print('form valid')
+            print(form)
             booking = form.save(commit=False)
             tables = Table.objects.filter(approved=True)
             print(len(tables))
