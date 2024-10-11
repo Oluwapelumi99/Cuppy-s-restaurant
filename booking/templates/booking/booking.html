@@ -4,6 +4,13 @@
 {% load static %}
 {% load crispy_forms_tags %}
 <div id="details">
+    <div id="loggedin" class="text-muted ">
+        {% if user.is_authenticated %}
+        <div> You are logged in as {{ user }}</div>
+        {% else %}
+        <div>You are not logged in</div>
+        {% endif %}
+    </div>
     <div>
         <h3>RESERVATIONS</h3>
         <p>Online Reservations are available for a single couple or only one person, for larger group contact 

@@ -7,9 +7,8 @@ body {
     width: 100vw;
     height: 100vh;
 }
-nav {
+.navbar-text {
     position: fixed;
-    top: 0;
     width: 100%;
 }
 /*index.html css*/
@@ -57,14 +56,13 @@ nav {
     padding-left: 20px;
     padding-top: 20px;
     font-family: 'dancing script', sans-serif;
-    font-size: 20px;
-    display: flex;
+    font-size: 15px;
 }
 
 #bookform {
     font-family: 'dancing script', sans-serif;
-    margin-top: 90px;
-    margin-left: 50px;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 #bookform_submit {
@@ -134,6 +132,17 @@ footer {
 /*Media queries of screen sizes bigger than 768px and up*/
 /*Media queries*/
 @media screen and (min-width :768px) {
+    body {
+        background-color: #ffc0cb;
+        width: 100vw;
+        height: 100vh;
+    }
+/*index.html page*/
+    #opacity {
+        background-color:  rgba(4, 0, 1, 0.6);
+        height: 100vh;
+        width: 100vw;
+    }
     #loggedin {
         display: none;
     }
@@ -145,22 +154,7 @@ footer {
         color: #fff4f9;
         display: flex;
         font-size: 20px;
-        font-family: 'dancing script', sans-serif;
-        
-    }
-    #hero-image {
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover;
-        position: fixed;
-        z-index: -1;
-    }
-
-    #reviews_page {   
-        margin-left: 1000px;
-        color: #fff;
-        font-family: 'dancing script', sans-serif;
-        font-size: 20px;
+        font-family: 'dancing script', sans-serif; 
     }
     #location {
         margin-top: 150px;
@@ -171,17 +165,39 @@ footer {
         margin-left: 50px;
         
     }
+    #hero-image {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        position: fixed;
+        z-index: -1;
+    }
     #book_table {
         font-family: 'dancing script', sans-serif;
         font-size: 22px;
         border-radius: 10px; 
     }
+
+/*Booking.html page*/
+    #bookform {
+        margin-top: 90px;
+        margin-left: 50px;
+    }
+
     #details {
         padding-left: 20px;
         padding-top: 20px;
         font-family: 'dancing script', sans-serif;
         font-size: 20px;
         display: flex;
+    }
+
+/*Reviews page*/
+    #reviews_page {   
+        margin-left: 500px;
+        color: #fff;
+        font-family: 'dancing script', sans-serif;
+        font-size: 20px;
     }
 }
 /*Media queries of screen sizes bigger than 992px and up*/

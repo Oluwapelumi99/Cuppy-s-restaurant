@@ -184,12 +184,23 @@ You can test your site for accessibility through the wave.webaim site - it needs
 
 - ### On the review page
 - On the bottom right of the home page, there is a link to the reviews page that says 'Read all {{ review_count }} reviews', (this updates depending on how many reviews the restaurant has. ) ' Once this link is clicked it shows all the reviews the restaurant has. As seen below:
-<img width="563" alt="Screenshot 2024-10-11 at 12 40 09" src="https://github.com/user-attachments/assets/f2b59b9a-ae55-4add-8f3f-816fcb5da472">\
+<img width="563" alt="Screenshot 2024-10-11 at 12 40 09" src="https://github.com/user-attachments/assets/f2b59b9a-ae55-4add-8f3f-816fcb5da472">
 
 - When the link is clicked, it takes us to the page read all the reviews.
 <img width="1704" alt="Screenshot 2024-10-11 at 12 48 39" src="https://github.com/user-attachments/assets/7c0239a7-5835-42b7-ac17-41b94b29796d">
 
--  As it can be seen from the image above, users who have not written a review cannot edit or delete other people's review.
+- To create reviews, user will click on 'write reviews' and it will take them to the review form page. as seen below.
+<img width="1707" alt="Screenshot 2024-10-11 at 23 07 51" src="https://github.com/user-attachments/assets/7ba58bd6-41d6-4fd0-9a12-21473f7a7879">
+
+- After review has been created, it sends a success message. saying 'review created'
+<img width="1710" alt="Screenshot 2024-10-11 at 23 08 22" src="https://github.com/user-attachments/assets/a2cd4c02-7008-4ea6-83c8-a150ae9512f4">
+
+-And the review is updated to the database.
+<img width="1706" alt="Screenshot 2024-10-11 at 23 08 39" src="https://github.com/user-attachments/assets/9c2a5367-1d21-4928-a70d-461ea4e41af0">
+
+
+-  As it can be seen from the image below, users who have not written a review cannot edit or delete other people's review.
+<img width="1704" alt="Screenshot 2024-10-11 at 12 48 39" src="https://github.com/user-attachments/assets/7c0239a7-5835-42b7-ac17-41b94b29796d">
 - In the picture below, a review has been made by the currently logged in user, which bring the number of reviews to 4. And it has the option to edit or delete the review. Now cuppystaff is logged in and cuppystaff can now make changes to their reviews.
 <img width="1710" alt="Screenshot 2024-10-11 at 12 54 48" src="https://github.com/user-attachments/assets/1a24884f-355c-43ef-ad4f-18f5d7095e89">
 
@@ -211,14 +222,24 @@ You can test your site for accessibility through the wave.webaim site - it needs
 - If I go back to the reviews page, the review is no longer there.
 <img width="1710" alt="Screenshot 2024-10-11 at 13 08 33" src="https://github.com/user-attachments/assets/648f5360-f421-407a-a50f-d8eda6e0c5f4">
 
-
-
-
-
-
-
 - ### On the register page
-- 
+- Users can create an account by clicking on the Register text in the nav bar, which takes them to the register page as seen below.
+<img width="1708" alt="Screenshot 2024-10-11 at 23 16 46" src="https://github.com/user-attachments/assets/c17a730f-c567-4ecc-8d6a-8e95729420ed">
+
+- After they have signed up, an email verification link is sent to their email address for them to verify their email account as shown below.
+<img width="1707" alt="Screenshot 2024-10-11 at 23 24 01" src="https://github.com/user-attachments/assets/01f243da-36e9-4467-aa24-f39fe833adf0">
+
+-An email that was received from the restaurant app is seen in the screenshot below.
+<img width="1271" alt="Screenshot 2024-10-11 at 23 24 17" src="https://github.com/user-attachments/assets/cfde29d8-e0e7-484d-b1ee-adb7d0de247b">
+
+- After ther user clicks on the link sent to their email, it redirects them to the confirm email page.
+<img width="1186" alt="Screenshot 2024-10-11 at 23 31 11" src="https://github.com/user-attachments/assets/5bbab981-711c-4eeb-b269-acef5cd8d660">
+
+-After confirmation, it takes them to the sign in page now. And sends a success messgae as seen below:
+<img width="1705" alt="Screenshot 2024-10-11 at 23 31 29" src="https://github.com/user-attachments/assets/5e7c0b1b-ff76-40d5-957b-eb7a7b8dd479">
+
+- After the user can click on sign in and the user is successfully signed in then it sends a success message.
+<img width="1710" alt="Screenshot 2024-10-11 at 23 32 29" src="https://github.com/user-attachments/assets/c6a200fc-ccd5-402f-a1ae-e3da81bb41fa">
 
 - ### On the Log in page 
 - Users who already registered an account can log into their account.The log in page has been set to extend base.html and it looks like this now.
@@ -229,6 +250,25 @@ You can test your site for accessibility through the wave.webaim site - it needs
 <img width="1706" alt="Screenshot 2024-10-11 at 01 15 57" src="https://github.com/user-attachments/assets/16db7529-d6dc-47a1-bc2b-9b46b62ad91b">
 - And when the user signs out, It sends a success message that says 'You've been signed out'.
 
+- ### Forgot password page
+- Users can reset their password if they have forgotten it.
+- On the sign in page, there is a link that says 'Forgot password?'
+<img width="1709" alt="Screenshot 2024-10-11 at 23 39 34" src="https://github.com/user-attachments/assets/64c7cca6-f6fd-4d2f-8610-f040aac8a0cc">
+
+- If user clicks on it, it takes them to the reset password page, here they can put in their email address so they can be sent an email.
+<img width="1710" alt="Screenshot 2024-10-11 at 23 39 46" src="https://github.com/user-attachments/assets/c42b926b-09fb-418d-9178-43c041f822bd">
+
+- After that, it confirms that an email has been sent.
+<img width="1710" alt="Screenshot 2024-10-11 at 23 40 04" src="https://github.com/user-attachments/assets/342be8c3-ee73-4eab-81c7-7eb9eedae6df">
+
+- Email that was sent it seen below.
+<img width="1269" alt="Screenshot 2024-10-11 at 23 40 20" src="https://github.com/user-attachments/assets/20d7bf94-f344-4864-add2-783be64f78c4">
+
+- Then I can change my password.
+<img width="1710" alt="Screenshot 2024-10-11 at 23 40 59" src="https://github.com/user-attachments/assets/3ee17800-781a-47df-9490-1999fdb641b7">
+
+- After, it sends a success message that my password has been changed successfully
+<img width="1706" alt="Screenshot 2024-10-11 at 23 41 17" src="https://github.com/user-attachments/assets/8b445b29-ece5-409a-91b5-26af465b88ba">
 
 - ### Footer
 <img width="1703" alt="Screenshot 2024-10-11 at 03 17 30" src="https://github.com/user-attachments/assets/0d80efab-e5ec-403e-b943-d6ed2a07180e">
@@ -259,6 +299,7 @@ You should have tests for every section of every page.. individually.
 - https://code.visualstudio.com
 - https://www.heroku.com
 - https://pep8ci.herokuapp.com/
+- https://djangoproject.com
 -
 
 ## Cloning and forking.
