@@ -77,13 +77,17 @@ def submit_review(request):
     """
     if request.method == "POST":
         try:
-            review = Review.objects.get(id=rating_id)
             form = ReviewForm(request.POST)
+            print('got form')
             user = get_object_or_404(User, username=request.user)
+            print('got user')
             if form.is_valid():
+                print('form is valid')
                 review = form.save(commit=False)
                 review.author = user
+                print('added user')
                 review.save()
+                print('saved')
                 messages.add_message(request, messages.SUCCESS, 'Review Created!')
                 return redirect('home_page')
             else:
