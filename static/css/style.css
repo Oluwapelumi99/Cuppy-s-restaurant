@@ -7,10 +7,7 @@ body {
     width: 100vw;
     height: 100vh;
 }
-.navbar-text {
-    position: fixed;
-    width: 100%;
-}
+
 /*index.html css*/
 #hero-image {
     width: 100vw;
