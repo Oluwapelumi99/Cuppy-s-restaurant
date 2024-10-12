@@ -1,24 +1,50 @@
 # Cuppy's Restaurant
-![image of site](link to image) - use an image from AmIResponsive that shows the site on multiple devices
 
 ## Introduction
 - This is a project demonstrating a restaurant booking system. In this project, I will create a system to reserve tables in a restaurant and users can also make changes to their booking. Users will also be able to leave reviews on what they think about this restaurant and they will be able to edit and delete these reviews if they wish to.
-- Users will also have the opportunity to create their accounts which has to be done in order to make bookings or leave reviews and an email to verify their account and reset their account will be sent to their email address.
+- Users will also have the opportunity to create their accounts which has to be done in order to make bookings or leave reviews and an email to verify their account when they register will be sent to their email address and they can also reset their password if they have forgotten their password.
 - This site was made to put what I have learnt so far in HTML, CSS, JAVASCRIPT AND PYTHON to test.
+
+<img width="1695" alt="Screenshot 2024-10-11 at 22 35 57" src="https://github.com/user-attachments/assets/d73fbc7e-7867-494b-8ca4-44ce425c359a">
 
 ## Table of Contents
 
-## User Experience
+## User Stroies
+- User Goals
+- Site owner goals
 ## Design
-### Colour Scheme
-### Typography
-### Imagery
-## Features e.g navs
+- Colour Scheme
+- Typography
+- Imagery
+## Features
+- Favicon
+- Nav bar
+- Home page
+- Bookings page
+- Reviews page
+- Register page
+- Sign up page
+- Email verification page
 ## Testing
-## Technologies Used
-## Cloning and forking.
+- Manual testing
+- Automated testing
+## Bugs
+- Solved bugs
+## Validator testing
+- HTML
+- CSS
+- JAVASCRIPT
+- PYTHON
+## Accessibility
+## Unfixed bugs
+## Cloning and Forking
+## Technologies used
 ## Deployment
 ## Credits
+-Media
+-Fonts
+-Icons
+-Content
 
 ### User Stories
 - User Goals
@@ -126,6 +152,28 @@
 
 ### Lighthouse
 
+- I confrimed that the colors and font chosen are easy to read and accessible by running it through lighthose in dev tools. And I also made sure all buttons were asseccible by screen readers by adding an aria-label attribute to each button and image.
+
+- ### Home page
+<img width="1703" alt="Screenshot 2024-10-12 at 01 02 36" src="https://github.com/user-attachments/assets/b8f8cd8e-5685-473a-95fb-1f1a0e45bb80">
+<img width="1707" alt="Screenshot 2024-10-12 at 01 03 28" src="https://github.com/user-attachments/assets/c62fb028-3c09-4def-bc92-f59d0cf30c61">
+<img width="1707" alt="Screenshot 2024-10-12 at 01 03 51" src="https://github.com/user-attachments/assets/fb1aa611-0607-4d96-b519-a6f8a487a66e">
+
+- ### Bookings page 
+<img width="1695" alt="Screenshot 2024-10-12 at 01 05 00" src="https://github.com/user-attachments/assets/c2262ae4-40f3-4f02-a609-65dd4135ed1b">
+<img width="1700" alt="Screenshot 2024-10-12 at 01 05 16" src="https://github.com/user-attachments/assets/7d036862-8f0a-4736-aea3-82ecc52bde85">
+
+- ### Reviews page 
+
+
+
+- ### Register page
+<img width="1708" alt="Screenshot 2024-10-12 at 01 06 49" src="https://github.com/user-attachments/assets/4eee25c5-4d1c-42a6-8b94-f6702597fc9f">
+<img width="1710" alt="Screenshot 2024-10-12 at 01 07 06" src="https://github.com/user-attachments/assets/b56ad14b-9c90-4b41-87ce-1dcc1681e6d0">
+
+- ### Login page
+<img width="1708" alt="Screenshot 2024-10-12 at 01 08 18" src="https://github.com/user-attachments/assets/166fa607-f74e-4f87-bbfa-0638000524f4">
+<img width="1710" alt="Screenshot 2024-10-12 at 01 08 34" src="https://github.com/user-attachments/assets/91d88e27-ce52-4650-a618-c9c946273aa2">
 
 ### Wave Webaim - accessibility testing
 You can test your site for accessibility through the wave.webaim site - it needs to be deployed in order for it to test it. Fix any errors that it gives
@@ -300,7 +348,9 @@ You should have tests for every section of every page.. individually.
 - https://www.heroku.com
 - https://pep8ci.herokuapp.com/
 - https://djangoproject.com
--
+- Lighthouse on google chrome
+- Chrome dev tools
+- https://ui.dev/amiresponsive
 
 ## Cloning and forking.
 ### CLONING
