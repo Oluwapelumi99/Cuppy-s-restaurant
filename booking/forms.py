@@ -2,19 +2,6 @@ from django import forms
 from .models import Booking, Table, Customer
 
 
-
-# class CustomerForm(forms.ModelForm):
-#     class Meta:
-#         model = Customer
-#         fields = '__all__'
-
-
-# class TableForm(forms.ModelForm):
-#     class Meta:
-#         model = Table
-#         fields = ['seats']
-
-
 class BookingForm(forms.ModelForm):
     """
     Provide a form to customers on the booking page to make their bookings

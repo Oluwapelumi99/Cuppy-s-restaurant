@@ -32,13 +32,15 @@ body {
 }
 
 #content {
-    padding-left: 1px; 
+    padding-left: 5px; 
     padding-top: 20px;
     
 }
 #location {
-    padding-right: 1px;
+    padding-right: 5px;
     margin-top: 30px;
+    position: absolute;
+    right: 0; 
 }
 #book_table {
     font-family: 'dancing script', sans-serif;
@@ -89,7 +91,7 @@ body {
 }
 
 #make-bookings {
-    margin-top: 50px;
+    margin-top: 170px;
     text-align: center;
     color: #ffc0cb;
 }
@@ -119,16 +121,17 @@ footer {
     width: 100%;
     background-color: rgba(4, 0, 1, 0.6);   
 }
-/* Media queries for smaller devices less than 350px*/
+/* Media queries for smaller devices less than 768px*/
 /*Media queries*/
-@media screen and (max-width:350px) {
+@media screen and (max-width:768px) {
     .navbar-text {
         display: none  
     }
 }
-/*Media queries of screen sizes bigger than 768px and up*/
+
+/*Media queries of screen sizes bigger than 769px and up*/
 /*Media queries*/
-@media screen and (min-width :768px) {
+@media screen and (min-width :769px) {
     body {
         background-color: #ffc0cb;
         width: 100vw;

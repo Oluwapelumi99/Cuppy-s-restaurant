@@ -18,7 +18,7 @@
 - Imagery
 ## Features
 - Favicon
-- Nav bar
+- Navigation
 - Home page
 - Bookings page
 - Reviews page
@@ -67,7 +67,10 @@
 - Image used on the home page matches the theme of the site. Image is seen below. It is gotten from https://www.pexels.com
 <img width="1710" alt="Screenshot 2024-10-11 at 00 43 30" src="https://github.com/user-attachments/assets/239a1f5b-7119-48dc-bb30-2c1e8d0cf3c4">
 
-### Features
+## Features
+- ### Favicon
+A favicon has been set to display in the icon bar when the website is viewed on the browser. The favicon gives a description of what game the page is about.Favicon was gotten from https://icons8.com
+<img width="306" alt="Screenshot 2024-10-12 at 00 58 18" src="https://github.com/user-attachments/assets/e12c695c-d513-4930-9b61-70cf77be5075">
 
 ### navigations
 <img width="1710" alt="Screenshot 2024-10-11 at 01 18 50" src="https://github.com/user-attachments/assets/1186f933-d7ed-444a-bdcb-14de4f5eb67b">

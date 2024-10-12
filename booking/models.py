@@ -47,7 +47,7 @@ class Booking(models.Model):
     start_time = models.DateTimeField(verbose_name= 'booking_dateandtime_start', null=False, blank=False)
     number_of_guests = models.CharField(max_length=1, choices=PEOPLE_CHOICES, default='2')
     created_on = models.DateTimeField(auto_now_add=True)
-    special_request = models.TextField(max_length=1024, null=True)
+    special_request = models.TextField(max_length=1024, null=True, blank=True)
     class Meta:
         ordering = ["created_on"]
 
