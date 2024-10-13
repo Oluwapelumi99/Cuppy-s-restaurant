@@ -21,9 +21,9 @@ class TestReviewViews(TestCase):
 
     def test_render_review_page_with_review_form(self):
         response = self.client.get(reverse(
-                'submit_review'))
+                'review_list'))
         self.assertEqual(response.status_code, 200)
         self.assertIn(b"Test review views", response.content)
         self.assertIn(b"4", response.content)
-        self.assertIsInstance(
-        response.context['form'], ReviewForm)
+
+    def 

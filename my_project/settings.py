@@ -35,7 +35,7 @@ SECRET_KEY = "spa(ws9C-6+?d5$C%JqYPWq;T!-vWdfsgApo<Wal@2Lt6{'i,4]cY9{;c{!q_#`"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-oluwapelumi-cuppysresta-owp92hug8pl.ws-eu116.gitpod.io',
+ALLOWED_HOSTS = ['8000-oluwapelumi-cuppysresta-h02xhdroggm.ws.codeinstitute-ide.net',
                 '.herokuapp.com']
 
 
@@ -124,7 +124,7 @@ if 'test' in sys.argv:
     
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeinstitute-ide.net/",
-    'https://8000-oluwapelumi-cuppysresta-owp92hug8pl.ws-eu116.gitpod.io',
+    'https://8000-oluwapelumi-cuppysresta-h02xhdroggm.ws.codeinstitute-ide.net',
     "https://*.herokuapp.com"
 ]
 # Password validation
@@ -163,17 +163,6 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, "send_mail")
 EMAIL_USE_TLS = True
-
-# from pprint import pprint
-# import googlemaps
-# GOOGLE_MAPS_API_KEY = os.environ.get('API_KEY')
-# GMAPS_CLIENT = googlemaps.Client(GOOGLE_MAPS_API_KEY)
-
-# restaurant_address = 'Osmaston Road, DE1 2EH, Derby, UK'
-# response = GMAPS_CLIENT.geocode(restaurant_address)
-# pprint(response)
-# print(response[0]['geometry'])
-
 
 
 # Internationalization
