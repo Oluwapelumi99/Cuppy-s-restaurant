@@ -11,10 +11,6 @@ from django.core.mail import send_mail
 from allauth.account.views import EmailConfirmation
 from .models import Review
 from .forms import ReviewForm
-import googlemaps
-from pprint import pprint
-import requests
-import json
 
 
 # Create your views here.

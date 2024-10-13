@@ -10,12 +10,13 @@ class CustomerAdmin(SummernoteModelAdmin):
     search_fields = ['title']
     summernote_fields = ('content',)
 
+
 @admin.register(Table)
 class TableAdmin(SummernoteModelAdmin):
 
     list_filter = ('seats',)
 
 # Register your models here.
+
+
 admin.site.register(Booking)
-
-

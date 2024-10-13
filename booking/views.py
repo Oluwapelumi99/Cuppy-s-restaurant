@@ -2,7 +2,9 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponse
+from django.core.mail import send_mail
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
 from django.contrib.auth.decorators import login_required
 from django.views.generic import DeleteView
 from .models import Booking, Table, Customer
@@ -59,14 +61,12 @@ def booking(request):
         if form.is_valid():
             booking = form.save(commit=False)
             tables = Table.objects.filter(approved=True)
-            print(len(tables))
             start_query_time = booking.start_time - timedelta(
                 hours=1, minutes=45)
             end_query_time = booking.start_time + timedelta(hours=2)
             available_tables = Table.objects.exclude(
                 booking__start_time__gte=start_query_time,
                 booking__start_time__lte=end_query_time)
-            print(available_tables)
             if available_tables.exists():
                 booking.table = available_tables.first()
                 booking.customer = request.user

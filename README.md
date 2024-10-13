@@ -48,8 +48,36 @@
 
 ### User Stories
 - User Goals
-- Site Owner Goals
+ -The user goals for this site are to be able to make booking, see their bookings, updatee the bookings and also delete their bookings. Satisfying the CRUD function.
+- Another user goal is to be able to leave reviews, read reveiws, update reviews and delete their reviews also satifying the CRUD function.
 
+- Site Owner Goals
+- I want users to be able to manage their own accounts by verifying their emails, resetting their passwords if forgotten.
+- Users can use the map to direct them to the restaurant.
+- Users can click on the email link to send an email if experiencing difficulties to improve their experience.
+
+### USER STORIES
+- All user stories have been satisfied and has all been tested in this README. User stories including must have, should have and could have except the won't haves
+
+
+## must have
+<img width="1312" alt="Screenshot 2024-10-13 at 22 52 02" src="https://github.com/user-attachments/assets/f3e7be26-24d5-4217-8548-6a5668cae641">
+<img width="1306" alt="Screenshot 2024-10-13 at 22 56 30" src="https://github.com/user-attachments/assets/d8101782-486f-4a24-834c-4aeca1d56392">
+<img width="1308" alt="Screenshot 2024-10-13 at 22 52 45" src="https://github.com/user-attachments/assets/b8a46198-fc8c-403b-93a3-ac98357d3dfc">
+<img width="1254" alt="Screenshot 2024-10-13 at 22 52 34" src="https://github.com/user-attachments/assets/01967e82-fbbc-4093-8880-7dd21e8f70a7">
+<img width="1396" alt="Screenshot 2024-10-13 at 22 52 24" src="https://github.com/user-attachments/assets/b041d9bc-ca14-40ed-8909-629c3c0e6c83">
+<img width="1341" alt="Screenshot 2024-10-13 at 22 56 57" src="https://github.com/user-attachments/assets/e07052c6-bd91-4551-9ae9-4018aff22462">
+
+## should have 
+<img width="1320" alt="Screenshot 2024-10-13 at 22 52 13" src="https://github.com/user-attachments/assets/993a8492-8962-4e94-80e5-ed13ceeffacf">
+
+## could have 
+<img width="1333" alt="Screenshot 2024-10-13 at 22 57 09" src="https://github.com/user-attachments/assets/5237e3df-f4f6-45f9-82a3-2a0c96224ec7">
+<img width="1326" alt="Screenshot 2024-10-13 at 22 56 48" src="https://github.com/user-attachments/assets/4012e984-7497-40d9-b2e9-390ec4c84573">
+
+## won't have
+<img width="1322" alt="Screenshot 2024-10-13 at 22 57 45" src="https://github.com/user-attachments/assets/0e8468f3-63a9-4f85-805e-2bff819306c5">
+<img width="1341" alt="Screenshot 2024-10-13 at 22 57 53" src="https://github.com/user-attachments/assets/a92f99e2-d603-4917-ab95-75587464d75c">
 
 ## Design
   ### Color Scheme
@@ -150,7 +178,18 @@ A favicon has been set to display in the icon bar when the website is viewed on 
 <img width="1706" alt="Screenshot 2024-10-11 at 03 41 27" src="https://github.com/user-attachments/assets/72c37690-4b82-4e1b-a65b-8ae7c395da6a">
 
 - ### Python testing
-- 
+- The python codes have been tested. 
+- home_page/views.py file. When it was tested through pep8.
+<img width="1677" alt="Screenshot 2024-10-13 at 00 21 18" src="https://github.com/user-attachments/assets/64d43dcb-9ee0-47d4-bcea-466475c34a10">
+
+- All errors were fixed as seen below.
+<img width="1700" alt="Screenshot 2024-10-13 at 00 37 30" src="https://github.com/user-attachments/assets/50d0f556-f23d-449d-9023-874d0cd1b2eb">
+
+- booking/views.py file
+<img width="1649" alt="Screenshot 2024-10-13 at 00 39 22" src="https://github.com/user-attachments/assets/87044d72-280b-4325-990d-29e1bf4ec9c9">
+
+- All errors were fixed as seen below.
+<img width="1702" alt="Screenshot 2024-10-13 at 00 47 51" src="https://github.com/user-attachments/assets/97351697-ace2-47eb-88f1-c3dc2451b692">
 
 
 ### Lighthouse
@@ -167,7 +206,9 @@ A favicon has been set to display in the icon bar when the website is viewed on 
 <img width="1700" alt="Screenshot 2024-10-12 at 01 05 16" src="https://github.com/user-attachments/assets/7d036862-8f0a-4736-aea3-82ecc52bde85">
 
 - ### Reviews page 
-
+<img width="1692" alt="Screenshot 2024-10-13 at 00 19 34" src="https://github.com/user-attachments/assets/20a050c2-e672-47ce-ab61-d65e4ac226c1">
+<img width="1696" alt="Screenshot 2024-10-13 at 00 19 47" src="https://github.com/user-attachments/assets/dbc2623c-5cb6-49eb-b75d-4fc3c099616d">
+<img width="1692" alt="Screenshot 2024-10-13 at 00 20 00" src="https://github.com/user-attachments/assets/a1a34a8a-4ca7-446b-a02e-12f1a635db0f">
 
 
 - ### Register page
@@ -219,9 +260,6 @@ You can test your site for accessibility through the wave.webaim site - it needs
 
 - Once booking has been updated, it directs to the home page and displays a success message. As seen below:
 <img width="1706" alt="Screenshot 2024-10-11 at 02 36 04" src="https://github.com/user-attachments/assets/7af8d389-ff7c-450c-84a8-70537a011d8c">
-
-- A function to only make changes to bookings have been implemented and it will not allow users to make changes to bookings 72 hours before booking date.
-<img width="1709" alt="Screenshot 2024-10-11 at 02 34 34" src="https://github.com/user-attachments/assets/b9b6cfb1-9592-43cb-88e1-b74a995709bf">
 
 - If the user chooses to cancel their booking, It asks them if they are sure about deleting their booking as shown in the mage below:
 <img width="1703" alt="Screenshot 2024-10-11 at 02 18 40" src="https://github.com/user-attachments/assets/9a571940-05c4-4759-80c1-2b92add58982">
@@ -330,29 +368,19 @@ You can test your site for accessibility through the wave.webaim site - it needs
 <img width="1708" alt="Screenshot 2024-10-11 at 03 30 40" src="https://github.com/user-attachments/assets/1128bf40-3d5a-4249-9e7d-43cd7f0c452d">
 <img width="1708" alt="Screenshot 2024-10-11 at 03 30 54" src="https://github.com/user-attachments/assets/bf7e90e2-8e0e-4fbd-b119-0b7b6ee508aa">
 
-Test the user stories that you created earlier in the readme - did you satisfy the goal, how?
-
-To write up the tests you can use a table,
-| Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
-| -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
-| enter details here | enter details here | enter details here | enter details here | enter details here |
-
-You should have tests for every section of every page.. individually.
 
 ### Automated Testing
 
 - I started the automated testing by checking that the forms in my app are valid. 
-- Started by creating a test_forms.py file in the home_page app and tested the form as seen in the image below.
-<img width="780" alt="Screenshot 2024-10-11 at 17 59 33" src="https://github.com/user-attachments/assets/ea87d32a-7be9-40f7-a6ec-64633b3cb1f6">
+- Started by creating a test_forms.py file for both my apps.
+- I have ran a total of 10 tests to test the booking forms and all of them have passed
+<img width="744" alt="Screenshot 2024-10-13 at 23 01 04" src="https://github.com/user-attachments/assets/6dfa1d8f-459d-4ee3-a183-7ef2ceefc8be">
+<img width="728" alt="Screenshot 2024-10-13 at 23 01 13" src="https://github.com/user-attachments/assets/7dba5eed-e656-40ad-aec0-3ab4ff1cef4a">
+<img width="939" alt="Screenshot 2024-10-13 at 23 02 03" src="https://github.com/user-attachments/assets/e9d25383-5d96-4aca-8aaa-ea96131e9fc2">
+<img width="778" alt="Screenshot 2024-10-13 at 23 02 09" src="https://github.com/user-attachments/assets/6f6e3a16-4338-44e2-b90e-c1b42ac23580">
+- Tests result
+<img width="601" alt="Screenshot 2024-10-13 at 23 02 23" src="https://github.com/user-attachments/assets/9355fe20-6505-4e60-93e4-d30ae918df1a">
 
-- Result of the test:
-<img width="598" alt="Screenshot 2024-10-11 at 17 50 35" src="https://github.com/user-attachments/assets/92be78dd-f740-4f58-a407-07a4dac46de4">
-
-- Test to show that review form is invalid.
-<img width="712" alt="Screenshot 2024-10-11 at 18 01 34" src="https://github.com/user-attachments/assets/c5277bb4-5785-4c28-914b-02735d03ada1">
-
-Result of the test:
-<img width="625" alt="Screenshot 2024-10-11 at 18 01 49" src="https://github.com/user-attachments/assets/18a7487b-8d69-4eae-950a-93ba7ecce66e">
 
 
 ## Technologies Used
