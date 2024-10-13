@@ -5,7 +5,7 @@
 - Users will also have the opportunity to create their accounts which has to be done in order to make bookings or leave reviews and an email to verify their account when they register will be sent to their email address and they can also reset their password if they have forgotten their password.
 - This site was made to put what I have learnt so far in HTML, CSS, JAVASCRIPT AND PYTHON to test.
 
-<img width="1695" alt="Screenshot 2024-10-11 at 22 35 57" src="https://github.com/user-attachments/assets/d73fbc7e-7867-494b-8ca4-44ce425c359a">
+<img width="1689" alt="Screenshot 2024-10-12 at 22 04 20" src="https://github.com/user-attachments/assets/b662e78a-871d-422f-84a3-2da530da27a7">
 
 ## Table of Contents
 
