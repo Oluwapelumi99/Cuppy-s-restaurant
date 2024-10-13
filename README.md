@@ -342,7 +342,17 @@ You should have tests for every section of every page.. individually.
 ### Automated Testing
 
 - I started the automated testing by checking that the forms in my app are valid. 
-- Started by creating a test_forms.py file and tested the form as seen in the image below.
+- Started by creating a test_forms.py file in the home_page app and tested the form as seen in the image below.
+<img width="780" alt="Screenshot 2024-10-11 at 17 59 33" src="https://github.com/user-attachments/assets/ea87d32a-7be9-40f7-a6ec-64633b3cb1f6">
+
+- Result of the test:
+<img width="598" alt="Screenshot 2024-10-11 at 17 50 35" src="https://github.com/user-attachments/assets/92be78dd-f740-4f58-a407-07a4dac46de4">
+
+- Test to show that review form is invalid.
+<img width="712" alt="Screenshot 2024-10-11 at 18 01 34" src="https://github.com/user-attachments/assets/c5277bb4-5785-4c28-914b-02735d03ada1">
+
+Result of the test:
+<img width="625" alt="Screenshot 2024-10-11 at 18 01 49" src="https://github.com/user-attachments/assets/18a7487b-8d69-4eae-950a-93ba7ecce66e">
 
 
 ## Technologies Used
