@@ -1,7 +1,7 @@
 # Cuppy's Restaurant
 
 ## Introduction
-- This is a project demonstrating a restaurant booking system. In this project, I will create a system to reserve tables in a restaurant and users can also make changes to their booking. Users will also be able to leave reviews on what they think about this restaurant and they will be able to edit and delete these reviews if they wish to.
+- This is a project demonstrating a restaurant booking system. In this project, I will create a system to reserve table in a restaurant for a single couple or one person at a time. Users can make changes to their booking. Users will also be able to leave reviews on what they think about this restaurant and they will be able to edit and delete these reviews if they wish to.
 - Users will also have the opportunity to create their accounts which has to be done in order to make bookings or leave reviews and an email to verify their account when they register will be sent to their email address and they can also reset their password if they have forgotten their password.
 - This site was made to put what I have learnt so far in HTML, CSS, JAVASCRIPT AND PYTHON to test.
 
@@ -104,10 +104,10 @@ A favicon has been set to display in the icon bar when the website is viewed on 
 <img width="1710" alt="Screenshot 2024-10-11 at 01 18 50" src="https://github.com/user-attachments/assets/1186f933-d7ed-444a-bdcb-14de4f5eb67b">
 
 - At the top of the page, we can see 'Cuppy's', which is the restaurant's name, clicking on Cuppy's lead us to the home_page as seen below.
-<img width="1703" alt="Screenshot 2024-10-11 at 01 08 05" src="https://github.com/user-attachments/assets/fd0422a8-e487-4d77-8ee3-8e6f99cce32b">
+<img width="1283" alt="Screenshot 2024-10-14 at 00 35 55" src="https://github.com/user-attachments/assets/c62573b3-b137-4fcc-b37a-257d69f0fbb6">
 
 - The navigation bar also shows the home pae and clicking on this will also take us to the home_page as seen below.
-<img width="1703" alt="Screenshot 2024-10-11 at 01 08 05" src="https://github.com/user-attachments/assets/fd0422a8-e487-4d77-8ee3-8e6f99cce32b">
+<img width="1283" alt="Screenshot 2024-10-14 at 00 35 55" src="https://github.com/user-attachments/assets/c62573b3-b137-4fcc-b37a-257d69f0fbb6">
 
 - The booking page link called 'BOOKINGS' can also be seen on the nav bar, clicking on this will take us to the booking page as seen below.
 <img width="1710" alt="Screenshot 2024-10-11 at 01 09 20" src="https://github.com/user-attachments/assets/67a59977-8ba7-49ac-8c3b-33303aecb11f">
@@ -121,7 +121,7 @@ A favicon has been set to display in the icon bar when the website is viewed on 
 <img width="1706" alt="Screenshot 2024-10-11 at 01 15 57" src="https://github.com/user-attachments/assets/16db7529-d6dc-47a1-bc2b-9b46b62ad91b">
 
 - On the right corner of the nav bar, the log in status and user name has been added for easy visibility and to improve user's experience so they know if they are logged in and if they are not logged in, it says so as seen in the image below.
-
+<img width="1283" alt="Screenshot 2024-10-14 at 00 35 55" src="https://github.com/user-attachments/assets/c62573b3-b137-4fcc-b37a-257d69f0fbb6">
 
 
 ## Testing
@@ -179,18 +179,76 @@ A favicon has been set to display in the icon bar when the website is viewed on 
 
 - ### Python testing
 - The python codes have been tested. 
-- home_page/views.py file. When it was tested through pep8.
+## Home_page python files
+- views.py file. When it was tested through pep8.
 <img width="1677" alt="Screenshot 2024-10-13 at 00 21 18" src="https://github.com/user-attachments/assets/64d43dcb-9ee0-47d4-bcea-466475c34a10">
 
 - All errors were fixed as seen below.
 <img width="1700" alt="Screenshot 2024-10-13 at 00 37 30" src="https://github.com/user-attachments/assets/50d0f556-f23d-449d-9023-874d0cd1b2eb">
 
-- booking/views.py file
+forms.py found errors as seen below
+<img width="1287" alt="Screenshot 2024-10-14 at 00 20 32" src="https://github.com/user-attachments/assets/8583f7dc-2074-4f06-9d59-196400d9bba1">
+
+- errors have been fixed as seen below
+<img width="1227" alt="Screenshot 2024-10-14 at 00 20 38" src="https://github.com/user-attachments/assets/28a09c88-52c5-49d7-bde9-297ab4115a0d">
+
+ model.py
+<img width="1323" alt="Screenshot 2024-10-14 at 00 27 03" src="https://github.com/user-attachments/assets/6deb7626-0648-4656-ae5f-69caefe8288f">
+
+-All errors have been fixed as seen below
+<img width="1259" alt="Screenshot 2024-10-14 at 00 28 12" src="https://github.com/user-attachments/assets/3371949b-0e11-486a-98f1-5567f41834ca">
+
+-Admin.py
+<img width="1296" alt="Screenshot 2024-10-14 at 00 20 01" src="https://github.com/user-attachments/assets/de1eb16e-c654-4b45-9446-913d8b157849">
+
+-urls.py
+<img width="1293" alt="Screenshot 2024-10-14 at 01 49 39" src="https://github.com/user-attachments/assets/4216f7c2-dca5-4913-90e5-75217fc2dcdd">
+
+-test_forms.py 
+<img width="1417" alt="Screenshot 2024-10-14 at 00 33 47" src="https://github.com/user-attachments/assets/cf3e2528-8a17-4652-be9c-5a18f5cf89a4">
+
+-test_views.py
+<img width="1286" alt="Screenshot 2024-10-14 at 00 34 41" src="https://github.com/user-attachments/assets/20103dd0-ac7b-4fbd-b6e4-af2969945e57">
+
+
+## Booking app python files testing
+- views.py file
 <img width="1649" alt="Screenshot 2024-10-13 at 00 39 22" src="https://github.com/user-attachments/assets/87044d72-280b-4325-990d-29e1bf4ec9c9">
 
 - All errors were fixed as seen below.
 <img width="1702" alt="Screenshot 2024-10-13 at 00 47 51" src="https://github.com/user-attachments/assets/97351697-ace2-47eb-88f1-c3dc2451b692">
 
+- forms.py found one error and this was fixed. images attached below
+<img width="1466" alt="Screenshot 2024-10-14 at 00 02 37" src="https://github.com/user-attachments/assets/269d2e24-7744-4309-8302-115f01763de6">
+<img width="1228" alt="Screenshot 2024-10-14 at 00 02 51" src="https://github.com/user-attachments/assets/e2806acc-fd2b-420b-ad2b-628e98fabc79">
+
+- admin.py
+<img width="1397" alt="Screenshot 2024-10-14 at 01 56 27" src="https://github.com/user-attachments/assets/c24dd45d-015f-470b-a6ec-7a8a74e23c1c">
+
+- models.py found errors, image attached below
+<img width="1509" alt="Screenshot 2024-10-14 at 00 04 30" src="https://github.com/user-attachments/assets/be73fa13-f71a-475b-832c-bf1b3e8b3751">
+
+- All errors have been fixed
+<img width="1284" alt="Screenshot 2024-10-14 at 00 10 48" src="https://github.com/user-attachments/assets/724b9c91-0739-47fe-81c1-65e85089fd4f">
+
+- urls.py found errors
+<img width="1425" alt="Screenshot 2024-10-14 at 00 17 36" src="https://github.com/user-attachments/assets/b54fa4ff-cfd8-4930-b879-42faab7573e8">
+
+- All errors have been fixed
+<img width="1345" alt="Screenshot 2024-10-14 at 00 18 40" src="https://github.com/user-attachments/assets/ed1dbc01-942e-41a0-a0b5-19f9d5f853f5">
+
+-test_forms.py found errors 
+<img width="1526" alt="Screenshot 2024-10-14 at 00 13 20" src="https://github.com/user-attachments/assets/38229748-5231-448c-ab62-36036fbfd8d4">
+
+- All errors have been fixed.
+<img width="1520" alt="Screenshot 2024-10-14 at 00 15 31" src="https://github.com/user-attachments/assets/edb57c25-1e11-46a2-a975-1af4f15fe9d9">
+
+
+## Settings.py file 
+<img width="1613" alt="Screenshot 2024-10-14 at 02 08 35" src="https://github.com/user-attachments/assets/513f03fa-5737-4705-9976-0ade33f52597">
+
+- All errors could not be fixed, I have tried to fix the indentation problem but it keeps giving over indenr=ted or underindented.
+<img width="1495" alt="Screenshot 2024-10-14 at 02 25 35" src="https://github.com/user-attachments/assets/f1e04674-f97f-4ace-8b6e-de23a66b39f5">
 
 ### Lighthouse
 
@@ -220,7 +278,12 @@ A favicon has been set to display in the icon bar when the website is viewed on 
 <img width="1710" alt="Screenshot 2024-10-12 at 01 08 34" src="https://github.com/user-attachments/assets/91d88e27-ce52-4650-a618-c9c946273aa2">
 
 ### Wave Webaim - accessibility testing
-You can test your site for accessibility through the wave.webaim site - it needs to be deployed in order for it to test it. Fix any errors that it gives
+- I tested the pages using the https://wave.webaim.org. and it found no errors
+<img width="1710" alt="Screenshot 2024-10-14 at 01 24 06" src="https://github.com/user-attachments/assets/ba5c8c1c-2347-455c-bf04-f00a93fbb850">
+<img width="1710" alt="Screenshot 2024-10-14 at 01 24 39" src="https://github.com/user-attachments/assets/0a7937e3-27e7-40c8-b159-a6fd20509c18">
+<img width="1703" alt="Screenshot 2024-10-14 at 01 24 30" src="https://github.com/user-attachments/assets/a323bb05-4381-430e-9f16-e737a99568f3">
+<img width="1705" alt="Screenshot 2024-10-14 at 00 46 25" src="https://github.com/user-attachments/assets/e5d79a5c-aead-402a-ab9b-04821d9a8cfe">
+<img width="1706" alt="Screenshot 2024-10-14 at 01 24 18" src="https://github.com/user-attachments/assets/2fa1f73f-c722-4b29-a8e9-e12419a4fb86">
 
 ### Manual Testing
 
@@ -373,7 +436,7 @@ You can test your site for accessibility through the wave.webaim site - it needs
 
 - I started the automated testing by checking that the forms in my app are valid. 
 - Started by creating a test_forms.py file for both my apps.
-- I have ran a total of 10 tests to test the booking forms and all of them have passed
+- I have ran a total of 10 tests, 9 to test the booking and review forms 1 to test the review_list function and all of them have passed
 <img width="744" alt="Screenshot 2024-10-13 at 23 01 04" src="https://github.com/user-attachments/assets/6dfa1d8f-459d-4ee3-a183-7ef2ceefc8be">
 <img width="728" alt="Screenshot 2024-10-13 at 23 01 13" src="https://github.com/user-attachments/assets/7dba5eed-e656-40ad-aec0-3ab4ff1cef4a">
 <img width="939" alt="Screenshot 2024-10-13 at 23 02 03" src="https://github.com/user-attachments/assets/e9d25383-5d96-4aca-8aaa-ea96131e9fc2">
@@ -389,8 +452,10 @@ You can test your site for accessibility through the wave.webaim site - it needs
 - https://www.heroku.com
 - https://pep8ci.herokuapp.com/
 - https://djangoproject.com
+- https://wave.webaim.org
 - Lighthouse on google chrome
 - Chrome dev tools
+- https://jshint.com
 - https://ui.dev/amiresponsive
 
 ## Cloning and forking.

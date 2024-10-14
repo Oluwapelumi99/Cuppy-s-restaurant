@@ -3,59 +3,54 @@
 {% block content %}
 {% load static %}
 {% load crispy_forms_tags %}
- 
-<div id="write-review" class="col text-center mt-5 "> 
+
+<div id="write-review" class="col text-center mt-5 ">
   <h4> Share your thoughts with other Customers
     <span><a class="mt-5" href="{% url 'submit_review'%}">Write a review</a></span>
   </h4>
 </div>
 
 
-<!--Displaying reviews-->    
-        {% for review in reviews %}
-        
-            <div id="reviews" class="col text-center font-weight-bold">{{ review.author }}
-            {% csrf_token %}
-            <span class="font-weight-normal">
-              {{ review.created_on }}
-            </span>
-          <div id="review{{ review.id }}">
-            {{ review.body | linebreaks }} 
-            {{ review.rating }}
-          </div>
-          {% if user.is_authenticated and review.author == user %}
-          <button class="btn btn-delete btn-signup mt-3"
-           review_id="{{ review.id }}">Delete</button>
-           <a href="{% url 'edit_review' review.id %}" class="btn btn-signup btn-edit mt-3">Edit</a>
-            </div>
-            <br>
-           {% endif %} 
-           {% endfor %}
+<!--Displaying reviews-->
+{% for review in reviews %}
+
+<div id="reviews" class="col text-center font-weight-bold">{{ review.author }}
+  {% csrf_token %}
+  <span class="font-weight-normal">
+    {{ review.created_on }}
+  </span>
+  <div id="review{{ review.id }}">
+    {{ review.body | linebreaks }}
+    {{ review.rating }}
+  </div>
+  {% if user.is_authenticated and review.author == user %}
+  <button class="btn btn-delete btn-signup mt-3" review_id="{{ review.id }}">Delete</button>
+  <a href="{% url 'edit_review' review.id %}" class="btn btn-signup btn-edit mt-3">Edit</a>
+</div>
+<br>
+{% endif %}
+{% endfor %}
 <!-- Delete confirmation modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1"
-  aria-labelledby="deleteModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title"
-          id="deleteModalLabel">Delete review?</h5>
-        <button type="button" class="btn-close"
-          data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title" id="deleteModalLabel">Delete review?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         Are you sure you want to delete your review?
         This action cannot be undone.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary"
-          data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <a id="deleteConfirm" href="#" class="btn
           btn-danger">Delete</a>
       </div>
     </div>
   </div>
-</div>    
+</div>
 {% endblock %}
 {% block extras%}
-  <script src="{% static 'js/reviews.js' %}"></script> 
+<script src="{% static 'js/reviews.js' %}"></script>
 {% endblock %}

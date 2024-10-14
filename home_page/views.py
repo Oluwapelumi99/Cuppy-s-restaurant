@@ -90,6 +90,9 @@ def edit_review(request, pk):
     queryset = Review.objects.filter(status=True)
     review = get_object_or_404(Review, pk=pk)
     review_form = ReviewForm(data=request.POST or None, instance=review)
+    context = {
+            'form': review_form
+        }
     if request.method == "POST":
         if review_form.is_valid() and review.author == request.user:
             review = review_form.save(commit=False)

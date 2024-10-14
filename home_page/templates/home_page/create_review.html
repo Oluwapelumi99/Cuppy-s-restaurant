@@ -3,20 +3,20 @@
 {% block content %}
 {% load static %}
 {% load crispy_forms_tags %}
-{% if user.is_authenticated %} 
+{% if user.is_authenticated %}
 <form method="POST" class="col text-center mt-5">
     {{ form.as_p}}
     {% csrf_token %}
     <button class="btn-signup" type="submit">Submit</button>
 </form>
-    {% else %}
+{% else %}
 <p>Log in to leave a review</p>
-    {% endif %}
-        <br>
-         
-    </div>
+{% endif %}
+<br>
+
+</div>
 
 {% endblock content %}
 {% block extras%}
-    <script src="{% static 'js/stars.js' %}"></script> 
+<script src="{% static 'js/stars.js' %}"></script>
 {% endblock %}

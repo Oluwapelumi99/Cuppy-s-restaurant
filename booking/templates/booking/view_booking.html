@@ -12,20 +12,17 @@
         Number of guests: {{ booking.number_of_guests }}
     </div>
     <div class="mt-3">
-     Time: {{ booking.start_time }}
+        Time: {{ booking.start_time }}
     </div>
     <div class="mt-3">
         Special requests: {{ booking.special_request }}
     </div>
     {% if user.is_authenticated %}
     {% if booking.customer_id == user.id %}
-          <a href="{% url 'update_booking' booking.id %}" class="btn btn-signup btn-delete mt-3">Edit</a>
-          <a href="{% url 'cancel_booking' booking.id %}" class="btn btn-signup btn-edit mt-3">Cancel</a>
+    <a href="{% url 'update_booking' booking.id %}" class="btn btn-signup btn-delete mt-3">Edit</a>
+    <a href="{% url 'cancel_booking' booking.id %}" class="btn btn-signup btn-edit mt-3">Cancel</a>
     {% endif %}
-{% endif %} 
+    {% endif %}
 </div>
 {% endfor %}
-{% endblock content %}   
-
-
-        
+{% endblock content %}

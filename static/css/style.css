@@ -97,7 +97,7 @@ body {
 }
 
 /* Reviews page css*/
-#reviews_page {   
+#reviews_page #write-review {   
     color: #fff;
     font-family: 'dancing script', sans-serif;
     font-size: 20px;
