@@ -104,10 +104,10 @@ A favicon has been set to display in the icon bar when the website is viewed on 
 <img width="1710" alt="Screenshot 2024-10-11 at 01 18 50" src="https://github.com/user-attachments/assets/1186f933-d7ed-444a-bdcb-14de4f5eb67b">
 
 - At the top of the page, we can see 'Cuppy's', which is the restaurant's name, clicking on Cuppy's lead us to the home_page as seen below.
-<img width="1283" alt="Screenshot 2024-10-14 at 00 35 55" src="https://github.com/user-attachments/assets/c62573b3-b137-4fcc-b37a-257d69f0fbb6">
+<img width="1710" alt="Screenshot 2024-10-14 at 08 52 52" src="https://github.com/user-attachments/assets/98e42dea-6de2-4799-b3c7-5671d7c3c367">
 
-- The navigation bar also shows the home pae and clicking on this will also take us to the home_page as seen below.
-<img width="1283" alt="Screenshot 2024-10-14 at 00 35 55" src="https://github.com/user-attachments/assets/c62573b3-b137-4fcc-b37a-257d69f0fbb6">
+- The navigation bar also shows the home page and clicking on this will also take us to the home_page as seen below.
+<img width="1700" alt="Screenshot 2024-10-14 at 08 53 03" src="https://github.com/user-attachments/assets/9d9b313d-5992-4b38-9520-50deb75a2e05">
 
 - The booking page link called 'BOOKINGS' can also be seen on the nav bar, clicking on this will take us to the booking page as seen below.
 <img width="1710" alt="Screenshot 2024-10-11 at 01 09 20" src="https://github.com/user-attachments/assets/67a59977-8ba7-49ac-8c3b-33303aecb11f">
@@ -121,7 +121,7 @@ A favicon has been set to display in the icon bar when the website is viewed on 
 <img width="1706" alt="Screenshot 2024-10-11 at 01 15 57" src="https://github.com/user-attachments/assets/16db7529-d6dc-47a1-bc2b-9b46b62ad91b">
 
 - On the right corner of the nav bar, the log in status and user name has been added for easy visibility and to improve user's experience so they know if they are logged in and if they are not logged in, it says so as seen in the image below.
-<img width="1283" alt="Screenshot 2024-10-14 at 00 35 55" src="https://github.com/user-attachments/assets/c62573b3-b137-4fcc-b37a-257d69f0fbb6">
+<img width="1710" alt="Screenshot 2024-10-11 at 01 18 50" src="https://github.com/user-attachments/assets/1186f933-d7ed-444a-bdcb-14de4f5eb67b">
 
 
 ## Testing
@@ -134,10 +134,6 @@ A favicon has been set to display in the icon bar when the website is viewed on 
 
 - These errors were fixed by adding an alt text to the images, the pictures were later removed as they did not improve the user experience and were no longer needed. Also,the span was made into a div element and the closing p element was removed, then the page was tested again and it returned no errors as seen below.
 <img width="1699" alt="Screenshot 2024-10-10 at 18 49 16" src="https://github.com/user-attachments/assets/ef7b4fc2-b43e-4114-9655-c9b071e2acad">
-
-- On the home page, there is an address link to direct customers to the restaurant. This has been tested, it works and it leads to google maps as seen below.
-It has been set to target blank so it leads to another page when clicked.
-<img width="1710" alt="Screenshot 2024-10-14 at 03 48 43" src="https://github.com/user-attachments/assets/9a9e0f4c-cb52-4274-920d-c3dc52936c05">
 
  #### booking.html
 - The booking page presented with the errors as seen in the image below
@@ -201,16 +197,16 @@ forms.py found errors as seen below
 -All errors have been fixed as seen below
 <img width="1259" alt="Screenshot 2024-10-14 at 00 28 12" src="https://github.com/user-attachments/assets/3371949b-0e11-486a-98f1-5567f41834ca">
 
--Admin.py
+-Admin.py found no errors
 <img width="1296" alt="Screenshot 2024-10-14 at 00 20 01" src="https://github.com/user-attachments/assets/de1eb16e-c654-4b45-9446-913d8b157849">
 
--urls.py
+-urls.py found no errors
 <img width="1293" alt="Screenshot 2024-10-14 at 01 49 39" src="https://github.com/user-attachments/assets/4216f7c2-dca5-4913-90e5-75217fc2dcdd">
 
--test_forms.py 
+-test_forms.py, no errors found
 <img width="1417" alt="Screenshot 2024-10-14 at 00 33 47" src="https://github.com/user-attachments/assets/cf3e2528-8a17-4652-be9c-5a18f5cf89a4">
 
--test_views.py
+-test_views.py no errors found
 <img width="1286" alt="Screenshot 2024-10-14 at 00 34 41" src="https://github.com/user-attachments/assets/20103dd0-ac7b-4fbd-b6e4-af2969945e57">
 
 
@@ -250,7 +246,7 @@ forms.py found errors as seen below
 ## Settings.py file 
 <img width="1613" alt="Screenshot 2024-10-14 at 02 08 35" src="https://github.com/user-attachments/assets/513f03fa-5737-4705-9976-0ade33f52597">
 
-- All errors could not be fixed, I have tried to fix the indentation problem but it keeps giving over indenr=ted or underindented.
+- All errors could not be fixed, I have tried to fix the indentation problem but it keeps giving over indented or underindented.
 <img width="1495" alt="Screenshot 2024-10-14 at 02 25 35" src="https://github.com/user-attachments/assets/f1e04674-f97f-4ace-8b6e-de23a66b39f5">
 
 ### Lighthouse
@@ -295,6 +291,10 @@ forms.py found errors as seen below
 - A transparent background has been created on top of the background image, so it can provide a great contrast to see what is written on it.
 - On the home page, a brief introduction is seen and number to call the restaurant on. Also, an email address that links directly to the restaurants email address as seen below.
 <img width="1701" alt="Screenshot 2024-10-11 at 01 32 37" src="https://github.com/user-attachments/assets/47834070-34ec-448a-85f3-6ff458ad50bb">
+
+- On the home page, there is an address link to direct customers to the restaurant. This has been tested, it works and it leads to google maps as seen below.
+It has been set to target blank so it leads to another page when clicked.
+<img width="1710" alt="Screenshot 2024-10-14 at 03 48 43" src="https://github.com/user-attachments/assets/9a9e0f4c-cb52-4274-920d-c3dc52936c05">
 
 
 - ### On the booking page
