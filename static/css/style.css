@@ -5,7 +5,7 @@
 body {
     background-color: #ffc0cb;
     width: 100vw;
-    height: 100vh;
+    height: 100px;
 }
 
 /*index.html css*/
@@ -65,7 +65,7 @@ body {
 }
 
 #bookform_submit {
-    margin-left: 12rem;
+    margin-left: 10rem;
 }
 
 .btn-signup,
@@ -116,8 +116,6 @@ a {
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
     width: 100%;
     background-color: rgba(4, 0, 1, 0.6);   
 }
