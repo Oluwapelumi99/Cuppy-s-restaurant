@@ -1,8 +1,209 @@
+* {
+    padding: 0;
+    margin: 0;
+}
 body {
     background-color: #ffc0cb;
+    width: 100vw;
+    height: 100px;
 }
 
-#details {
+/*index.html css*/
+#hero-image {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+#description {
+    color: #fff4f9;
+    font-size: 15px;
+    font-family: 'dancing script', sans-serif; 
+}
+#loggedin{
+    padding-top: 5px;
     text-align: center;
 }
+#opacity {
+    background-color:  rgba(4, 0, 1, 0.6);
+    height: 100vh;
+    width: 100vw;
+}
+
+#content {
+    padding-left: 5px; 
+    padding-top: 20px;
+    
+}
+#location {
+    padding-right: 5px;
+    margin-top: 30px;
+    position: absolute;
+    right: 0; 
+}
+#book_table {
+    font-family: 'dancing script', sans-serif;
+    font-size: 22px;
+    border-radius: 10px; 
+}
+#reviews_page {
+    text-align: center;
+}
+/* booking.html css*/
+#details {
+    padding-left: 20px;
+    padding-top: 20px;
+    font-family: 'dancing script', sans-serif;
+    font-size: 15px;
+}
+
+#bookform {
+    font-family: 'dancing script', sans-serif;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#bookform_submit {
+    margin-left: 10rem;
+}
+
+.btn-signup,
+.btn-edit {
+    background-color: #000000;
+    color: #ffc0cb;
+}
+
+.btn-signup:hover,
+.btn-signup:active {
+    background-color: #ffc0cb;
+    color: #000000;
+}
+/*cancel_booking.html css*/
+#cancelform {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.my-btn {
+    background-color: inherit !important;
+    border: 0 !important;
+}
+
+#make-bookings {
+    margin-top: 170px;
+    text-align: center;
+    color: #ffc0cb;
+}
+
+/* Reviews page css*/
+#reviews_page #write-review {   
+    color: #fff;
+    font-family: 'dancing script', sans-serif;
+    font-size: 20px;
+}
+.font-weight-bold {
+    font-size: large;
+}
+#password {
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+a {
+    text-decoration: underline;
+    color: inherit;
+}
+
+footer {
+    width: 100%;
+    background-color: rgba(4, 0, 1, 0.6);   
+}
+/* Media queries for smaller devices less than 768px*/
+/*Media queries*/
+@media screen and (max-width:768px) {
+    .navbar-text {
+        display: none  
+    }
+}
+
+/*Media queries of screen sizes bigger than 769px and up*/
+/*Media queries*/
+@media screen and (min-width :769px) {
+    body {
+        background-color: #ffc0cb;
+        width: 100vw;
+        height: 100vh;
+    }
+/*index.html page*/
+    #opacity {
+        background-color:  rgba(4, 0, 1, 0.6);
+        height: 100vh;
+        width: 100vw;
+    }
+    #loggedin {
+        display: none;
+    }
+    #password {
+        margin-top: 10px;
+        margin-left: 370px;
+    }
+    #description {
+        color: #fff4f9;
+        display: flex;
+        font-size: 20px;
+        font-family: 'dancing script', sans-serif; 
+    }
+    #location {
+        margin-top: 150px;
+        margin-left: 250px;
+    }
+    #content {
+        margin-top: 20px;
+        margin-left: 50px;
+        
+    }
+    #hero-image {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        position: fixed;
+        z-index: -1;
+    }
+    #book_table {
+        font-family: 'dancing script', sans-serif;
+        font-size: 22px;
+        border-radius: 10px; 
+    }
+
+/*Booking.html page*/
+    #bookform {
+        margin-top: 90px;
+        margin-left: 50px;
+    }
+
+    #details {
+        padding-left: 20px;
+        padding-top: 20px;
+        font-family: 'dancing script', sans-serif;
+        font-size: 20px;
+        display: flex;
+    }
+
+/*Reviews page*/
+    #reviews_page {   
+        margin-left: 500px;
+        color: #fff;
+        font-family: 'dancing script', sans-serif;
+        font-size: 20px;
+    }
+}
+/*Media queries of screen sizes bigger than 992px and up*/
+@media screen and (min-width: 992px){
+   #opacity {
+    background-color:  rgba(4, 0, 1, 0.6);
+    height: 100vh;
+    width: 100vw;
+    }
+} 
 
