@@ -133,8 +133,11 @@ A favicon has been set to display in the icon bar when the website is viewed on 
 <img width="1710" alt="Screenshot 2024-10-10 at 17 36 19" src="https://github.com/user-attachments/assets/722e4e35-91b5-407c-b6df-529a5c5eeca0">
 
 - These errors were fixed by adding an alt text to the images, the pictures were later removed as they did not improve the user experience and were no longer needed. Also,the span was made into a div element and the closing p element was removed, then the page was tested again and it returned no errors as seen below.
-
 <img width="1699" alt="Screenshot 2024-10-10 at 18 49 16" src="https://github.com/user-attachments/assets/ef7b4fc2-b43e-4114-9655-c9b071e2acad">
+
+- On the home page, there is an address link to direct customers to the restaurant. This has been tested, it works and it leads to google maps as seen below.
+It has been set to target blank so it leads to another page when clicked.
+<img width="1710" alt="Screenshot 2024-10-14 at 03 48 43" src="https://github.com/user-attachments/assets/9a9e0f4c-cb52-4274-920d-c3dc52936c05">
 
  #### booking.html
 - The booking page presented with the errors as seen in the image below

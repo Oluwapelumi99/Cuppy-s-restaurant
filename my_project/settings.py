@@ -34,7 +34,7 @@ TEMPLATES_DIR3 = os.path.join(BASE_DIR, 'home_page', 'templates', 'home_page')
 SECRET_KEY = "spa(ws9C-6+?d5$C%JqYPWq;T!-vWdfsgApo<Wal@2Lt6{'i,4]cY9{;c{!q_#`"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-oluwapelumi-cuppysresta-h02xhdroggm.ws.codeinstitute-ide.net',
                 '.herokuapp.com']
